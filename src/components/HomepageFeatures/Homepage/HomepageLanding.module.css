@@ -1,0 +1,64 @@
+.main {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    var(--homepage-background-image) lightgray 50% / contain repeat;
+  --homepage-background-image: url("/img/tiles/tile5.png");
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-align: center;
+  overflow: hidden;
+  height: 90vh;
+  width: 100%;
+}
+
+:global([data-theme="dark"]) .main {
+  --homepage-background-image: url("/img/tiles/tile1.png");
+}
+
+.text {
+  color: #ffffff;
+}
+
+.heading {
+  font-size: 4.7rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tagline {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  color: #ffffff !important;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: transparent !important;
+}
