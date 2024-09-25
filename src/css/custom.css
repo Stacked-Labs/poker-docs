@@ -73,3 +73,20 @@
 .footer {
   background-color: black !important;
 }
+
+details {
+  background-color: #f9f9f9 !important; 
+  border: 1px solid #a00505;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+details[open] {
+  background-color: #e9e9e9; 
+}

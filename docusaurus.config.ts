@@ -112,7 +112,7 @@ const config: Config = {
       style: "dark",
     },
     footer: {
-      style: "light",
+      style: "dark",
       links: [
         {
           title: "Docs",

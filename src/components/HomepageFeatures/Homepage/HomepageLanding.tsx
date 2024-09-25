@@ -30,7 +30,7 @@ const HomepageLanding = () => {
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro"
+            to="/docs/introduction/what-is-stacked"
           >
             Learn more
           </Link>

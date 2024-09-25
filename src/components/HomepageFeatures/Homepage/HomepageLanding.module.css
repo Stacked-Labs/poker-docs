@@ -5,7 +5,7 @@
       rgba(0, 0, 0, 0.2) 100%
     ),
     var(--homepage-background-image) lightgray 50% / contain repeat;
-  --homepage-background-image: url("/img/tiles/tile5.png");
+  --homepage-background-image: url("/img/tiles/tile1.png");
   background-position: center;
   display: flex;
   align-items: center;
@@ -15,10 +15,6 @@
   overflow: hidden;
   height: 90vh;
   width: 100%;
-}
-
-:global([data-theme="dark"]) .main {
-  --homepage-background-image: url("/img/tiles/tile1.png");
 }
 
 .text {
