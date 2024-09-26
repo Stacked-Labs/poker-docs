@@ -15,7 +15,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
+  organizationName: "Stacked", // Usually your GitHub org/user name.
   projectName: "Stacked", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -103,8 +103,23 @@ const config: Config = {
           label: "Docs",
         },
         {
+          href: "https://x.com/stacked_poker",
+          className: "navbar_logo navbar_x",
+          position: "right",
+        },
+        {
+          href: "https://github.com/Stacked-Labshttps://discord.gg/R42388MfDd",
+          className: "navbar_logo navbar_discord",
+          position: "right",
+        },
+        {
+          href: "https://warpcast.com/stackedpoker",
+          className: "navbar_logo navbar_warpcast",
+          position: "right",
+        },
+        {
           href: "https://github.com/Stacked-Labs",
-          className: "navbar_github",
+          className: "navbar_logo navbar_github",
           position: "right",
         },
       ],
@@ -112,7 +127,7 @@ const config: Config = {
       style: "dark",
     },
     footer: {
-      style: "dark",
+      style: "light",
       links: [
         {
           title: "Docs",
@@ -129,23 +144,31 @@ const config: Config = {
               label: "Market",
               to: "/docs/category/market",
             },
+            {
+              label: "FAQs",
+              to: "/docs/faq",
+            },
           ],
         },
         {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/",
+              label: "Discord",
+              href: "https://discord.gg/R42388MfDd",
             },
             {
-              label: "Discord",
-              href: "https://discord.com/",
+              label: "X",
+              href: "https://x.com/stacked_poker",
+            },
+            {
+              label: "Warpcast",
+              href: "https://warpcast.com/stackedpoker",
             },
             {
               label: "Github",
-              href: "https://stackoverflow.com/",
-            },
+              href: "https://github.com/Stacked-Labs",
+            }
           ],
         },
         {
@@ -158,11 +181,7 @@ const config: Config = {
             {
               label: "Instagram",
               href: "https://instagram.com/",
-            },
-            {
-              label: "X",
-              href: "https://x.com/",
-            },
+            }
           ],
         },
       ],

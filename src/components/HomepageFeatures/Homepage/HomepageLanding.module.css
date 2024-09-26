@@ -21,13 +21,19 @@
   color: #ffffff;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .heading {
-  font-size: 4.7rem;
+  font-size: 7rem;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  padding-left: 1.2rem;
 }
 
 .tagline {
@@ -49,12 +55,9 @@
   gap: 1rem;
 }
 
-.button {
-  color: #ffffff !important;
-}
-
 .navbar {
   position: fixed;
   width: 100%;
   background-color: transparent !important;
 }
+

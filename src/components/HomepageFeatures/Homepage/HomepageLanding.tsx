@@ -11,25 +11,19 @@ const HomepageLanding = () => {
   return (
     <section className={styles.main}>
       <div>
-        <Heading as="h1" className={clsx(styles.text, styles.heading)}>
-          <img src={"/img/chips.png"} alt="logo" />
-          {siteConfig.title}
-        </Heading>
-        <div>
-          <p className={clsx(styles.text, styles.tagline)}>
-            {siteConfig.tagline}
-            <br />
-          </p>
-          <p className={clsx(styles.text, styles.subtitle)}>
-            HOST AND PLAY FOR ANY ERC20
-          </p>
+        <div className={styles.flex}>
+          <img src={"/img/chips.png"} alt="logo"
+            height={70} />
+          <Heading as="h1" className={clsx(styles.text, styles.heading)}>
+            {siteConfig.title}
+          </Heading>
         </div>
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/">
+          <Link className="button button--secondary button--lg" to="/">
             Play Poker
           </Link>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--lg button--white"
             to="/docs/introduction/what-is-stacked"
           >
             Learn more
