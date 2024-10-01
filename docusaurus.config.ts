@@ -108,7 +108,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://github.com/Stacked-Labshttps://discord.gg/R42388MfDd",
+          href: "https://discord.gg/R42388MfDd",
           className: "navbar_logo navbar_discord",
           position: "right",
         },
@@ -168,19 +168,6 @@ const config: Config = {
             {
               label: "Github",
               href: "https://github.com/Stacked-Labs",
-            }
-          ],
-        },
-        {
-          title: "Social",
-          items: [
-            {
-              label: "Facebook",
-              href: "https://facebook.com",
-            },
-            {
-              label: "Instagram",
-              href: "https://instagram.com/",
             }
           ],
         },
