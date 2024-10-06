@@ -19,7 +19,7 @@ const HomepageLanding = () => {
           </Heading>
         </div>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/">
+          <Link className="button button--secondary button--lg" to="https://stackedpoker.io">
             Play Poker
           </Link>
           <Link
