@@ -8,7 +8,7 @@ const config: Config = {
   favicon: "img/stacked-logo.ico",
 
   // Set the production url of your site here
-  url: "https://poker-game-rho.vercel.app",
+  url: "https://stackedpoker.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -134,15 +134,23 @@ const config: Config = {
           items: [
             {
               label: "Introduction",
-              to: "/docs/introduction/what-is-stacked",
+              to: "/docs/introduction",
             },
             {
-              label: "Game",
-              to: "/docs/category/game",
+              label: "Getting Started",
+              to: "/docs/category/getting-started",
             },
             {
-              label: "Market",
-              to: "/docs/category/market",
+              label: "How it works",
+              to: "/docs/howitworks", 
+            },
+            {
+              label: "Market Plan",
+              to: "/docs/category/market-plan",
+            },
+            {
+              label: "Roadmap",
+              to: "/docs/roadmap",
             },
             {
               label: "FAQs",
