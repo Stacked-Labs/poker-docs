@@ -16,7 +16,7 @@ sidebar_position: 1
 <details>
   <summary>How do I get started?</summary>
   <div>
-    To get started, follow our <a href="./getting-started.md">Getting Started Guide</a> which provides step-by-step instructions on installation, local development, and deployment.
+    To get started, follow our <a href="/docs/category/getting-started">Getting Started Guide</a> which provides step-by-step instructions on installation, local development, and deployment.
   </div>
 </details>
 
@@ -73,13 +73,13 @@ sidebar_position: 1
 <details>
   <summary>How do I contact support?</summary>
   <div>
-    You can contact support by emailing support@example.com or by filling out the contact form on our website.
+    You can contact support by creating a ticket in the **#support** channel in our Discord server. This is the fastest way to get assistance from our team.
   </div>
 </details>
 
 <details>
   <summary>Where can I find more information?</summary>
   <div>
-    For more detailed information, refer to our <a href="./index.md">documentation</a> or reach out to our support team.
+    For more detailed information, refer to our socials and reach out to our support team.
   </div>
 </details>

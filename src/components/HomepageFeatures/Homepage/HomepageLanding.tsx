@@ -13,18 +13,18 @@ const HomepageLanding = () => {
       <div>
         <div className={styles.flex}>
           <img src={"/img/chips.png"} alt="logo"
-            height={70} />
+            height={90} />
           <Heading as="h1" className={clsx(styles.text, styles.heading)}>
             {siteConfig.title}
           </Heading>
         </div>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="https://stackedpoker.io">
+          <Link className="button button--secondary button--lg" to="https://stackedpoker.io" style={{ color: 'white' }}>
             Play Poker
           </Link>
           <Link
             className="button button--lg button--white"
-            to="/docs/introduction/what-is-stacked"
+            to="/docs/introduction"
           >
             Learn more
           </Link>
