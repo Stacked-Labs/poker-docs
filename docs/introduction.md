@@ -6,32 +6,26 @@ sidebar_position: 1
 
 ## 1.1 What is Stacked?
 
-Welcome to Stacked, the ultimate way to enjoy poker with friends using your crypto wallet. With Stacked, you can set up and play poker using any ERC-20 token in just a few clicks. Whether you're a casual player or a seasoned poker enthusiast, our app brings together the excitement of poker and the power of decentralized finance. No more banks or intermediaries—just you, your friends, and your favorite tokens.
-
----
+Stacked is the ultimate platform for poker enthusiasts who want to enjoy their favorite game using cryptocurrency. It allows users to set up and play poker with any ERC-20 token, combining the fun of poker with the security and efficiency of DeFi. Stacked removes the need for traditional intermediaries like bankers (the game hosts who act as a trusted third-party handling payments with Venmo, Cashapp, Revolut, etc.), offering a seamless and trustless experience where you and your friends can bet directly using your crypto assets.
 
 ## 1.2 Why Stacked?
 
-Stacked offers several unique advantages that set it apart from traditional poker platforms:
+Stacked stands out from traditional poker platforms by offering several key advantages:
 
-- **Instant Setup**: No registrations or accounts. Just connect your wallet and you're ready to play. We support 100+ wallets, making it easy for anyone to join.
+### Instant Setup
 
-- **Play for Any ERC-20**: Choose your favorite token and bet on it. It can be anything from your trustworthy stablecoin of choice to the niche dog token you made.
+Players can start playing poker by simply connecting their Web3 wallet—no account registrations or downloads required. Over 100 different wallets are supported, including popular options like MetaMask, Rabby, and Coinbase. Utilizing Thirdweb as a connection solution, allowing users to also set up with traditional accounts such as Google, Discord, X, etc.
 
-- **Trustless Play**: All funds are managed securely through smart contracts. Each game has its own smart contract specifically for you and your game, ensuring that all transactions are isolated and secure.
+### Play for Any ERC-20
+
+Whether it's a well-known stablecoin like USDC or a memecoin like SHIB, players can wager using any ERC-20 token. This provides flexibility and broadens the poker experience for crypto enthusiasts.
+
+### Trustless Play
+
+Every game on Stacked is managed through smart contracts, ensuring that all player deposits and payouts are handled securely, without any need for manual intervention or reliance on a central authority.
+
+### Fair Revenue Share
+
+Bankers are a key part of the Stacked ecosystem, responsible for creating games and attracting players. To reward their contributions, Stacked ensures that 50% of the Protocol Pot Fee from each game is paid out to the Banker at the end of the game. This way, Bankers benefit directly from the platform’s success and are motivated to continue generating games.
 
 ---
-
-## 1.3 How It Works
-
-Stacked simplifies the process of setting up and playing crypto poker games:
-
-- **Connect a Wallet**: Users connect their crypto wallets to the platform to start hosting or joining poker games.
-
-- **Generate a Game Link**: Hosts can generate a game link through a smart contract bank and share it with friends and the community.
-
-- **Deposit Buy-in**: Players who join the game log in with their wallets and deposit their buy-ins directly into the smart contract bank.
-
-- **Payouts**: At the end of the game, players are automatically paid out their respective stacks to their connected wallets.
----
-
