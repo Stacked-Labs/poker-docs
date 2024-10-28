@@ -5,7 +5,7 @@
       rgba(0, 0, 0, 0.2) 100%
     ),
     var(--homepage-background-image) lightgray 50% / contain repeat;
-  --homepage-background-image: url("/img/tiles/tile1.png");
+  --homepage-background-image: url("/img/tiles/tile1.webp");
   background-position: center;
   display: flex;
   align-items: center;
