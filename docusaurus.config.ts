@@ -108,7 +108,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://discord.gg/R42388MfDd",
+          href: "https://discord.gg/896EhkVYbd",
           className: "navbar_logo navbar_discord",
           position: "right",
         },
@@ -163,7 +163,7 @@ const config: Config = {
           items: [
             {
               label: "Discord",
-              href: "https://discord.gg/R42388MfDd",
+              href: "https://discord.gg/896EhkVYbd",
             },
             {
               label: "X",
