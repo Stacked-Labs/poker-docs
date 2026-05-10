@@ -2,13 +2,50 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
-const config: Config = {
-  title: "Stacked",
-  tagline: "Your crypto poker arena",
-  favicon: "img/stacked-logo.ico",
+const SITE_URL = "https://stackedpoker.io";
+const SITE_TITLE = "Stacked Poker Docs";
+const SITE_TAGLINE =
+  "Texas Hold'em with USDC on Base — no downloads, no KYC, no account.";
+const SITE_DESCRIPTION =
+  "Documentation for Stacked Poker. Learn how to play Texas Hold'em in your browser with friends — free play or real stakes settled in USDC on Base. No downloads, no KYC, no account.";
+const SITE_KEYWORDS =
+  "stacked poker, online poker, crypto poker, USDC poker, Base poker, texas holdem, onchain poker, web3 poker, poker docs";
+const SITE_TWITTER = "@stacked_poker";
+const SITE_OG_IMAGE = "img/preview-social-card.png";
 
-  // Set the production url of your site here
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Stacked Poker",
   url: "https://stackedpoker.io",
+  description:
+    "Play Texas Hold'em in your browser with friends. Free play, or real stakes in USDC on Base. No downloads, no KYC, no account.",
+  applicationCategory: "GameApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  publisher: {
+    "@type": "Organization",
+    name: "Stacked Poker",
+    url: "https://stackedpoker.io",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://stackedpoker.io/IconMain.png",
+    },
+    sameAs: [
+      "https://x.com/stacked_poker",
+      "https://discord.gg/896EhkVYbd",
+      "https://t.me/stackedpoker",
+      "https://github.com/Stacked-Labs",
+    ],
+  },
+};
+
+const config: Config = {
+  title: SITE_TITLE,
+  tagline: SITE_TAGLINE,
+  favicon: "img/favicon.ico",
+
+  url: SITE_URL,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -52,6 +89,60 @@ const config: Config = {
         href: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
       },
     },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/img/IconLogo.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "512x512",
+        href: "/img/IconMain.png",
+      },
+    },
+    {
+      tagName: "meta",
+      attributes: { name: "theme-color", content: "#0B1430" },
+    },
+    {
+      tagName: "meta",
+      attributes: { name: "application-name", content: "Stacked Poker" },
+    },
+    {
+      tagName: "meta",
+      attributes: {
+        name: "apple-mobile-web-app-title",
+        content: "Stacked Poker",
+      },
+    },
+    {
+      tagName: "script",
+      attributes: { type: "application/ld+json" },
+      innerHTML: JSON.stringify(jsonLd),
+    },
+    { tagName: "meta", attributes: { name: "description", content: SITE_DESCRIPTION } },
+    { tagName: "meta", attributes: { name: "keywords", content: SITE_KEYWORDS } },
+    { tagName: "meta", attributes: { name: "author", content: "Stacked Labs" } },
+    { tagName: "meta", attributes: { name: "robots", content: "index, follow" } },
+    { tagName: "meta", attributes: { property: "og:type", content: "website" } },
+    { tagName: "meta", attributes: { property: "og:site_name", content: "Stacked Poker" } },
+    { tagName: "meta", attributes: { property: "og:title", content: SITE_TITLE } },
+    { tagName: "meta", attributes: { property: "og:description", content: SITE_DESCRIPTION } },
+    { tagName: "meta", attributes: { property: "og:url", content: SITE_URL } },
+    { tagName: "meta", attributes: { property: "og:image", content: `${SITE_URL}/${SITE_OG_IMAGE}` } },
+    { tagName: "meta", attributes: { property: "og:locale", content: "en_US" } },
+    { tagName: "meta", attributes: { name: "twitter:card", content: "summary_large_image" } },
+    { tagName: "meta", attributes: { name: "twitter:site", content: SITE_TWITTER } },
+    { tagName: "meta", attributes: { name: "twitter:creator", content: SITE_TWITTER } },
+    { tagName: "meta", attributes: { name: "twitter:title", content: SITE_TITLE } },
+    { tagName: "meta", attributes: { name: "twitter:description", content: SITE_DESCRIPTION } },
+    { tagName: "meta", attributes: { name: "twitter:image", content: `${SITE_URL}/${SITE_OG_IMAGE}` } },
   ],
 
   presets: [
@@ -86,14 +177,13 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     customCss: [require.resolve("./src/css/custom.css")],
-    image: "img/stacked-logo.png",
+    image: SITE_OG_IMAGE,
     navbar: {
       title: "Stacked",
       logo: {
         alt: "Stacked Logo",
-        src: "img/chips.png",
+        src: "img/IconLogo.png",
       },
       items: [
         {
@@ -113,8 +203,8 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://warpcast.com/stackedpoker",
-          className: "navbar_logo navbar_warpcast",
+          href: "https://t.me/stackedpoker",
+          className: "navbar_logo navbar_telegram",
           position: "right",
         },
         {
@@ -124,13 +214,35 @@ const config: Config = {
         },
       ],
       hideOnScroll: true,
-      style: "dark",
     },
     footer: {
       style: "light",
+      logo: {
+        alt: "Stacked Logo",
+        src: "img/IconLogo.png",
+        width: 44,
+        height: 44,
+      },
       links: [
         {
-          title: "Docs",
+          title: "Product",
+          items: [
+            {
+              label: "Play Now",
+              href: "https://stackedpoker.io",
+            },
+            {
+              label: "Create Game",
+              href: "https://stackedpoker.io/create-game",
+            },
+            {
+              label: "Leaderboard",
+              href: "https://stackedpoker.io/leaderboard",
+            },
+          ],
+        },
+        {
+          title: "Resources",
           items: [
             {
               label: "Introduction",
@@ -141,12 +253,8 @@ const config: Config = {
               to: "/docs/category/getting-started",
             },
             {
-              label: "How it works",
-              to: "/docs/howitworks", 
-            },
-            {
-              label: "Market Plan",
-              to: "/docs/category/market-plan",
+              label: "How it Works",
+              to: "/docs/howitworks",
             },
             {
               label: "Roadmap",
@@ -162,32 +270,32 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Discord",
-              href: "https://discord.gg/896EhkVYbd",
-            },
-            {
               label: "X",
               href: "https://x.com/stacked_poker",
             },
             {
-              label: "Warpcast",
-              href: "https://warpcast.com/stackedpoker",
+              label: "Discord",
+              href: "https://discord.gg/896EhkVYbd",
             },
             {
-              label: "Github",
+              label: "Telegram",
+              href: "https://t.me/stackedpoker",
+            },
+            {
+              label: "GitHub",
               href: "https://github.com/Stacked-Labs",
-            }
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Stacked Labs`,
+      copyright: `The easiest way to play poker with friends, onchain. No downloads, no hassle — just pure poker action.<br/>© ${new Date().getFullYear()} Stacked Labs. All rights reserved.`,
     },
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: false,
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.vsDark,
     },
     sidebar: {
       className: "custom-sidebar",

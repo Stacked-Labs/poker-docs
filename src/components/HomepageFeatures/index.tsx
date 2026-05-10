@@ -4,52 +4,55 @@ import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  imgSrc: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "Onchain settlement, instant cash-out",
+    imgSrc: "/img/tables/table-vertical-green.webp",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Real cash games settled in USDC on Base. Your stack is your wallet — sit
+        down, play, walk away. No room cashier, no withdrawals queue.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: "Penthouse, not casino floor",
+    imgSrc: "/img/IconLogo.png",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Warm, intimate, table-grade UX built for poker players first. Cozy not
+        corporate — designed for the friend who hosts the Friday-night game.
       </>
     ),
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "Mobile-first, made to play",
+    imgSrc: "/img/chips.png",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Optimized for the way poker actually gets played in 2026 — phone in
+        hand, between hands at the live table, on the way home from work.
       </>
     ),
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, imgSrc, description }: FeatureItem) {
   return (
-    <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    <div className={clsx("col col--4", styles.featureCol)}>
+      <div className={styles.card}>
+        <div className={styles.media}>
+          <img src={imgSrc} alt="" loading="lazy" className={styles.mediaImg} />
+          <div className={styles.mediaOverlay} aria-hidden="true" />
+        </div>
+        <Heading as="h3" className={styles.cardTitle}>
+          {title}
+        </Heading>
+        <p className={styles.cardBody}>{description}</p>
       </div>
     </div>
   );
@@ -59,6 +62,12 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className={styles.intro}>
+          <span className={styles.eyebrow}>WHY STACKED</span>
+          <Heading as="h2" className={styles.sectionTitle}>
+            Built for the table, not the dashboard
+          </Heading>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

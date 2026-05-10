@@ -1,30 +1,3 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Page-level module. Most styling lives inside the components themselves.
  */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-image: url("/img/tiles/tile1.webp");
-  background-position: center;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.tagline {
-  font-size: 1.5rem;
-  color: #850c0c;
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

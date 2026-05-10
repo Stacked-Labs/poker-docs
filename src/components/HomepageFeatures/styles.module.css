@@ -1,13 +1,96 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
   width: 100%;
-  background-color: #3a3a3a;
-  color: #fff;
+  padding: clamp(48px, 8vw, 96px) 0;
+  background-color: var(--ifm-background-surface-color, #ffffff);
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.intro {
+  text-align: center;
+  max-width: 56ch;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #36a37b;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-content);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.featureCol {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--ifm-card-background-color, #ffffff);
+  border: 1px solid rgba(11, 20, 48, 0.08);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+[data-theme="dark"] .card {
+  background: var(--ifm-card-background-color, rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(236, 238, 245, 0.08);
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mediaImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mediaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 20, 48, 0) 0%,
+    rgba(11, 20, 48, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.cardTitle {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ifm-color-content);
+  margin: 0;
+}
+
+.cardBody {
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ifm-color-content-secondary);
+  margin: 0;
 }
