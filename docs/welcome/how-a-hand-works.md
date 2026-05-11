@@ -38,7 +38,7 @@ sequenceDiagram
 
 **Carol** does the same: $100 buy-in, Alice approves, seated with 10,000 chips.
 
-Alice decides to play too. She takes a seat at her own table, buys in for $100, and the table is three-handed.
+Alice doesn't have to play to earn — as soon as hands start running, she earns 25% of the rake on every pot. She decides to play too: she takes a seat at her own table, buys in for $100, and the table is three-handed.
 
 ## The hand
 
@@ -83,6 +83,7 @@ A few things worth noticing:
 - **The contract is the source of truth for money.** Every player's stack matches the on-chain seat balance after every hand. If the backend disagreed with the contract, the contract would win.
 - **It's fast.** Settlement was sub-second. Gameplay isn't slowed down by being on-chain.
 - **Stacked covers the gas where it shouldn't be friction.** Table deployment, settlement: on us. Deposits, withdrawals: on you, because you sign them.
+- **Alice earned the whole time.** A Host's 25% share of the rake credits per hand, live, whether or not the Host plays. Multiply by hundreds of hands and that's the hosting side of Stacked.
 
 That's a hand. Multiply by hundreds and the only thing that changes is the cards.
 

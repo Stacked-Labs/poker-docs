@@ -42,7 +42,7 @@ These numbers reflect the current defaults. Stacked can tune the rate and cap st
 
 ## How the rake is split
 
-Every dollar of rake splits two ways:
+Every dollar of rake splits two ways. The Host's share is the structural piece that makes the marketplace work — without it, there's no reason to run a public table.
 
 - **25% goes to the Host** of the table — credited to the Host's withdrawable balance at that table's contract. See [Hosting earnings](/docs/hosting/earnings).
 - **75% goes to Stacked** as the platform fee.

@@ -4,7 +4,7 @@ sidebar_position: 30
 
 # Hosting a table
 
-Anyone can run their own poker table on Stacked.
+Anyone can run a poker table on Stacked, and Hosts earn 25% of the rake on real-money tables they run.
 
 Hosts create tables, decide who sits, and earn a share of the rake on real-money tables they run. There are no application gates and no fees to start: connect a wallet, click create, and a new table contract is deployed for you on Base (Coinbase's Ethereum-based network) — Stacked covers the deployment gas.
 

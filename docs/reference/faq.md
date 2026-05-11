@@ -40,7 +40,7 @@ Yes — each table is independent. Your stack at table A doesn't affect table B.
 Anyone with a connected wallet. Creating a table is free; Stacked sponsors the deployment gas. See [Hosting a table](/docs/hosting/overview).
 
 **How much can a Host earn?**
-25% of the rake on real-money tables they host. See [Hosting earnings](/docs/hosting/earnings).
+Hosts earn 25% of the rake on every real-money hand at their tables — credited live, withdrawable any time, no minimum. See [Hosting earnings](/docs/hosting/earnings).
 
 **Do Hosts earn anything on Free Play tables?**
 No. Free Play has no rake and no earnings.

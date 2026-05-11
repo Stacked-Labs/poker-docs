@@ -39,3 +39,4 @@ If you want to try a real-money table after Free Play, you'll need USDC on Base.
 - [Your first real-money hand →](/docs/getting-started/first-real-money-hand)
 - [At the table →](/docs/playing/at-the-table) — what to expect during a hand.
 - [Free Play vs real-money →](/docs/playing/free-play-vs-real-money)
+- [Host your own table →](/docs/hosting/overview) — Free Play or real-money; real-money Hosts earn 25% of the rake.

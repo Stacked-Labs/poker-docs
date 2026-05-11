@@ -46,3 +46,4 @@ A few additions are in the works:
 - [Withdrawals →](/docs/your-money/withdrawals) — leaving the table cleanly.
 - [Per-hand settlement →](/docs/your-money/settlement) — what the on-chain indicator between hands actually represents.
 - [Cash game rules →](/docs/playing/cash-game-rules) — the poker rules behind the betting rounds.
+- [Host a table →](/docs/hosting/overview) — run a table of your own; Hosts earn 25% of the rake on real-money play.

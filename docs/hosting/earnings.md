@@ -4,7 +4,7 @@ sidebar_position: 31
 
 # Hosting earnings
 
-Real-money tables you host generate rake, and your share lives at each table you run.
+Hosts earn 25% of the rake on every real-money hand played at a table they run, credited live as hands settle.
 
 ## How your share accumulates
 

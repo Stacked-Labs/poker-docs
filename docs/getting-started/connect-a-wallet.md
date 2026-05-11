@@ -34,3 +34,4 @@ If you're connecting a wallet that supports multiple networks, you'll want it se
 - [Get USDC on Base →](/docs/getting-started/get-usdc-on-base) — funding your wallet for real-money tables.
 - [Your first Free Play hand →](/docs/getting-started/first-free-play-hand) — no USDC required.
 - [Joining a table →](/docs/playing/joining-a-table) — once your wallet is connected.
+- [Host a table →](/docs/hosting/overview) — Hosts earn 25% of the rake on real-money play.

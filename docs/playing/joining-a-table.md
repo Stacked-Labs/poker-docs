@@ -41,3 +41,4 @@ Stacked is a marketplace where every table is created by a player. The approval 
 - [At the table →](/docs/playing/at-the-table) — what to expect once you're seated.
 - [Free Play vs real-money →](/docs/playing/free-play-vs-real-money) — the differences between the two modes.
 - [Deposits →](/docs/your-money/deposits) — how the buy-in transaction works.
+- [Host your own table →](/docs/hosting/overview) — the other side of the approval flow.

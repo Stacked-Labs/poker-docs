@@ -16,7 +16,7 @@ A few ideas tie the whole thing together.
 
 ### Anyone can host
 
-Every table on Stacked is created by a player. You set the stakes, invite who you want, and approve players as they request a seat. On real-money tables, you earn **25% of the rake** — paid out on-chain whenever you withdraw. ([How rake works →](/docs/your-money/rake))
+Every table on Stacked is created by a player. **On real-money tables you host, you earn 25% of the rake** — paid out on-chain whenever you withdraw. You set the stakes, invite who you want, and approve players as they request a seat. ([How rake works →](/docs/your-money/rake))
 
 ### Your money is on-chain, not with us
 
@@ -39,4 +39,4 @@ If you want to try Stacked without putting USDC on the table, every Host can als
 - [Connect a wallet](/docs/getting-started/connect-a-wallet) — to deposit USDC and join a real-money table.
 - [Try a Free Play hand](/docs/getting-started/first-free-play-hand) — no USDC required.
 - [How a hand of Stacked works](/docs/welcome/how-a-hand-works) — step-by-step walkthrough.
-- [Hosting a table](/docs/hosting/overview) — run your own game and earn on rake.
+- [Hosting a table](/docs/hosting/overview) — create a table and earn 25% of the rake on it.
