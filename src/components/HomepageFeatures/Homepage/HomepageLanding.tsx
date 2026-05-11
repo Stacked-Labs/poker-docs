@@ -22,7 +22,7 @@ const HomepageLanding = () => {
           </Link>
           <Link
             className="button button--white button--lg"
-            to="/docs/introduction"
+            to="/docs/welcome/what-is-stacked"
           >
             Read the docs
           </Link>

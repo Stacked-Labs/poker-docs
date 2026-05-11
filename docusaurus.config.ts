@@ -5,9 +5,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 const SITE_URL = "https://stackedpoker.io";
 const SITE_TITLE = "Stacked Poker Docs";
 const SITE_TAGLINE =
-  "Texas Hold'em with USDC on Base — no downloads, no KYC, no account.";
+  "Create your own poker table, settled on-chain.";
 const SITE_DESCRIPTION =
-  "Documentation for Stacked Poker. Learn how to play Texas Hold'em in your browser with friends — free play or real stakes settled in USDC on Base. No downloads, no KYC, no account.";
+  "Documentation for Stacked Poker. Learn how to play poker in your browser — free play or real stakes settled in USDC on Base. No downloads, no KYC, no account.";
 const SITE_KEYWORDS =
   "stacked poker, online poker, crypto poker, USDC poker, Base poker, texas holdem, onchain poker, web3 poker, poker docs";
 const SITE_TWITTER = "@stacked_poker";
@@ -19,7 +19,7 @@ const jsonLd = {
   name: "Stacked Poker",
   url: "https://stackedpoker.io",
   description:
-    "Play Texas Hold'em in your browser with friends. Free play, or real stakes in USDC on Base. No downloads, no KYC, no account.",
+    "Play poker in your browser. Free play, or real stakes in USDC on Base. No downloads, no KYC, no account.",
   applicationCategory: "GameApplication",
   operatingSystem: "Web",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -145,6 +145,9 @@ const config: Config = {
     { tagName: "meta", attributes: { name: "twitter:image", content: `${SITE_URL}/${SITE_OG_IMAGE}` } },
   ],
 
+  markdown: { mermaid: true },
+  themes: ["@docusaurus/theme-mermaid"],
+
   presets: [
     [
       "classic",
@@ -245,24 +248,24 @@ const config: Config = {
           title: "Resources",
           items: [
             {
-              label: "Introduction",
-              to: "/docs/introduction",
+              label: "What is Stacked?",
+              to: "/docs/welcome/what-is-stacked",
             },
             {
-              label: "Getting Started",
-              to: "/docs/category/getting-started",
+              label: "Getting started",
+              to: "/docs/getting-started/connect-a-wallet",
             },
             {
-              label: "How it Works",
-              to: "/docs/howitworks",
+              label: "How Stacked works",
+              to: "/docs/about/how-stacked-works",
             },
             {
-              label: "Roadmap",
-              to: "/docs/roadmap",
+              label: "Hosting",
+              to: "/docs/hosting/overview",
             },
             {
-              label: "FAQs",
-              to: "/docs/faq",
+              label: "FAQ",
+              to: "/docs/reference/faq",
             },
           ],
         },

@@ -44,9 +44,10 @@
   --ifm-navbar-link-hover-color: #36A37B;
 
   /* Footer */
-  --ifm-footer-background-color: #0B1430;
-  --ifm-footer-link-color: #ECEEF5;
-  --ifm-footer-color: #ECEEF5;
+  --ifm-footer-background-color: #FFFFFF;
+  --ifm-footer-link-color: #0B1430;
+  --ifm-footer-color: #0B1430;
+  --ifm-footer-title-color: #0B1430;
 
   /* Admonitions */
   --ifm-color-success: #36A37B;
@@ -312,14 +313,15 @@
 
 /* ===== Footer ===== */
 .footer {
-  background-color: var(--stacked-midnight) !important;
-  color: var(--stacked-cold);
+  background-color: #FFFFFF !important;
+  color: #0B1430;
   padding: 32px 0 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(11, 20, 48, 0.08);
 }
 
 [data-theme="dark"] .footer {
   background-color: #191919 !important;
+  color: var(--stacked-cold);
   border-top-color: rgba(255, 255, 255, 0.04);
 }
 
@@ -343,7 +345,7 @@
   text-align: left;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(11, 20, 48, 0.08);
 }
 
 [data-theme="dark"] .footer__bottom {
@@ -364,7 +366,7 @@
 }
 
 .footer__title {
-  color: var(--stacked-cold);
+  color: #0B1430;
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -373,17 +375,26 @@
   margin-bottom: 10px;
 }
 
+[data-theme="dark"] .footer__title {
+  color: var(--stacked-cold);
+}
+
 .footer__item {
   padding: 2px 0;
 }
 
 .footer__item a,
 .footer__link-item {
-  color: rgba(236, 238, 245, 0.72);
+  color: rgba(11, 20, 48, 0.72);
   font-size: 0.9375rem;
   font-weight: 500;
   transition: color 160ms ease, transform 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: inline-block;
+}
+
+[data-theme="dark"] .footer__item a,
+[data-theme="dark"] .footer__link-item {
+  color: rgba(236, 238, 245, 0.72);
 }
 
 .footer__item a:hover,
@@ -394,11 +405,15 @@
 }
 
 .footer__copyright {
-  color: rgba(236, 238, 245, 0.5);
+  color: rgba(11, 20, 48, 0.55);
   font-size: 0.8125rem;
   line-height: 1.55;
   margin: 0;
   text-align: left;
+}
+
+[data-theme="dark"] .footer__copyright {
+  color: rgba(236, 238, 245, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -553,4 +568,14 @@ pre code {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
+}
+
+/* Responsive Mermaid diagrams: scale SVG down to container width, allow horizontal scroll if still too wide. */
+.docusaurus-mermaid-container {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.docusaurus-mermaid-container svg {
+  max-width: 100%;
+  height: auto;
 }
