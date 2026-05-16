@@ -48,7 +48,7 @@ No. Free Play has no rake and no earnings.
 ## Money
 
 **What's the rake?**
-4% of the pot, capped per hand by a big-blind-tiered schedule. 25% goes to the Host, 75% to Stacked. Full details on [How rake works](/docs/your-money/rake).
+4% of the pot, capped per hand. The cap scales with the table's big blind, with a discount at short-handed tables. 25% goes to the Host, 75% to Stacked. Full details on [How rake works](/docs/your-money/rake).
 
 **Do I pay gas?**
 You pay gas on deposits and withdrawals you sign yourself. Stacked covers gas on settlement (every hand) and on table deployment (when a Host creates a table).
