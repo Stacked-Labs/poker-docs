@@ -37,17 +37,17 @@ So instead of bucketing tables into tiers, the cap is a **smooth curve** that pr
 
 The cap is published as a **multiple of the big blind**, the same unit poker players already think in. The multiplier is large at micro-stakes (where small caps would feel oppressive relative to a typical pot) and tapers as stakes climb.
 
-Here's the cap at common big-blind values, for a full-ring table (5+ players):
+Here's the cap at common big-blind values, broken out by table size. The short-handed columns apply the discount described in the next section.
 
-| Big blind | Cap per hand |
-|---|---|
-| $0.10 | 13.00× BB |
-| $0.25 | 9.34× BB |
-| $0.50 | 6.56× BB |
-| $1.00 | 3.79× BB |
-| $2.00 | 2.00× BB |
-| $5.00 | 1.20× BB |
-| $10.00+ | 0.60× BB and lower |
+| Big blind | Full ring (5+) | Short-handed (3–4) | Heads-up (2) |
+|---|---|---|---|
+| $0.10   | 13.00× BB        | 6.50× BB         | 4.42× BB |
+| $0.25   | 9.34× BB         | 4.67× BB         | 3.18× BB |
+| $0.50   | 6.56× BB         | 3.28× BB         | 2.23× BB |
+| $1.00   | 3.79× BB         | 1.90× BB         | 1.29× BB |
+| $2.00   | 2.00× BB         | 1.00× BB         | 0.68× BB |
+| $5.00   | 1.20× BB         | 0.60× BB         | 0.41× BB |
+| $10.00+ | 0.60× BB and lower | 0.30× BB and lower | 0.20× BB and lower |
 
 The cap is also bounded in absolute terms: it never falls below **$0.01** and never rises above **$6.00** per hand, regardless of the big blind.
 
