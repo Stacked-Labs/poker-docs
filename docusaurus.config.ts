@@ -4,10 +4,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const SITE_URL = "https://stackedpoker.io";
 const SITE_TITLE = "Stacked Poker Docs";
-const SITE_TAGLINE =
-  "Create your own poker table, settled on-chain.";
+const SITE_TAGLINE = "Your table. Your money.";
 const SITE_DESCRIPTION =
-  "Documentation for Stacked Poker. Learn how to play poker in your browser — free play or real stakes settled in USDC on Base. No downloads, no KYC, no account.";
+  "Documentation for Stacked Poker. Learn how to play poker in your browser — free play or real stakes settled in USDC on Base. No downloads.";
 const SITE_KEYWORDS =
   "stacked poker, online poker, crypto poker, USDC poker, Base poker, texas holdem, onchain poker, web3 poker, poker docs";
 const SITE_TWITTER = "@stacked_poker";
@@ -19,7 +18,7 @@ const jsonLd = {
   name: "Stacked Poker",
   url: "https://stackedpoker.io",
   description:
-    "Play poker in your browser. Free play, or real stakes in USDC on Base. No downloads, no KYC, no account.",
+    "Play poker in your browser. Free play, or real stakes in USDC on Base. No downloads.",
   applicationCategory: "GameApplication",
   operatingSystem: "Web",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

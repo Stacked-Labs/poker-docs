@@ -8,35 +8,53 @@ Recreational players. Mostly **not** crypto-native. Mostly **not** poker pros. C
 
 Two implications:
 - Define crypto terms on first use **on each page**, in a sentence, in player words. There is no glossary — definitions live inline. If a term recurs many times within a single page, define once at the top and use freely after.
-- Don't assume poker depth past Hold'em fundamentals. Concepts like rake structure, ICM, position dynamics need a sentence of framing.
+- Don't assume poker depth past Hold'em fundamentals. Concepts like the platform fee structure, ICM, position dynamics need a sentence of framing.
 
 ## The one-line hook
 
-**Create your own poker table, settled on-chain.**
+**Your table. Your money.**
 
-This is the page-1 headline and the line we lean on across the site. It says the two things that distinguish Stacked: (1) the product is a Host-led marketplace, not a centralized poker room; (2) every hand settles on-chain, not in a back-office ledger.
+This is the page-1 headline and the line we lean on across the site. Short and non-technical on purpose. It says the two things that distinguish Stacked: (1) **Your table** — a Host-led marketplace where players create the tables, not a centralized poker room; (2) **Your money** — your USDC stays in on-chain custody you control, not in a house account. (The older hook, "Create your own poker table, settled on-chain," is retired — too long and too technical.)
 
 ## Terminology — fixed
 
 | Term | Definition | Capitalization |
 |---|---|---|
 | **Stacked** | The product. | Title case. |
-| **Host** | The player who creates a table. Earns 25% of the rake on real-money tables they host. (Internally also called `gameCreator`. **Never write "Banker" in player docs** — that term is killed.) | Title case as a role. Lowercase as a verb: "you can host a table." |
-| **Free Play** | Play-money mode. Chips have no real value, no rake, Hosts earn nothing. Same lobby as real-money, clearly tagged. | Title case, two words. |
+| **Host** | The player who creates a table. Earns 25% of the platform fee on real-money tables they host. (Internally also called `gameCreator`. **Never write "Banker" in player docs** — that term is killed.) | Title case as a role. Lowercase as a verb: "you can host a table." |
+| **Free Play** | Play-money mode. Chips have no real value, no platform fee, Hosts earn nothing. Same lobby as real-money, clearly tagged. | Title case, two words. |
 | **Real-money** | USDC-staked tables. 1 chip = $0.01. | Hyphenated, lowercase. |
 | **USDC** | Stablecoin we use. Pegged to the US dollar. On first use per page: "USDC, a digital dollar that holds a stable value." | All caps. |
 | **Base** | The blockchain (Coinbase's L2) we run on. On first use per page: "Base, an Ethereum-based network with very low fees." | Title case. Don't write "L2" without explaining. |
 | **Wallet** | The app a player connects to play. Can be brought-your-own (Coinbase Wallet, MetaMask, Rainbow, etc.) or an embedded wallet we provide. | Lowercase. |
-| **Settlement** | The on-chain transfer of chip movements after each hand. Happens every hand, ~30 seconds in the background, ~$0.001 in fees. | Lowercase. |
-| **Rake** | The platform fee on real-money tables. **Production source of truth is `poker-server/poker/rake.go` — not the smart-contract docs (those are stale).** Currently: **4% of the pot, capped per hand by a continuous cap curve** that scales with the big blind. The cap rises gently with stakes (around $1.30 at $0.05/$0.10, leveling out at $6.00 for high stakes). Short-handed tables get a discount: heads-up pays 34% of the cap, 3–4 handed pays 50%, 5+ handed pays the full cap. All parameters are env-tunable. **Outside the dedicated Rake page, only ever say "Hosts earn 25% of rake"** — never quote the 4% headline, never quote cap numbers, never quote the 75/25 split. Those numbers live on one page only. **Never mention rake in Free Play context** — Free Play has no rake; let it be implied. | Lowercase. |
+| **Settlement** | The on-chain transfer of chip movements after each hand. Happens every hand, under 5 seconds in the background, ~$0.001 in fees. | Lowercase. |
+| **Platform fee** | The fee on real-money tables. The **player-facing term is "platform fee"; "rake" must NEVER appear in player copy.** **Production source of truth is `poker-server/poker/rake.go` — not the smart-contract docs (those are stale).** Currently: **4% of the pot, capped per hand by a continuous cap curve** that scales with the big blind. The cap rises gently with stakes (around $1.30 at $0.05/$0.10, leveling out at $6.00 for high stakes). Short-handed tables get a discount: heads-up pays 34% of the cap, 3–4 handed pays 50%, 5+ handed pays the full cap. All parameters are env-tunable. The platform fee also covers the gas Stacked sponsors for settlement and table creation — a benefit worth surfacing in copy. **Outside the dedicated Fees page (/docs/your-money/fees), only ever say "Hosts earn 25% of the platform fee"** — never quote the 4% headline, never quote cap numbers, never quote the 75/25 split. Those numbers live on one page only. **Never mention the platform fee in Free Play context** — Free Play has no platform fee; let it be implied. | Lowercase. |
 
 ## The hybrid architecture (canonical framing)
 
-Stacked is **hybrid by design**: a Go backend runs the live game (dealing, betting rounds, turn order, table state); smart contracts on Base hold the USDC and settle every hand on-chain. This isn't a compromise — each part handles what it's best at. The backend gives players sub-second gameplay; the contracts give them on-chain custody and provable settlement.
+Stacked is **hybrid by design**: Stacked's servers run the live game (dealing, betting rounds, turn order, table state); smart contracts on Base hold the USDC and settle every hand on-chain. This isn't a compromise — each part handles what it's best at. Our servers give players fast gameplay; the contracts give them on-chain custody and settlement anyone can verify.
 
 Always describe this as **two systems, each doing what it's good at**, not "centralized but with on-chain settlement bolted on." Never claim Stacked is "fully decentralized" or "no central operator." Players will find out either way; honesty is the trust story.
 
-This framing applies on: What is Stacked?, How Stacked works, Custody, Per-hand settlement, About → Architecture.
+Describe it at a **high level only** — see **Technical exposure** below. This framing applies on: What is Stacked?, How Stacked works, Custody, Per-hand settlement, About → Architecture.
+
+## Technical exposure (describe outcomes, not mechanisms)
+
+Player docs are public, and competitors read them. Reveal **what players get**, never **how it's wired**. The rule of thumb: describe outcomes and guarantees, not implementation. Keep the honesty (above) without handing out a blueprint.
+
+**Never put in player docs:**
+- **How settlement works after each hand.** No "the backend sends a settlement transaction/report to the contract," no settlement reports, webhooks, events (e.g. a "ChipsSettled" event), settlement wallets, or any backend↔contract message choreography. Say only that the hand settles on-chain when it ends.
+- **Infrastructure and vendors.** Never name third-party infra (e.g. thirdweb) or the relayer/"engine" that submits transactions and sponsors gas. For wallets, say "popular wallets" or list the brands (Coinbase Wallet, MetaMask, Rainbow, WalletConnect); for the provided wallet, "an embedded wallet Stacked creates for you."
+- **The backend stack.** Never name the language or framework (no "Go backend"). Say "Stacked's servers."
+- **Revealing diagrams.** No architecture/sequence diagrams showing backend↔contract messaging, settlement reports, events, gas-payment edges, or internal platform-fee routing. Keep diagrams to the player's own money flow (your wallet → table contract → your wallet), ≤3–4 nodes, no internal mechanism.
+
+**Keep (these are player-facing outcomes and trust facts, not blueprints):**
+- Each real-money table is its own smart contract deployed on Base when the Host creates it (per-table contracts).
+- Your USDC sits in that contract, not with Stacked; only the contract's rules can move it; you sign your own deposits and withdrawals.
+- Every real-money hand settles on-chain when it ends; it's fast (typically under 5 seconds on Base) and runs in the background.
+- You never pay gas for settlement or table creation — Stacked covers those. State it as a player benefit, not as the mechanism ("Stacked sends the transaction and pays the gas").
+- The 24-hour emergency exit.
+- Verifiability: contracts are source-verified and readable on Basescan; settlement outcomes are visible on-chain.
 
 ## Sport coverage
 
@@ -46,6 +64,7 @@ Don't write "Texas Hold'em" as if it's the whole product. Stacked plans to expan
 
 Do not use anywhere in player-facing copy:
 - "Banker" / "banker" / "bank" — replaced by Host (player role) or "the table contract" / "on-chain custody" (the smart-contract escrow)
+- "rake" — player-facing term is "platform fee" (source code may still use rake)
 - "Comprehensive" page — duplicate, deleted
 - "Web3" — replace with "wallet" or "on-chain" depending on context
 - "DeFi" — never appears in player docs
@@ -56,7 +75,7 @@ Do not use anywhere in player-facing copy:
 
 1. **Every page opens with one sentence ending in a period that says why this exists, before any heading or list.** This is the value prop. Mechanics come after.
 2. **Lead with the player's perspective, not the system's.** "After each hand, your share moves into the on-chain contract" — not "the backend invokes settleHand()."
-3. **Concrete numbers > vague adjectives.** Don't say "fast" — say "typically sub-second, depending on Base network conditions." Don't say "low fees" — say "about $0.001 per hand."
+3. **Concrete numbers > vague adjectives.** Don't say "fast" — say "typically under 5 seconds, depending on Base network conditions." Don't say "low fees" — say "about $0.001 per hand."
 4. **Translate every developer-internal change to player impact.** Not "we refactored the lobby" — "tables now load faster."
 5. **No exclamation marks.** No emoji. No marketing puffery. Calm, factual, confident.
 6. **One concrete walkthrough per major feature.** A specific scenario with specific numbers ("Alice creates a $1/$2 table, Bob requests a seat, Alice approves, Bob deposits 100 USDC, the contract issues 10,000 chips...") — players model the system from examples, not abstractions.
@@ -84,19 +103,19 @@ Do not use anywhere in player-facing copy:
 ## What we say (and don't)
 
 **We can claim, today:**
-- Per-hand on-chain settlement, every hand. Typically sub-second, depending on Base network conditions.
+- Per-hand on-chain settlement, every hand. Typically under 5 seconds, depending on Base network conditions.
 - **Stacked sponsors all backend gas: settlement gas (every hand) and table-deployment gas (when a Host creates a table) are paid by Stacked, not the player or Host.** Players only pay gas on actions they sign themselves — depositing into a table, withdrawing back to their wallet. Phrase as: "Stacked covers the gas, so you never pay to settle a hand" / "Creating a table is free — Stacked covers the deployment cost."
 - ~$0.001 per settlement (Base gas).
 - 24-hour emergency self-withdraw if a settlement stalls — **lead with this on the custody/safety page.** It's the single strongest trust story.
-- Rake details (4% of pot, BB-tiered caps, 75/25 split) live on the dedicated Rake page only. Everywhere else: "Hosts earn 25% of rake." Free Play pages don't mention rake at all. Source of truth is `poker-server/poker/rake.go`, not the older smart-contract docs.
+- Platform fee details (4% of pot, BB-tiered caps, 75/25 split) live on the dedicated Fees page (/docs/your-money/fees) only. Everywhere else: "Hosts earn 25% of the platform fee." Free Play pages don't mention the platform fee at all. Source of truth is `poker-server/poker/rake.go`, not the older smart-contract docs.
 - Both BYO and embedded wallets supported.
-- Any thirdweb-compatible wallet works (Coinbase Wallet, MetaMask, Rainbow, WalletConnect).
+- Any popular wallet works (Coinbase Wallet, MetaMask, Rainbow, WalletConnect). Don't name the wallet-integration vendor.
 - Free table creation (gas sponsored at launch — phrase as current behavior, not a permanent guarantee).
 - All tables require Host approval before a player sits.
 - Cash games only.
 
 **We do not say:**
-- No KYC promises in copy until legal confirms phrasing.
+- **No "no KYC" marketing claim.** Don't state or imply Stacked has "no KYC" / "no identity verification" / "no account verification." Stacked isn't implementing KYC today but **reserves the right to require identity checks later**, so we never promise their absence. Equally, don't announce KYC. Stay silent on KYC in player copy; strip any no-KYC claims if found.
 - No specific list of blocked jurisdictions until legal finalizes — the "Where Stacked is available" page ships with a placeholder.
 - No tournament mechanics — only a roadmap mention.
 - No fiat-onramp claims that we can't back (need a separate confirmation pass before writing the deposit page).

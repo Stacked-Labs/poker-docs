@@ -9,7 +9,7 @@ const HomepageLanding = () => {
       <div className={styles.content}>
         <span className={styles.eyebrow}>STACKED</span>
         <h1 className={styles.heading}>
-          Create your own poker table, settled on-chain.
+          Your table. Your money.
         </h1>
         <div className={styles.buttons}>
           <Link

@@ -70,7 +70,7 @@ export default function RakeCapCalculator(): JSX.Element {
         <thead>
           <tr>
             <th>Table size</th>
-            <th>Rake cap per hand</th>
+            <th>Fee cap per hand</th>
           </tr>
         </thead>
         <tbody>
@@ -84,7 +84,7 @@ export default function RakeCapCalculator(): JSX.Element {
       </table>
 
       <p className={styles.note}>
-        Rake is still {RAKE_RATE_PCT}% of the pot — the cap only kicks in once
+        The platform fee is still {RAKE_RATE_PCT}% of the pot — the cap only kicks in once
         the pot is large enough to exceed it. The cap is bounded by an absolute
         floor of $0.01 and a ceiling of $6.00 per hand.
       </p>

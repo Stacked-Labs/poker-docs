@@ -4,13 +4,13 @@ sidebar_position: 30
 
 # Hosting a table
 
-Anyone can run a poker table on Stacked, and Hosts earn 25% of the rake on real-money tables they run.
+Anyone can run a poker table on Stacked, and Hosts earn 25% of the platform fee on real-money tables they run.
 
-Hosts create tables, decide who sits, and earn a share of the rake on real-money tables they run. There are no application gates and no fees to start: connect a wallet, click create, and a new table contract is deployed for you on Base (Coinbase's Ethereum-based network) — Stacked covers the deployment gas.
+Hosts create tables, decide who sits, and earn a share of the platform fee on real-money tables they run. There are no application gates and no fees to start: connect a wallet, click create, and a new table contract is deployed for you on Base (Coinbase's Ethereum-based network) — Stacked covers the deployment gas, the small network fee for an on-chain action.
 
 ## Why host
 
-If you run a regular game with friends, want a piece of the rake on a public table, or just want to set the rules for how a game is played, hosting is the path. On real-money tables, you keep **25% of the rake** — paid out on-chain whenever you withdraw. ([How rake works →](/docs/your-money/rake)) Free Play tables don't generate earnings; the value is creating space for friends or a community to play without putting real money on the table.
+If you run a regular game with friends, want a piece of the platform fee on a public table, or just want to set the rules for how a game is played, hosting is the path. On real-money tables, you keep **25% of the platform fee** — paid out on-chain whenever you withdraw. ([How fees work →](/docs/your-money/fees)) Free Play tables don't generate earnings; the value is creating space for friends or a community to play without putting real money on the table.
 
 You can also play in your own table. Hosting and playing aren't separate roles — you can take a seat at the table you created, or just oversee from the side and let others play. Most Hosts who run friend games play; most who run public tables don't.
 
@@ -34,7 +34,7 @@ The flow is the same for public and invite-only tables. Letting Hosts curate who
 
 ## Running the table
 
-Once the table is live, players play hands and Stacked's backend keeps the game running. **You don't have to stay online for the table to keep running.** Your only required action while the table is live is approving new pending players when they arrive.
+Once the table is live, players play hands and Stacked's servers keep the game running. **You don't have to stay online for the table to keep running.** Your only required action while the table is live is approving new pending players when they arrive.
 
 You can also step in between hands:
 
@@ -51,6 +51,6 @@ Free Play tables work the same way for the Host. Create the table, pick stakes, 
 ## What's next
 
 - [Hosting earnings →](/docs/hosting/earnings) — how your 25% share is tracked and withdrawn.
-- [How rake works →](/docs/your-money/rake) — the full breakdown of the platform fee.
+- [How fees work →](/docs/your-money/fees) — the full breakdown of the platform fee.
 - [Connect a wallet →](/docs/getting-started/connect-a-wallet) — required before you can create a table.
 - [Joining a table →](/docs/playing/joining-a-table) — the player side of the same approval flow.

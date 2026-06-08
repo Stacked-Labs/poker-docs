@@ -8,7 +8,7 @@ Quick fixes for the issues that come up most. If something here doesn't help, re
 
 ## Wallet won't connect
 
-**Most common cause:** wallet on the wrong network. Stacked runs on Base; switch your wallet to Base and try again. Most wallets switch automatically when prompted.
+**Most common cause:** wallet on the wrong network. Stacked runs on Base, an Ethereum-based network with very low fees; switch your wallet to Base and try again. Most wallets switch automatically when prompted.
 
 If the connect button doesn't respond, refresh the page. If you're using a browser extension wallet, make sure it's unlocked.
 
@@ -16,11 +16,11 @@ If the connect button doesn't respond, refresh the page. If you're using a brows
 
 **Stuck:** Base congestion can briefly slow transactions. Wait a minute and refresh — usually the transaction confirms.
 
-**Failed:** check that your wallet has enough ETH on Base for gas. A few cents' worth is plenty. If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.) — try again with the prompt's suggested values.
+**Failed:** check that your wallet has enough ETH on Base for gas — the small network fee paid to process a transaction. A few cents' worth is plenty. If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.) — try again with the prompt's suggested values.
 
 ## Deposited, but I'm not seated
 
-You're in the pending list waiting for the Host to approve. The Host sees your wallet and buy-in; most respond quickly. If the Host declines or doesn't get to you, your USDC is safe in the contract — click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
+You're in the pending list waiting for the Host to approve. The Host sees your wallet and buy-in; most respond quickly. If the Host declines or doesn't get to you, your USDC — a digital dollar that holds a stable value — is safe in the contract; click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
 
 ## Disconnected mid-hand
 
@@ -36,7 +36,7 @@ Withdrawals happen between hands. If you just left the table, give it a moment f
 
 ## Settlement seems stuck
 
-If a hand finishes and the next one doesn't deal for an unusually long time, the backend may be retrying a stuck settlement. The table pauses while this resolves. If settlements stall for 24 hours, the [24-hour emergency exit](/docs/your-money/emergency-exit) unlocks and you can withdraw your stack directly from the contract.
+If a hand finishes and the next one doesn't deal for an unusually long time, on-chain settlement for that hand may be taking longer than usual. The table pauses while this resolves. If settlements stall for 24 hours, the [24-hour emergency exit](/docs/your-money/emergency-exit) unlocks and you can withdraw your stack directly from the contract.
 
 ## "Insufficient funds" when depositing
 

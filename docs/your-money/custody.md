@@ -4,11 +4,11 @@ sidebar_position: 50
 
 # How custody works
 
-Your USDC on Stacked sits in a smart contract on Base — not in a Stacked-controlled account.
+Your USDC — a digital dollar that holds a stable value — sits in a smart contract on Base, not in a Stacked-controlled account. A smart contract is a small program that lives on-chain and can only do what its code allows.
 
 ## What holds your money
 
-Every real-money table on Stacked is its own smart contract, deployed to Base (Coinbase's Ethereum-based network) when the Host creates the table. When you sit down, your buy-in moves into that table's contract. When you leave, it moves back to your wallet. While you're playing, every settled hand updates your seat balance inside the contract.
+Every real-money table on Stacked is its own smart contract, deployed to Base (an Ethereum-based network with very low fees) when the Host creates the table. When you sit down, your buy-in moves into that table's contract. When you leave, it moves back to your wallet. While you're playing, every settled hand updates your seat balance inside the contract.
 
 ```mermaid
 flowchart LR
@@ -33,15 +33,14 @@ The contract's logic is fixed at deployment. No party — including Stacked — 
 **The contract can:**
 
 - Accept your deposit when you sit down.
-- Update seat balances after each hand based on what the backend reports.
-- Take rake on each pot and split it between the platform and the Host.
+- Update seat balances on-chain after each hand.
 - Release your stack back to your wallet when you withdraw.
 - Release your stack via the [emergency exit](/docs/your-money/emergency-exit) if settlement stalls for 24 hours.
 
 **The contract cannot:**
 
-- Send your funds anywhere except back to your wallet, the platform fee recipient, or the Host's rake balance.
-- Change the rake schedule on its own.
+- Send your funds anywhere outside its own rules — your stack only ever returns to your wallet.
+- Change the platform fee schedule on its own.
 - Hold your money against your will once you've left or after the 24-hour emergency window unlocks.
 - Be edited after deployment. The contract has no admin override and no upgrade hook — what was deployed runs forever, exactly as deployed.
 
@@ -52,10 +51,10 @@ Three parties touch a real-money table. Each has a defined and limited role:
 | Party | What they can do | What they can't do |
 |---|---|---|
 | **You (player)** | Deposit, play, withdraw, emergency-exit after 24h | Move another player's funds; change table rules |
-| **Host** | Approve players, kick, change stakes between hands, pause or end the table, withdraw rake | Move any player's stack; settle hands; change the rake schedule |
-| **Stacked** | Run the game off-chain, submit settlement transactions to the contract, deploy and operate new tables | Custody player funds; bypass withdrawal permissions; settle hands without the contract recording them |
+| **Host** | Approve players, kick, change stakes between hands, pause or end the table, withdraw the platform fee | Move any player's stack; change the platform fee schedule |
+| **Stacked** | Run the live game, deploy and operate new tables | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules |
 
-Stacked's role is operational. The backend runs the game and reports each hand's outcome to the contract. The contract applies the report and moves chips between seat balances. Stacked's settlement wallets can move chips around inside the contract; they can't redirect them anywhere outside the contract's rules.
+There are two systems at work, each doing what it's good at: Stacked runs the game — dealing, betting, turn order — while the on-chain contract holds the money and records each hand's result. Stacked can move chips between seat balances inside the contract as hands settle, but it can never redirect them anywhere outside the contract's rules.
 
 ## Code and contracts
 
@@ -67,14 +66,7 @@ If you want to see the code for a specific table, open its contract address on B
 
 ## Contract addresses
 
-Production contracts on Base mainnet.
-
-| Contract | Address |
-|---|---|
-| Factory | _coming soon_ |
-| USDC (token) | [`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`](https://basescan.org/address/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913) |
-
-Per-table contracts are deployed on demand when a Host creates a table. Each table's contract address is visible in the table's settings.
+Each real-money table's own contract address is shown in that table's settings — open it on Basescan to read the code. A single canonical list of Stacked's contracts will be published once they're finalized.
 
 ## What's next
 

@@ -5,6 +5,7 @@ sidebar_position: 20
 # Joining a table
 
 Sitting down at a table on Stacked is a request, not a click — the Host approves you before you sit.
+
 ## Finding a table
 
 Open the lobby to see every public table currently running — Free Play and real-money together, with a tag on each showing which mode. Each table shows its stakes, the Host, and how many seats are filled. Pick one and click sit.
@@ -20,7 +21,7 @@ The flow once you're at the table is the same either way: request a seat, Host a
 
 ## Requesting a seat
 
-On a **real-money table**, requesting a seat means depositing your buy-in into the table contract. You pick the amount and sign the deposit transaction from your wallet. (See [Deposits](/docs/your-money/deposits) for the full step.) Once the deposit confirms on-chain, you appear in the Host's pending list with your wallet and the buy-in you chose.
+On a **real-money table**, requesting a seat means depositing your buy-in into the table contract — the smart contract (a program on the blockchain that holds funds under fixed rules) that holds the money for that table, not Stacked. You pick the amount and sign the deposit from your wallet. (See [Deposits](/docs/your-money/deposits) for the full step.) Once the deposit confirms on-chain, you appear in the Host's pending list with your wallet and the buy-in you chose.
 
 On a **Free Play table**, there's no deposit. You click sit, pick a chip amount, and you're in the pending list.
 

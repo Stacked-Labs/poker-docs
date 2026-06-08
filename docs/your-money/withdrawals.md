@@ -4,33 +4,22 @@ sidebar_position: 53
 
 # Withdrawals
 
-A withdrawal moves USDC from a real-money table contract back to your wallet.
+A withdrawal moves USDC — a digital dollar that holds a stable value — from a real-money table contract back to your wallet.
 
 ## How it works
 
 There are two steps. First, you leave the table — between hands. Second, you sign a withdrawal transaction and the contract releases your stack to your wallet.
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    participant P as You
-    participant W as Wallet
-    participant B as Stacked backend
-    participant C as Table contract
-    P->>B: Click leave (between hands)
-    Note over B: Wait for current hand<br/>to finish settling
-    B->>C: Grant withdrawal permission
-    C-->>P: Withdraw button unlocks
-    P->>W: Click withdraw, sign
-    W->>C: Withdrawal transaction (you pay gas)
-    C-->>W: USDC to your wallet
+flowchart LR
+    C[Table contract] -->|you sign a withdrawal| W[Your wallet]
 ```
 
 
-1. **Leave the table.** Click leave at the table between hands. You can't leave mid-hand; you finish the current hand first. The contract notes that you're no longer seated and grants you permission to withdraw.
+1. **Leave the table.** Click leave at the table between hands. You can't leave mid-hand; you finish the current hand first. Once you're no longer seated, the withdraw button unlocks.
 2. **Click withdraw.** Sign the transaction from your wallet. The contract sends your stack directly to your wallet — no queue, no Stacked approval, no schedule. The amount is exactly your seat balance at the moment you left.
 
-You pay the gas on the withdrawal — it's a transaction you sign. Gas on Base is typically under a cent.
+You pay the gas on the withdrawal — gas is the small network fee for a transaction you sign yourself. On Base, the low-fee network Stacked runs on, gas is typically under a cent.
 
 ## Other ways you end up withdrawing
 

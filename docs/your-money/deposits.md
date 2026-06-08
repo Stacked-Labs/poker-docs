@@ -4,37 +4,26 @@ sidebar_position: 52
 
 # Deposits
 
-A deposit is how you move USDC from your wallet into a real-money table so you can sit down.
+A deposit is how you move USDC — a digital dollar that holds a stable value — from your wallet into a real-money table so you can sit down.
 
 ## What you need
 
-- A connected wallet — any thirdweb-supported wallet (Coinbase Wallet, MetaMask, Rainbow, WalletConnect, and others), or the embedded wallet Stacked creates for you if you don't have one.
-- USDC on Base in that wallet. Stacked doesn't yet have a built-in way to buy USDC; for now you'll need to bring it. _Onramp coming._
-- A small amount of ETH on Base to cover gas for the deposit transaction. Gas on Base is typically under a cent.
+- A connected wallet — any popular wallet (Coinbase Wallet, MetaMask, Rainbow, WalletConnect, and others), or the embedded wallet Stacked creates for you if you don't have one.
+- USDC on Base in that wallet. Base is an Ethereum-based network with very low fees. Stacked doesn't yet have a built-in way to buy USDC; for now you'll need to bring it. _Onramp coming._
+- A small amount of ETH on Base to cover gas — the small network fee for a transaction — for the deposit. Gas on Base is typically under a cent.
 
 ## How depositing works
 
-When you click sit at a real-money table:
+When you click sit at a real-money table, your USDC moves from your wallet into that table's contract — the on-chain account that holds the money for that table:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    participant P as You
-    participant W as Wallet
-    participant C as Table contract
-    participant B as Stacked backend
-    participant H as Host
-    P->>W: Pick buy-in, click sit
-    W->>C: USDC approval (first time only)
-    W->>C: Deposit transaction (you pay gas)
-    C-->>B: PlayerDeposited event
-    B-->>H: You appear in pending list
-    H->>B: Approve seat
-    B-->>P: Seated. Chips at the table
+flowchart LR
+    W[Your wallet] -->|Deposit| C[Table contract]
+    C -->|Host approves| S[Seated at the table]
 ```
 
 
-1. **Pick your buy-in.** You choose how much USDC you want to put on the table, within whatever the contract allows for that table.
+1. **Pick your buy-in.** You choose how much USDC you want to put on the table, within whatever the contract allows for that table. Each real-money table is its own smart contract — a small program on Base that holds the money under fixed rules — deployed when the Host creates the table.
 2. **Sign the transaction.** Your wallet pops up to confirm the deposit. The first time you deposit at a specific table, your wallet may ask you to authorize USDC spending first — a one-time approval that's standard for any app that handles USDC. After that, subsequent deposits to the same table need only the deposit signature.
 3. **Wait for confirmation.** The deposit confirms on Base in a few seconds.
 4. **Wait for Host approval.** Once your deposit is on-chain, you appear in the Host's pending list with your wallet and buy-in. The Host approves or declines.

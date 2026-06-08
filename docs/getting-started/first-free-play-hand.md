@@ -4,11 +4,11 @@ sidebar_position: 13
 
 # Your first Free Play hand
 
-Free Play is the zero-risk way to try Stacked. No USDC, no on-chain activity — just poker with play-money chips.
+Free Play is the zero-risk way to try Stacked. No USDC (a digital dollar that holds a stable value), no on-chain activity — just poker with play-money chips.
 
 ## Before you start
 
-You need one thing: a connected wallet. Any thirdweb-supported wallet works, or the embedded wallet Stacked creates for you. See [Connect a wallet](/docs/getting-started/connect-a-wallet) if you haven't done that yet.
+You need one thing: a connected wallet. Popular wallets work — Coinbase Wallet, MetaMask, Rainbow, WalletConnect — or the embedded wallet Stacked creates for you. See [Connect a wallet](/docs/getting-started/connect-a-wallet) if you haven't done that yet.
 
 You don't need USDC. Free Play has no real money involved.
 
@@ -27,16 +27,16 @@ The poker engine is identical: same shuffler, same rules, same UI, same action t
 
 - **No deposit.** No USDC moves, no transaction to sign, no gas to pay.
 - **No on-chain activity.** Free Play tables don't deploy a contract or trigger settlements. Chips are tracked off-chain and forgotten when you leave.
-- **No rake, no Host earnings.** Play-money tables don't generate anything for anyone.
+- **No earnings.** Play-money tables don't earn anything for anyone — there's no real money in play.
 - **No persistence.** Each session starts fresh — there's no Free Play balance to track between visits.
 
 ## When you're ready for real-money
 
-If you want to try a real-money table after Free Play, you'll need USDC on Base. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base) and then [Your first real-money hand](/docs/getting-started/first-real-money-hand).
+If you want to try a real-money table after Free Play, you'll need USDC on Base, an Ethereum-based network with very low fees. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base) and then [Your first real-money hand](/docs/getting-started/first-real-money-hand).
 
 ## What's next
 
 - [Your first real-money hand →](/docs/getting-started/first-real-money-hand)
 - [At the table →](/docs/playing/at-the-table) — what to expect during a hand.
 - [Free Play vs real-money →](/docs/playing/free-play-vs-real-money)
-- [Host your own table →](/docs/hosting/overview) — Free Play or real-money; real-money Hosts earn 25% of the rake.
+- [Host your own table →](/docs/hosting/overview) — Free Play or real-money; real-money Hosts earn 25% of the platform fee.

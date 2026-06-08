@@ -26,7 +26,7 @@ Every table has a text chat among seated players. Use it for table talk or whate
 
 ## Between hands
 
-Between hands, real-money tables briefly show an on-chain settlement indicator while the contract receives the previous hand's outcome. It's normally instant — by the time the next deal starts, settlement is done. The indicator links through to the transaction on Basescan if you want to verify a specific hand.
+Between hands, real-money tables briefly show an on-chain settlement indicator while the previous hand settles on-chain. It's fast — typically under 5 seconds on Base, so by the time the next deal starts, settlement is done. The indicator links through to the transaction on Basescan, the public explorer for Base, if you want to verify a specific hand.
 
 Free Play tables don't have this — nothing settles on-chain.
 
@@ -46,4 +46,4 @@ A few additions are in the works:
 - [Withdrawals →](/docs/your-money/withdrawals) — leaving the table cleanly.
 - [Per-hand settlement →](/docs/your-money/settlement) — what the on-chain indicator between hands actually represents.
 - [Cash game rules →](/docs/playing/cash-game-rules) — the poker rules behind the betting rounds.
-- [Host a table →](/docs/hosting/overview) — run a table of your own; Hosts earn 25% of the rake on real-money play.
+- [Host a table →](/docs/hosting/overview) — run a table of your own; Hosts earn 25% of the platform fee on real-money play.

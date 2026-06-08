@@ -4,7 +4,7 @@ sidebar_position: 12
 
 # Get USDC on Base
 
-To play at real-money tables, you need USDC in your wallet on the Base network. Stacked doesn't have an in-app onramp yet, so for now you'll bring USDC from somewhere else.
+To play at real-money tables, you need USDC — a digital dollar that holds a stable value — in your wallet on Base, an Ethereum-based network with very low fees. Stacked doesn't have an in-app onramp yet, so for now you'll bring USDC from somewhere else.
 
 ## What you need
 

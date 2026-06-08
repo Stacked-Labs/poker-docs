@@ -11,8 +11,8 @@ Stacked has two modes side by side in the same lobby: Free Play and real-money. 
 |---|---|---|
 | Chips | Play-money, unlimited | Backed by USDC (1 chip = $0.01) |
 | Real wins / losses | No | Yes |
-| Rake | None | 4% of the pot, capped. [How rake works →](/docs/your-money/rake) |
-| Host earnings | None | 25% of rake. [Hosting earnings →](/docs/hosting/earnings) |
+| Platform fee | None | A small platform fee per pot. [How fees work →](/docs/your-money/fees) |
+| Host earnings | None | 25% of the platform fee. [Hosting earnings →](/docs/hosting/earnings) |
 | On-chain activity | None | Per-hand settlement on Base |
 
 ## How they're the same
@@ -23,11 +23,11 @@ The Host model is the same too. Anyone can create either kind of table; both req
 
 ## How they differ
 
-**Money.** Free Play chips are play-money — unlimited, no value, no real wins or losses. Each session starts fresh; there's no balance to track between visits. Real-money chips are backed by USDC (a digital dollar pegged 1:1 to USD) on Base, at a fixed rate of 1 chip = $0.01.
+**Money.** Free Play chips are play-money — unlimited, no value, no real wins or losses. Each session starts fresh; there's no balance to track between visits. Real-money chips are backed by USDC (a digital dollar pegged 1:1 to USD) on Base (an Ethereum-based network with very low fees), at a fixed rate of 1 chip = $0.01.
 
-**On-chain activity.** Real-money tables are smart contracts on Base. When you sit, your USDC moves into the contract; when you leave, it moves back to your wallet; in between, every hand settles on-chain. Free Play has no contract and no settlement — chips are tracked off-chain and forgotten when you leave.
+**On-chain activity.** Each real-money table is its own smart contract — a program on Base that holds the money and follows fixed rules no one can override — deployed when the Host creates the table. When you sit, your USDC moves into that contract; when you leave, it moves back to your wallet; in between, every hand settles on-chain. Free Play has no contract and no settlement — chips are tracked off-chain and forgotten when you leave.
 
-**Rake and earnings.** Real-money tables have rake on every pot, and the Host earns 25% of it. Free Play has neither.
+**Platform fee and earnings.** Real-money tables have a platform fee on every pot, and the Host earns 25% of it. Free Play has neither.
 
 ## Switching between them
 

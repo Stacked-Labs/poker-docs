@@ -4,13 +4,13 @@ sidebar_position: 14
 
 # Your first real-money hand
 
-Real-money tables on Stacked are USDC-backed and settle on-chain. The flow is one extra step than Free Play, but everything happens between you and the contract.
+Real-money tables on Stacked are staked in USDC (a digital dollar that holds a stable value) and settle on-chain. The flow is one extra step compared to Free Play, but everything happens between you and the table's own smart contract — a small program on Base (an Ethereum-based network with very low fees) that holds the money and follows fixed rules. Each real-money table is its own contract, deployed when the Host creates it; your USDC sits in that contract, not with Stacked, and only the contract's rules can move it.
 
 ## Before you start
 
 - A connected wallet. See [Connect a wallet](/docs/getting-started/connect-a-wallet).
 - USDC on Base in that wallet. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
-- A small amount of ETH on Base for gas. Gas on Base is typically under a cent per transaction.
+- A small amount of ETH on Base for gas — the small network fee for a transaction you sign yourself. Gas on Base is typically under a cent per transaction.
 
 ## Steps
 
@@ -25,7 +25,7 @@ Real-money tables on Stacked are USDC-backed and settle on-chain. The flow is on
 
 Once seated, the game runs like any other Hold'em table — fold, check, call, bet, raise, with an action timer. **Your actions during a hand aren't on-chain**; nothing is signed by your wallet while a hand is in progress. The blockchain only sees the result of the hand when it settles. See [Per-hand settlement](/docs/your-money/settlement) for what that means.
 
-Between hands, you'll see a brief on-chain settlement indicator. It's normally instant.
+Between hands, you'll see a brief on-chain settlement indicator. Settlement is fast — typically under 5 seconds on Base — and runs in the background. You never pay gas to settle a hand; Stacked covers that.
 
 ## Leaving
 

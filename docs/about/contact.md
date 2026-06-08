@@ -16,7 +16,7 @@ _Links live in the navbar at the top of every page._
 
 ## Reporting an issue
 
-For bugs, vulnerabilities, or anything that looks wrong, reach out in Discord and tag a team member. Security-sensitive reports — vulnerabilities in the contracts or the backend — should be sent as a direct message rather than posted publicly.
+For bugs, vulnerabilities, or anything that looks wrong, reach out in Discord and tag a team member. Security-sensitive reports — vulnerabilities in the contracts or Stacked's servers — should be sent as a direct message rather than posted publicly.
 
 ## Press and partnerships
 

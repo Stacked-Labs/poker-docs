@@ -102,20 +102,40 @@
 }
 
 /* ===== Navbar ===== */
+/*
+ * The frosted-glass blur lives on a ::before pseudo-element, NOT on .navbar itself.
+ * `backdrop-filter` (like `filter`/`transform`) on an element makes it the containing
+ * block for its `position: fixed` descendants. Docusaurus renders the mobile menu
+ * (.navbar-sidebar, which is position:fixed/top:0/bottom:0) INSIDE .navbar — so putting
+ * the blur on .navbar trapped the full-screen mobile menu inside the 64px navbar box,
+ * collapsing the Docs menu to an unusable sliver. Keeping the blur on the pseudo-element
+ * preserves the look without breaking the mobile menu.
+ */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
-  backdrop-filter: saturate(180%) blur(12px);
+  background-color: transparent !important;
   border-bottom: 1px solid rgba(11, 20, 48, 0.08);
   height: 64px;
   padding: 0 clamp(16px, 3vw, 28px);
   box-shadow: 0 1px 0 rgba(11, 20, 48, 0.04), 0 4px 16px rgba(11, 20, 48, 0.06);
 }
 
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+}
+
 [data-theme="dark"] .navbar {
-  background-color: rgba(46, 46, 54, 0.95) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+[data-theme="dark"] .navbar::before {
+  background-color: rgba(46, 46, 54, 0.95);
 }
 
 .navbar__inner {
@@ -263,8 +283,8 @@
 .navbar_github:hover { background-color: #181717; }
 [data-theme="dark"] .navbar_github:hover { background-color: #FFFFFF; }
 
-/* Color-mode toggle (do NOT match .navbar__toggle / mobile burger) */
-.navbar .clean-btn:not(.navbar__toggle) {
+/* Color-mode toggle (do NOT match .navbar__toggle burger or the mobile sidebar's close X) */
+.navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
   border: 1px solid rgba(11, 20, 48, 0.12);
   border-radius: 8px;
   margin-left: 14px;
@@ -276,18 +296,18 @@
   transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 
-.navbar .clean-btn:not(.navbar__toggle):hover {
+.navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
   background-color: rgba(54, 163, 123, 0.08);
   border-color: rgba(54, 163, 123, 0.32);
   color: var(--stacked-green);
 }
 
-[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle) {
+[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
   border-color: rgba(236, 238, 245, 0.14);
   color: rgba(236, 238, 245, 0.78);
 }
 
-[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):hover {
+[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
   background-color: rgba(255, 255, 255, 0.06);
   border-color: rgba(236, 238, 245, 0.28);
   color: var(--stacked-cold);

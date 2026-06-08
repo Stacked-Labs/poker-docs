@@ -4,21 +4,19 @@ sidebar_position: 55
 
 # 24-hour emergency exit
 
-If a settlement at your table ever stalls for 24 hours, you can withdraw your stack from the contract yourself — no support ticket, no permission from anyone, just you and the contract.
+If a settlement at your table ever stalls for 24 hours, you can withdraw your stack — your USDC, a digital dollar that holds a stable value — from the contract yourself, no support ticket, no permission from anyone, just you and the contract.
 
 ## What it is
 
-Every real-money table on Stacked is its own smart contract on Base. The contract is supposed to settle every hand within seconds. If that ever fails — Stacked's backend goes down, settlement transactions get stuck, RPC providers misbehave, anything — the contract has a fallback built in:
+Every real-money table on Stacked is its own smart contract — a small program on the blockchain that holds the money and follows fixed rules — deployed on Base, an Ethereum-based network with very low fees. The contract is built to settle every hand on-chain in under 5 seconds. If that ever fails — for any reason, including an outage on Stacked's side — the contract has a fallback built in:
 
 **24 hours after the last successful settlement, any player at the table can call a function on the contract that releases their current stack directly back to their wallet.**
 
 ```mermaid
 flowchart TB
-    H1["Hand settles"] -- "Clock resets" --> H2["Hand settles"]
-    H2 -- "Clock resets" --> H3["Hand settles"]
-    H3 -- "Settlement stalls" --> W["24 hours elapse<br/>with no settlement"]
+    H["Hands keep settling<br/>(clock keeps resetting)"] -- "Settlement stalls" --> W["24 hours pass<br/>with no settlement"]
     W --> E["Emergency exit unlocks<br/>for every seated player"]
-    E --> X["Player calls the contract directly<br/>USDC moves to wallet"]
+    E --> X["You sign the withdrawal<br/>USDC moves to your wallet"]
 ```
 
 This is the safety net behind the whole on-chain custody story. You don't have to take our word for it that your money is safe; the contract is what makes it safe, and the emergency exit is what makes that real.
@@ -33,7 +31,7 @@ If something goes wrong and settlements stop — for any reason — the clock st
 
 Open the table's **Settings → Players** tab. Once the 24-hour window has elapsed without a settlement, an emergency-withdraw option appears there. Click it, sign the transaction from your wallet, and the contract releases your current stack back to your wallet.
 
-Stacked's backend isn't involved in this step. The contract handles it on its own — even if our app is unreachable, the contract function is publicly callable from any wallet tool, so your funds are still accessible. You don't need our cooperation for the emergency exit to work.
+Stacked's servers aren't involved in this step. The contract handles it on its own — even if our app is unreachable, the contract function is publicly callable from any wallet tool, so your funds are still accessible. You don't need our cooperation for the emergency exit to work.
 
 ## What you get back
 

@@ -4,14 +4,14 @@ sidebar_position: 81
 
 # Supported wallets
 
-Stacked uses thirdweb for wallet integration, so any wallet thirdweb supports works for sign-in, deposits, and withdrawals. You're not locked into one specific wallet.
+Stacked works with popular wallets for sign-in, deposits, and withdrawals, so you're not locked into one specific wallet. If you don't have a wallet, Stacked can create one for you.
 
 ## Self-custody wallets
 
 You connect a wallet you already control. Common options:
 
-- **Coinbase Wallet** — works well, especially if you're sourcing USDC from a Coinbase account.
-- **MetaMask** — the most widely used Ethereum wallet; switches to Base when prompted.
+- **Coinbase Wallet** — works well, especially if you're sourcing USDC (a digital dollar that holds a stable value) from a Coinbase account.
+- **MetaMask** — the most widely used Ethereum wallet; switches to Base (an Ethereum-based network with very low fees) when prompted.
 - **Rainbow** — mobile-first.
 - **WalletConnect-compatible wallets** — Rabby, Trust Wallet, Zerion, Frame, Ledger Live, and many others.
 
@@ -19,7 +19,7 @@ If your wallet supports Base and signs Ethereum messages, it almost certainly wo
 
 ## Embedded wallet
 
-If you don't have a wallet, Stacked can create one for you using thirdweb's embedded wallet. You sign in with an email or a social account and Stacked provisions the wallet behind the scenes.
+If you don't have a wallet, Stacked can create an embedded wallet for you. You sign in with an email or a social account and Stacked sets up the wallet behind the scenes.
 
 The embedded wallet is yours — you can export the keys later if you ever want to move to a different wallet app.
 
