@@ -32,7 +32,7 @@ const jsonLd = {
     },
     sameAs: [
       "https://x.com/stacked_poker",
-      "https://discord.gg/896EhkVYbd",
+      "https://discord.gg/FdzHKPESVd",
       "https://t.me/stackedpoker",
       "https://github.com/Stacked-Labs",
     ],
@@ -200,7 +200,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://discord.gg/896EhkVYbd",
+          href: "https://discord.gg/FdzHKPESVd",
           className: "navbar_logo navbar_discord",
           position: "right",
         },
@@ -277,7 +277,7 @@ const config: Config = {
             },
             {
               label: "Discord",
-              href: "https://discord.gg/896EhkVYbd",
+              href: "https://discord.gg/FdzHKPESVd",
             },
             {
               label: "Telegram",
