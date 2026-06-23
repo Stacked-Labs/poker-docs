@@ -74,6 +74,26 @@ Every dollar of the platform fee splits two ways. The Host's share is the struct
 - **25% goes to the Host** of the table — credited to the Host's withdrawable balance at that table's smart contract (the on-chain program that holds the table's funds). See [Hosting earnings](/docs/hosting/earnings).
 - **75% goes to Stacked**, which also funds the gas Stacked sponsors to settle hands and deploy tables.
 
+## Tournament fees
+
+Tournaments charge the platform fee differently from cash games. There's no per-pot fee during a tournament; instead, the fee is part of the buy-in, taken once when the tournament starts. A player's buy-in covers their place in the prize pool plus this fee — nothing is added on top.
+
+The tournament fee is a percentage of the buy-in, and it steps down as buy-ins get larger:
+
+| Buy-in | Platform fee |
+|---|---|
+| Freeroll (no buy-in) | 0% |
+| Under $10 | 8% |
+| $10 – $24.99 | 6% |
+| $25 – $99.99 | 5% |
+| $100 – $499.99 | 4% |
+| $500 – $999.99 | 3.5% |
+| $1,000 and up | 3% |
+
+So a $20 buy-in carries a 6% fee: $1.20 of each $20 entry is the platform fee, and $18.80 goes into the prize pool. With 40 entries, that's $48 of total fee and a $752 prize pool from the buy-ins.
+
+The split is the same as cash games: **25% of the tournament fee goes to the Host** of the tournament, and **75% goes to Stacked**. The Host's share is held by the tournament contract and paid out once the tournament has finished and prizes are settled. Freerolls carry no fee, so there's no Host share on a freeroll. For how tournaments work end to end, see [Tournaments](/docs/playing/tournaments).
+
 ## Variations
 
 There's one platform fee schedule today, applied uniformly to every real-money table. The rate, the cap curve, and the short-handed discounts are all tunable — Stacked may adjust them over time as we calibrate. If anything changes meaningfully, this page updates with it. We may also add promotional fee-free periods, discounts, or special table types in the future; those will be documented here when they exist.
