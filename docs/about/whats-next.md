@@ -6,6 +6,10 @@ sidebar_position: 92
 
 A lightweight view of what's on the way. No quarter commitments, no firm dates — when something ships, the relevant page is updated and this list shrinks.
 
+## Recently shipped
+
+- **Tournaments** — buy-in tournaments alongside cash games, with prize pools settled on-chain. See [Tournaments](/docs/playing/tournaments).
+
 ## In progress
 
 - **Run it twice** — for all-in pots at the river, the remaining cards run multiple times to reduce variance. In active development.
@@ -13,7 +17,6 @@ A lightweight view of what's on the way. No quarter commitments, no firm dates �
 
 ## On the roadmap
 
-- **Tournaments** — multi-table tournaments alongside cash games. Cash games are the only mode today.
 - **Verifiable shuffling** — an on-chain commit-reveal scheme so anyone can check the cards weren't manipulated. Today's shuffler uses standard server-side cryptographic randomness.
 - **External contract audit** — formal third-party security review of the contracts. They're source-verified and unit-tested today; the audit completes the trust story.
 - **Expanded geographic availability** — we're working through what regions Stacked can operate in. See [Where Stacked is available](/docs/reference/availability).
