@@ -26,6 +26,8 @@ The prize pool is the sum of every buy-in, minus the platform fee, and the top f
 
 A Host can also **guarantee** a minimum prize pool — for example, "$500 guaranteed." If the buy-ins don't add up to the guarantee, the Host tops up the difference from their own funds, so the advertised pool is always paid in full.
 
+Some tournaments also carry a **bonus prize**: a fixed amount of a second token that the Host funds themselves and that pays out on top of the USDC. In some tournaments the bonus prize is the only prize, and buy-ins go to the Host instead of forming a pool — that's always labelled on the tournament. See [Bonus prizes](/docs/playing/bonus-prizes).
+
 ## Buy-in and the platform fee
 
 The platform fee on a tournament is part of the buy-in, not a separate charge. It's a percentage of the buy-in that steps down as buy-ins get larger — a higher percentage at small buy-ins, lower at large ones — and freerolls (tournaments with no buy-in) carry no fee at all. The exact schedule is on the [How fees work](/docs/your-money/fees) page. As with cash games, the Host of a tournament earns 25% of that fee. See [Hosting earnings](/docs/hosting/earnings).
@@ -57,6 +59,7 @@ If only 12 players had registered instead of 40 — below Alice's minimum of 20 
 
 ## What's next
 
+- [Bonus prizes →](/docs/playing/bonus-prizes) — fixed prizes in a second token, funded by the Host.
 - [How fees work →](/docs/your-money/fees) — the buy-in fee schedule, for cash games and tournaments.
 - [Hosting earnings →](/docs/hosting/earnings) — the Host's 25% share.
 - [24-hour emergency exit →](/docs/your-money/emergency-exit) — the safety net that also covers tournaments.

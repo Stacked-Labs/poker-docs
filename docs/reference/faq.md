@@ -34,6 +34,9 @@ The action timer keeps running. If you don't act before it expires, the system f
 **Can I sit at multiple tables at once?**
 Yes — each table is independent. Your stack at table A doesn't affect table B.
 
+**Some tournaments show a prize in a token that isn't USDC. What is that?**
+A bonus prize — a fixed amount of another token that the Host funded themselves, paid to the top finishers on top of the USDC. It's funded before registration opens, so an advertised one is always real. See [Bonus prizes](/docs/playing/bonus-prizes).
+
 ## Hosting
 
 **Who can host a table?**
@@ -44,6 +47,9 @@ Hosts earn 25% of the platform fee on every real-money hand at their tables — 
 
 **Do Hosts earn anything on Free Play tables?**
 No. Free Play has no platform fee and no earnings.
+
+**Can I put up my own token as a tournament prize?**
+Tokens usable as bonus prizes come from a short curated list, so you can't add one yourself — but if you're a project or community that wants yours on it, [ask on Discord](https://discord.gg/xdaC5gRP4E). See [Bonus prizes](/docs/playing/bonus-prizes).
 
 ## Money
 

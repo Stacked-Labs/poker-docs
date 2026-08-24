@@ -51,6 +51,7 @@ Free Play tables work the same way for the Host. Create the table, pick stakes, 
 ## What's next
 
 - [Hosting earnings →](/docs/hosting/earnings) — how your 25% share is tracked and withdrawn.
+- [Bonus prizes →](/docs/playing/bonus-prizes) — putting up a fixed prize in another token on a tournament you host.
 - [How fees work →](/docs/your-money/fees) — the full breakdown of the platform fee.
 - [Connect a wallet →](/docs/getting-started/connect-a-wallet) — required before you can create a table.
 - [Joining a table →](/docs/playing/joining-a-table) — the player side of the same approval flow.
