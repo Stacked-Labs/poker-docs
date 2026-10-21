@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 217" fill="none" role="img" aria-label="Stacked">
+  <defs>
+    <clipPath id="stacked-mark-top"><path d="M-5 -5H183.5L-5 183.5Z"/></clipPath>
+    <clipPath id="stacked-mark-mid"><path d="M183.5 -5H210V222H-5V183.5Z M-5 97.14L21 112H184L210 97.14V222H-5Z"/></clipPath>
+    <clipPath id="stacked-mark-base"><path d="M-5 147.14L21 162H184L210 147.14V222H-5Z"/></clipPath>
+  </defs>
+  <g stroke="#FFFFFF" stroke-width="21">
+    <ellipse cx="102.5" cy="58" rx="92" ry="47.5" clip-path="url(#stacked-mark-top)"/>
+    <ellipse cx="102.5" cy="108" rx="92" ry="47.5" clip-path="url(#stacked-mark-mid)"/>
+    <ellipse cx="102.5" cy="158" rx="92" ry="47.5" clip-path="url(#stacked-mark-base)"/>
+  </g>
+</svg>
