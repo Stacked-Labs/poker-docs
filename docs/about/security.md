@@ -8,15 +8,20 @@ What the contracts do, what we've done to make them safe so far, what's still ah
 
 ## Smart contract security
 
-Each real-money table is its own smart contract — a small program that holds money and follows fixed rules no one can change — deployed on Base, an Ethereum-based network with very low fees, when the Host creates the table. These table contracts are source-verified and readable on [Basescan](https://basescan.org), the public block explorer for Base, so the actual code each contract runs is open for anyone to inspect. We don't currently maintain a public GitHub repo for the contracts — that may change.
+Each real-money table is its own smart contract — a small program that holds the money and follows the rules written into it — deployed on Base, an Ethereum-based network with very low fees, when the Host creates the table. These table contracts are source-verified and readable on [Basescan](https://basescan.org), the public block explorer for Base, so the actual code each contract runs is open for anyone to inspect. We don't currently maintain a public GitHub repo for the contracts — that may change.
 
 The contracts are intentionally simple. They have:
 
 - Short functions with narrow input paths.
-- No admin override. Once a contract is deployed, no one can change its behavior.
-- No upgrade hook. The contract you sit at is the contract you stay at for that table's lifetime.
+- Narrow money paths. Every route that moves USDC out of a table pays it to the player it belongs to, to the Host's earnings, or to the platform fee when a hand settles. There is no function that sends your balance anywhere else.
 - Extensive unit-test coverage.
-- A 24-hour emergency exit baked in as the unconditional player fallback.
+- A 24-hour emergency exit that cannot be paused or switched off.
+
+### What Stacked can change, stated plainly
+
+Table contracts are deployed from a shared implementation, and Stacked can update that implementation — an update applies to tables that already exist. We hold that ability on purpose: it's how a bug gets fixed for everyone at once, instead of stranding money at every open table. It is also a real power, and you should price it in. The honest version of our security story is "narrow money paths and a fallback you control" — not "nobody can touch it."
+
+Stacked can also close a table in an emergency. The only thing that action can do is return every player's balance to their own wallet.
 
 **An external audit is on the roadmap and not yet complete.** Until that's done, the security story rests on simplicity, testing, the emergency exit, and what you can verify yourself on Basescan.
 

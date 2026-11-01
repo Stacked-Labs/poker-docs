@@ -42,7 +42,7 @@ The contract's logic is fixed at deployment. No party — including Stacked — 
 - Send your funds anywhere outside its own rules — your stack only ever returns to your wallet.
 - Change the platform fee schedule on its own.
 - Hold your money against your will once you've left or after the 24-hour emergency window unlocks.
-- Be edited after deployment. The contract has no admin override and no upgrade hook — what was deployed runs forever, exactly as deployed.
+- Be paused in a way that blocks the 24-hour emergency exit. Normal withdrawals can be paused; that fallback cannot.
 
 ## Who does what
 
@@ -52,7 +52,7 @@ Three parties touch a real-money table. Each has a defined and limited role:
 |---|---|---|
 | **You (player)** | Deposit, play, withdraw, emergency-exit after 24h | Move another player's funds; change table rules |
 | **Host** | Approve players, kick, change stakes between hands, pause or end the table, withdraw the platform fee | Move any player's stack; change the platform fee schedule |
-| **Stacked** | Run the live game, deploy and operate new tables | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules |
+| **Stacked** | Run the live game, deploy and operate tables, update table contract code, close a table in an emergency (which returns every balance to its owner) | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules; switch off the 24-hour emergency exit |
 
 There are two systems at work, each doing what it's good at: Stacked runs the game — dealing, betting, turn order — while the on-chain contract holds the money and records each hand's result. Stacked can move chips between seat balances inside the contract as hands settle, but it can never redirect them anywhere outside the contract's rules.
 
@@ -60,7 +60,11 @@ There are two systems at work, each doing what it's good at: Stacked runs the ga
 
 Stacked's table contracts are deployed and source-verified on [Basescan](https://basescan.org), so the actual code each contract runs is readable on the block explorer. We don't currently maintain a public GitHub repo for the contracts — that may change later.
 
-The contracts are intentionally simple: short functions, narrow deposit and withdrawal paths, no admin override, no upgrade mechanism. They have extensive unit-test coverage. **An external audit is on the roadmap and not yet complete.** Until that audit lands, the trust story rests on three things: testing, simplicity, and the 24-hour emergency exit.
+The contracts are intentionally simple: short functions, narrow deposit and withdrawal paths, and no route that sends your balance anywhere but back to you. They have extensive unit-test coverage.
+
+Table contracts are deployed from a shared implementation that Stacked can update, and an update applies to tables that already exist — that's how a bug gets fixed for everyone at once rather than stranding money at every open table. We'd rather tell you that than let you find it on the block explorer. What it doesn't change: the money paths still only ever pay you, and the 24-hour emergency exit still can't be switched off. See [Security & contracts](/docs/about/security) for the full picture.
+
+**An external audit is on the roadmap and not yet complete.** Until that audit lands, the trust story rests on three things: testing, narrow money paths, and the 24-hour emergency exit.
 
 If you want to see the code for a specific table, open its contract address on Basescan and read it directly.
 

@@ -43,9 +43,7 @@ When two players are at the table, the button posts the small blind and the othe
 
 ## Cash game, not tournament
 
-This page describes **cash games**: blinds don't increase over time, and you can join or leave between hands without losing your stack — your stack is your stack until you withdraw it.
-
-Stacked also runs **tournaments**, which work differently: you register up front, blinds rise on a clock, and you play until you're out or you win. Hosts can also attach [entry tasks](/docs/hosting/entry-tasks) to a tournament.
+This page covers cash games, where blinds don't increase over time and you can join or leave between hands without losing your stack — your stack is your stack until you withdraw it. Stacked also runs tournaments, where the blinds climb and you play down to a prize pool; see [Tournaments](/docs/playing/tournaments) for how those work.
 
 ## What's next
 

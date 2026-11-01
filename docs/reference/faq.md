@@ -62,7 +62,7 @@ Buy on Coinbase and withdraw to Base, or move USDC over from Ethereum. Built-in 
 We're finalizing the geographic availability list. See [Where Stacked is available](/docs/reference/availability) for current status.
 
 **Tournaments?**
-Cash games only today. Tournaments are on the roadmap.
+Yes — Stacked runs buy-in tournaments alongside cash games, with prize pools settled on-chain. See [Tournaments](/docs/playing/tournaments).
 
 **Mobile?**
 Stacked works in any modern browser, including mobile.

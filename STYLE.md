@@ -28,7 +28,7 @@ This is the page-1 headline and the line we lean on across the site. Short and n
 | **Base** | The blockchain (Coinbase's L2) we run on. On first use per page: "Base, an Ethereum-based network with very low fees." | Title case. Don't write "L2" without explaining. |
 | **Wallet** | The app a player connects to play. Can be brought-your-own (Coinbase Wallet, MetaMask, Rainbow, etc.) or an embedded wallet we provide. | Lowercase. |
 | **Settlement** | The on-chain transfer of chip movements after each hand. Happens every hand, under 5 seconds in the background, ~$0.001 in fees. | Lowercase. |
-| **Platform fee** | The fee on real-money tables. The **player-facing term is "platform fee"; "rake" must NEVER appear in player copy.** **Production source of truth is `poker-server/poker/rake.go` — not the smart-contract docs (those are stale).** Currently: **4% of the pot, capped per hand by a continuous cap curve** that scales with the big blind. The cap rises gently with stakes (around $1.30 at $0.05/$0.10, leveling out at $6.00 for high stakes). Short-handed tables get a discount: heads-up pays 34% of the cap, 3–4 handed pays 50%, 5+ handed pays the full cap. All parameters are env-tunable. The platform fee also covers the gas Stacked sponsors for settlement and table creation — a benefit worth surfacing in copy. **Outside the dedicated Fees page (/docs/your-money/fees), only ever say "Hosts earn 25% of the platform fee"** — never quote the 4% headline, never quote cap numbers, never quote the 75/25 split. Those numbers live on one page only. **Never mention the platform fee in Free Play context** — Free Play has no platform fee; let it be implied. | Lowercase. |
+| **Platform fee** | The fee on real-money tables. The **player-facing term is "platform fee"; "rake" must NEVER appear in player copy.** **Production source of truth is `poker-server/poker/rake.go` — not the smart-contract docs (those are stale).** Currently: **4% of the pot, capped per hand by a continuous cap curve** that scales with the big blind. The cap rises gently with stakes (around $1.30 at $0.05/$0.10, leveling out at $6.00 for high stakes). Short-handed tables get a discount: heads-up pays 34% of the cap, 3–4 handed pays 50%, 5+ handed pays the full cap. All parameters are env-tunable. The platform fee also covers the gas Stacked sponsors for settlement and table creation — a benefit worth surfacing in copy. **Outside the dedicated Fees page (/docs/your-money/fees), only ever say "Hosts earn 25% of the platform fee"** — never quote the 4% headline, never quote cap numbers, never quote the 75/25 split. Those numbers live on one page only. **Never mention the platform fee in Free Play context** — Free Play has no platform fee; let it be implied. **Tournaments charge the platform fee differently** — it's a percentage of the buy-in on a tier schedule (not a per-pot cap curve), and those tier numbers also live on the Fees page only (and the technical Smart contracts reference). The Tournaments page links to the Fees page rather than quoting tiers. | Lowercase. |
 
 ## The hybrid architecture (canonical framing)
 
@@ -107,26 +107,25 @@ Do not use anywhere in player-facing copy:
 - **Stacked sponsors all backend gas: settlement gas (every hand) and table-deployment gas (when a Host creates a table) are paid by Stacked, not the player or Host.** Players only pay gas on actions they sign themselves — depositing into a table, withdrawing back to their wallet. Phrase as: "Stacked covers the gas, so you never pay to settle a hand" / "Creating a table is free — Stacked covers the deployment cost."
 - ~$0.001 per settlement (Base gas).
 - 24-hour emergency self-withdraw if a settlement stalls — **lead with this on the custody/safety page.** It's the single strongest trust story.
-- Platform fee details (4% of pot, BB-tiered caps, 75/25 split) live on the dedicated Fees page (/docs/your-money/fees) only. Everywhere else: "Hosts earn 25% of the platform fee." Free Play pages don't mention the platform fee at all. Source of truth is `poker-server/poker/rake.go`, not the older smart-contract docs.
+- Platform fee details (cash: 4% of pot, BB-tiered caps, 75/25 split; tournaments: buy-in tier schedule, 75/25 split) live on the dedicated Fees page (/docs/your-money/fees) only. Everywhere else: "Hosts earn 25% of the platform fee." Free Play pages don't mention the platform fee at all. Source of truth: cash fees in `poker-server/poker/rake.go`; tournament fee tiers in `poker-server/transport/http/tournament_handler.go` (`cryptoTournamentRakeBps`), not the older smart-contract docs.
 - Both BYO and embedded wallets supported.
 - Any popular wallet works (Coinbase Wallet, MetaMask, Rainbow, WalletConnect). Don't name the wallet-integration vendor.
 - Free table creation (gas sponsored at launch — phrase as current behavior, not a permanent guarantee).
 - All tables require Host approval before a player sits.
-- Cash games only.
+- Cash games and buy-in tournaments. Tournament mechanics and fees may be documented (see the Tournaments page and the tournament section of the Fees page).
 
 **We do not say:**
 - **No "no KYC" marketing claim.** Don't state or imply Stacked has "no KYC" / "no identity verification" / "no account verification." Stacked isn't implementing KYC today but **reserves the right to require identity checks later**, so we never promise their absence. Equally, don't announce KYC. Stay silent on KYC in player copy; strip any no-KYC claims if found.
 - No specific list of blocked jurisdictions until legal finalizes — the "Where Stacked is available" page ships with a placeholder.
-- No tournament mechanics — only a roadmap mention.
 - No fiat-onramp claims that we can't back (need a separate confirmation pass before writing the deposit page).
-- No mainnet contract addresses (none have been recorded canonically yet — link to a single status page when ready).
+- Contract addresses live on the **Smart contracts** technical reference page (/docs/reference/smart-contracts) only — both Base mainnet and Base Sepolia. Keep raw addresses and implementation/beacon/admin details on that page; never put them in player-voice pages.
 - No "provably fair" language. Today's RNG is server-side; commit-reveal / on-chain shuffle is on the roadmap, framed as "coming."
 - No claim that hands settle "instantly" — settlement is fast, but not synchronous to gameplay.
 - No "audited" claim — contracts are not audited yet (44 Foundry unit tests pass; audit is on the roadmap).
 
 ## Roadmap stance
 
-A single lightweight "What's next" page. No quarter commitments, no dates. Themes only: tournaments, provably-fair RNG, more wallets, jurisdiction expansion. Update together when reality changes. The old `roadmap.md` (dated Q-by-Q for 2024–2025) is deleted in this rewrite.
+A single lightweight "What's next" page. No quarter commitments, no dates. Themes only: provably-fair RNG, more wallets, jurisdiction expansion (tournaments have shipped — they now have their own page). Update together when reality changes. The old `roadmap.md` (dated Q-by-Q for 2024–2025) is deleted in this rewrite.
 
 ## Cross-cutting cleanup the rewrite will perform
 
