@@ -19,6 +19,8 @@ Two things make it different from the normal prize pool:
 
 Nothing is taken out of a bonus prize. The full amount the Host funded is what gets split among the finishers.
 
+Bonus prizes are for real-money tournaments only. Free Play has no contract to hold a token, so a Free Play tournament can't offer one.
+
 ## How it works
 
 **The Host funds it first.** When a Host sets up a tournament with a bonus prize, they transfer the tokens into the tournament's own smart contract — a program on Base that holds the money and follows fixed rules no one can override. **Registration doesn't open until that transfer lands.** You can't register for a tournament whose bonus prize hasn't actually been paid in, so an advertised bonus prize is always a funded one.
@@ -46,7 +48,7 @@ If you're looking at one of these, know two things:
 - **The prize is fixed.** More entries do not make it bigger.
 - **Re-entries don't grow the prize either.** If someone busts and buys back in, that money goes to the Host, not to the pool.
 
-Stacked labels these tournaments and states both facts on the tournament page and again in the registration window, so nobody enters one thinking their buy-in is building the prize.
+Stacked labels these tournaments: the lobby card and the tournament page show the prize as a **Fixed prize**, and the tournament page adds "Buy-ins go to the Host. The prize is fixed and won't grow with the field." Look for that label before you register, so you never enter one thinking your buy-in is building the prize.
 
 ## Which tokens can be used
 
@@ -95,7 +97,7 @@ Then registration never opens and there's no tournament to enter. A bonus prize 
 Not today — one bonus token per tournament, alongside the USDC prizes.
 
 **What if something goes wrong and the tournament doesn't pay out?**
-The same 24-hour safety net that covers everything else on Stacked covers this too. If a tournament stalls, after 24 hours anyone can open refunds and entrants can reclaim their share of what's in the contract. See [the 24-hour emergency exit](/docs/your-money/emergency-exit).
+The same 24-hour safety net that covers everything else on Stacked covers this too. If a tournament stalls and isn't paid out, anyone can open refunds 24 hours after its advertised end time, and every entrant reclaims their share of the USDC in the contract. The bonus prize isn't split among the players in that case: it goes back to the Host who funded it, because nobody finished the tournament to win it. See [the 24-hour emergency exit](/docs/your-money/emergency-exit).
 
 **I hold a token and want it listed. What do I do?**
 [Ask on Discord](https://discord.gg/xdaC5gRP4E). See [Getting a token added](#getting-a-token-added) above.
