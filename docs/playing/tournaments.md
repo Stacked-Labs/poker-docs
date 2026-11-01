@@ -60,6 +60,7 @@ If only 12 players had registered instead of 40 — below Alice's minimum of 20 
 ## What's next
 
 - [Bonus prizes →](/docs/playing/bonus-prizes) — fixed prizes in a second token, funded by the Host.
+- [Entry tasks →](/docs/hosting/entry-tasks) — tasks a Host can ask you to finish before you register.
 - [How fees work →](/docs/your-money/fees) — the buy-in fee schedule, for cash games and tournaments.
 - [Hosting earnings →](/docs/hosting/earnings) — the Host's 25% share.
 - [24-hour emergency exit →](/docs/your-money/emergency-exit) — the safety net that also covers tournaments.
