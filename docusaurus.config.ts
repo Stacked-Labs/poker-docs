@@ -185,7 +185,8 @@ const config: Config = {
       title: "Stacked",
       logo: {
         alt: "Stacked Logo",
-        src: "img/IconLogo.png",
+        src: "img/stacked-mark-navy.svg",
+        srcDark: "img/stacked-mark-white.svg",
       },
       items: [
         {
@@ -221,9 +222,10 @@ const config: Config = {
       style: "light",
       logo: {
         alt: "Stacked Logo",
-        src: "img/IconLogo.png",
-        width: 44,
-        height: 44,
+        src: "img/stacked-mark-navy.svg",
+        srcDark: "img/stacked-mark-white.svg",
+        width: 34,
+        height: 36,
       },
       links: [
         {
