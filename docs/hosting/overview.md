@@ -6,7 +6,7 @@ sidebar_position: 30
 
 Anyone can run a poker table on Stacked, and Hosts earn 25% of the platform fee on real-money tables they run.
 
-Hosts create tables, decide who sits, and earn a share of the platform fee on real-money tables they run. There are no application gates and no fees to start: connect a wallet, click create, and a new table contract is deployed for you on Base (Coinbase's Ethereum-based network) — Stacked covers the deployment gas, the small network fee for an on-chain action.
+Hosts create tables, set the rules, and earn a share of the platform fee on real-money tables they run. There are no application gates and no fees to start: connect a wallet, click create, and a new table contract is deployed for you on Base (Coinbase's Ethereum-based network). Stacked covers the deployment gas, the small network fee for an on-chain action.
 
 ## Why host
 
@@ -19,22 +19,22 @@ You can also play in your own table. Hosting and playing aren't separate roles �
 When you create a table, you set three things:
 
 - **Stakes** — small blind and big blind. The big blind has to be at least twice the small blind.
-- **Mode** — Free Play (play-money chips, no earnings) or real-money (chips backed by USDC, a digital dollar pegged 1:1 to USD).
+- **Mode**: Free Play (play-money chips, no earnings) or real-money (chips backed by USDC, a digital dollar that holds a stable value).
 - **Visibility** — public (appears in the lobby) or invite-only (reachable only via direct link).
 
-That's it. You don't pick a buy-in range — each player chooses their own buy-in and you approve or decline based on what they bring. Stacked sponsors the gas to deploy the table contract, so creating a table is free for you.
+That's it. You don't pick a buy-in range. Each player chooses their own buy-in. Stacked sponsors the gas to deploy the table contract, so creating a table is free for you.
 
-## Approving players
+## Seating players
 
-Every player who wants to sit needs your approval. Stacked uses a home-game model: there are no protocol-run tables and no auto-seating — when someone wants to play at your table, they request a seat and wait for you to let them in.
+Every new table starts with Auto-Accept on. A player picks a seat, buys in, and is dealt in. You don't have to do anything, so your table can fill while you're away.
 
-When a request comes in, the player shows up in a pending list at your table view, and you get an in-app notification. The request includes the player's wallet and the buy-in they're proposing — for example, "Alice requests a seat with a 200 USDC buy-in." Approve and they're in; decline and they aren't.
+If you'd rather choose who sits, as in a private home game, turn off Auto-Accept in your table's Settings tab. From then on, each player who wants to sit shows up in a pending list at your table view, and you get an in-app notification. The request includes the player's wallet and the buy-in they're proposing, for example "Alice requests a seat with a 200 USDC buy-in." Approve and they're in; decline and they aren't.
 
-The flow is the same for public and invite-only tables. Letting Hosts curate who plays — turning down players whose buy-in is outside what you wanted, or anyone you don't want at your table — is what makes the marketplace work without the platform setting those rules.
+The choice is the same for public and invite-only tables. Letting Hosts decide how their table is seated, open to all or hand-picked, is what makes the marketplace work without the platform setting those rules.
 
 ## Running the table
 
-Once the table is live, players play hands and Stacked's servers keep the game running. **You don't have to stay online for the table to keep running.** Your only required action while the table is live is approving new pending players when they arrive.
+Once the table is live, players play hands and Stacked's servers keep the game running. **You don't have to stay online for the table to keep running.** With Auto-Accept on, you have no required actions while the table is live. If you turned it off, approve new pending players when they arrive.
 
 You can also step in between hands:
 
@@ -46,11 +46,11 @@ Stacked never moves a player's funds without the player's signature. Whenever so
 
 ## Hosting Free Play tables
 
-Free Play tables work the same way for the Host. Create the table, pick stakes, approve players, kick or pause as needed — there are just no earnings. Hosts run Free Play tables for the reasons people host home games — friends, communities, practice, fun. If you want to run a table where the cost of being wrong is zero, this is it.
+Free Play tables work the same way for the Host. Create the table, pick stakes, choose how players are seated, kick or pause as needed. There are just no earnings. Hosts run Free Play tables for the reasons people host home games: friends, communities, practice, fun. If you want to run a table where the cost of being wrong is zero, this is it.
 
 ## What's next
 
 - [Hosting earnings →](/docs/hosting/earnings) — how your 25% share is tracked and withdrawn.
 - [How fees work →](/docs/your-money/fees) — the full breakdown of the platform fee.
 - [Connect a wallet →](/docs/getting-started/connect-a-wallet) — required before you can create a table.
-- [Joining a table →](/docs/playing/joining-a-table) — the player side of the same approval flow.
+- [Joining a table →](/docs/playing/joining-a-table): the player side of taking a seat.

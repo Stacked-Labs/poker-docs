@@ -21,7 +21,7 @@ The on-chain record is the source of truth. Whatever stack you see in front of y
 
 In normal operation, settlement is invisible. The next hand begins as soon as the previous one is done, and the outcome is recorded on-chain in the background. Settlement is typically under 5 seconds on Base, depending on network conditions, so by the time you're ready to act on the next hand it's already on-chain.
 
-You don't pay any gas (the network fee for an on-chain action) for any of this — Stacked covers settlement gas on every hand, funded by the platform fee. The platform fee also covers the gas to create a table, so settling hands and creating tables are free for everyone at the table. The only gas you pay is the small network fee on the deposits and withdrawals you sign yourself.
+You don't pay any gas (the network fee for an on-chain action) for any of this. Stacked covers settlement gas on every hand, funded by the platform fee. The platform fee also covers the gas to create a table, so settling hands and creating tables are free for everyone at the table. If you connected your own wallet, the only gas you pay is the small network fee on the deposits and withdrawals you sign yourself. If you signed in with Google, X, Discord or email, Stacked covers those too.
 
 ## If a settlement is slow or fails
 

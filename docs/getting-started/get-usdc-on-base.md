@@ -4,26 +4,47 @@ sidebar_position: 12
 
 # Get USDC on Base
 
-To play at real-money tables, you need USDC — a digital dollar that holds a stable value — in your wallet on Base, an Ethereum-based network with very low fees. Stacked doesn't have an in-app onramp yet, so for now you'll bring USDC from somewhere else.
+To play at real-money tables, you need USDC, a digital dollar that holds a stable value, on Base, an Ethereum-based network with very low fees.
+
+There are two simple ways to get it: buy it with a card inside Stacked, or send it from an exchange.
 
 ## What you need
 
-- **USDC** — the stablecoin pegged 1:1 to the US dollar.
-- **On Base** — the Ethereum-based network Stacked runs on. USDC on other networks (mainnet Ethereum, Polygon, etc.) won't work for real-money tables until you bridge or swap it onto Base.
+- **USDC.** A digital dollar that holds a stable value.
+- **On Base.** Base is the network Stacked runs on. USDC on other networks (Ethereum mainnet, Polygon and others) won't work for real-money tables until you move it onto Base.
 
-## Common paths today
+## Buy with a card
 
-A few ways to get USDC on Base into your wallet:
+Once you're signed in, you can buy USDC with a card without leaving Stacked.
 
-- **Buy on Coinbase and withdraw to Base.** If you have a Coinbase account, buy USDC and withdraw it directly to your wallet on the Base network. Coinbase supports Base withdrawals natively, no bridge needed.
-- **Bridge from Ethereum mainnet.** If you already hold USDC on Ethereum mainnet, use a bridge like the [official Base bridge](https://bridge.base.org/) to move it to Base.
-- **Swap into USDC on Base.** If you hold other tokens on Base (or another network with a bridge), use any Base-compatible DEX (Uniswap, Aerodrome, etc.) to swap into USDC.
+1. Click **Add funds** in the header.
+2. Choose **Buy with card** and pick an amount.
+3. Pay by card. The USDC arrives on Base, ready for a table.
 
-Once USDC shows up in your wallet on Base, you're ready to sit down.
+Short of a buy-in? You don't need to go back to the header. When you pick a seat or register for a tournament without enough USDC, Stacked offers the same card purchase right there, with the missing amount filled in.
 
-## In-app onramp
+If your card doesn't go through, send from an exchange instead.
 
-A built-in path to buy USDC with a card or bank account inside Stacked is on the way. When it ships, this page will walk through the in-app flow.
+## Send from an exchange
+
+If you already have money on a crypto exchange, you can send USDC from there to your Stacked address.
+
+To find your address, click **Add funds** in the header, then choose **Send from an exchange or wallet**. Copy the address shown there.
+
+1. On your exchange, choose Withdraw USDC.
+2. Choose Base as the network.
+3. Paste your Stacked address and send.
+
+**Send only USDC on Base.** USDC sent on another network, or any other coin, may not arrive and can be lost. Nervous? Send a small amount first.
+
+Coinbase supports sending USDC on Base directly, with no bridge needed. Many other exchanges do too; look for Base in the network list.
+
+## Already hold crypto somewhere else?
+
+- **USDC on Ethereum mainnet.** Use the [official Base bridge](https://bridge.base.org/) to move it to Base.
+- **Other tokens.** If you hold other tokens on Base, swap them into USDC on any Base-compatible exchange app (Uniswap, Aerodrome and others).
+
+Once USDC shows up on Base, you're ready to sit down.
 
 ## What's next
 

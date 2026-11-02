@@ -19,7 +19,7 @@ flowchart LR
 1. **Leave the table.** Click leave at the table between hands. You can't leave mid-hand; you finish the current hand first. Once you're no longer seated, the withdraw button unlocks.
 2. **Click withdraw.** Sign the transaction from your wallet. The contract sends your stack directly to your wallet — no queue, no Stacked approval, no schedule. The amount is exactly your seat balance at the moment you left.
 
-You pay the gas on the withdrawal — gas is the small network fee for a transaction you sign yourself. On Base, the low-fee network Stacked runs on, gas is typically under a cent.
+Gas is the small network fee for a transaction you sign yourself. If you connected your own wallet, you pay the gas on the withdrawal. On Base, the low-fee network Stacked runs on, it is typically under a cent. If you signed in with Google, X, Discord or email, Stacked covers it.
 
 ## Other ways you end up withdrawing
 
@@ -28,7 +28,7 @@ The same withdraw step is what you use any time a contract is holding your money
 - **You leave a table voluntarily.** The standard case above.
 - **The Host kicks you between hands.** Same flow — you get permission, you click withdraw.
 - **The Host ends the table.** Every seated player gets permission to withdraw their stack.
-- **The Host declined your seat after you deposited.** Your deposit waits in the contract until you click withdraw. See [Deposits](/docs/your-money/deposits).
+- **The Host declined your seat after you deposited.** This can only happen at a table where the Host approves players by hand. Your deposit waits in the contract until you click withdraw. See [Deposits](/docs/your-money/deposits).
 - **The 24-hour emergency exit unlocks.** A separate path for the rare case settlement stalls — see [24-hour emergency exit](/docs/your-money/emergency-exit).
 
 In every case, **Stacked never moves your funds without your signature.** Whether you left, got kicked, the table closed, or you're emergency-exiting, the final click is always yours.

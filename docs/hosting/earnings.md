@@ -24,7 +24,7 @@ When you're ready to pull your share at a table, go into that table's Settings �
 
 Two things worth knowing:
 
-- **You pay the gas.** Gas is the small network fee for an on-chain action. Withdrawing is a transaction you sign from your wallet, so you cover the gas for it on Base. (Gas while hands are settling is on Stacked — you never pay to settle a hand.)
+- **Network fees depend on how you signed in.** Gas is the small network fee for an on-chain action. If you connected your own wallet, withdrawing is a transaction you sign, so you cover the gas for it on Base. If you signed in with Google, X, Discord or email, Stacked covers it. (Gas while hands are settling is always on Stacked. You never pay to settle a hand.)
 - **The balance keeps growing while you wait.** Withdrawing doesn't pause anything. If hands are still settling at the table, your balance restarts climbing the moment after you withdraw.
 
 You can withdraw at any point — every hand, every day, or once at the end of a long-running table. Whatever fits.

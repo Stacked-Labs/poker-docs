@@ -19,13 +19,13 @@ The signature is free — it's a wallet message, not an on-chain transaction. No
 
 ## Don't have a wallet yet?
 
-If you don't have a wallet, Stacked can create an embedded wallet for you. Sign in with an email or a social account and Stacked provisions a wallet behind the scenes. You can use it exactly the same way as a self-custody wallet — deposit USDC, sit at tables, withdraw.
+If you don't have a wallet, Stacked can create an embedded wallet for you. Sign in with an email or a social account and Stacked provisions a wallet behind the scenes. You can use it exactly the same way as a self-custody wallet: deposit USDC, sit at tables, withdraw. Stacked covers the network fees on this wallet, so you don't need to hold ETH for them.
 
 The embedded wallet is yours. You can export the keys later if you ever want to move to a different wallet app.
 
 ## What network and token
 
-Stacked runs on **Base**, an Ethereum-based network built by Coinbase, with very low transaction fees. All real-money tables use **USDC** (a digital dollar pegged 1:1 to USD) on Base.
+Stacked runs on **Base**, an Ethereum-based network built by Coinbase, with very low transaction fees. All real-money tables use **USDC** (a digital dollar that holds a stable value) on Base.
 
 If you're connecting a wallet that supports multiple networks, you'll want it set to Base. Most modern wallets switch networks automatically when an app requests it.
 
