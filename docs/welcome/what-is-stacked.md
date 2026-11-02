@@ -16,7 +16,7 @@ A few ideas tie the whole thing together.
 
 ### Anyone can host
 
-Every table on Stacked is created by a player. **On real-money tables you host, you earn 25% of the platform fee** — paid out on-chain whenever you withdraw. You set the stakes, invite who you want, and approve players as they request a seat. ([How fees work →](/docs/your-money/fees))
+Every table on Stacked is created by a player. **On real-money tables you host, you earn 25% of the platform fee**, paid out on-chain whenever you withdraw. You set the stakes and invite who you want. Players sit down instantly by default, and you can switch to approving each one yourself. ([How fees work →](/docs/your-money/fees))
 
 ### Your money is on-chain, not with us
 

@@ -20,9 +20,9 @@ Two systems are working together the whole time: Stacked runs the live game, and
 
 **Alice** decides to host a table. She connects her wallet, clicks create, picks $0.50 / $1 stakes, sets the mode to real-money, and makes the table public. Stacked gives the table its own smart contract — a small program that holds the money and follows fixed rules — on Base, an Ethereum-based network with very low fees. Creating the table is free: Alice never pays gas (the small network fee for an on-chain action); Stacked covers it.
 
-**Bob** is browsing the lobby. He spots Alice's table, sees the stakes match what he wants to play, and clicks sit. He picks a $100 buy-in. His wallet pops up; he signs the deposit. A few seconds later the contract holds his 100 USDC — a digital dollar that holds a stable value — and Bob appears in Alice's pending list. Alice approves; Bob is seated with 10,000 chips in front of him (1 chip = $0.01).
+**Bob** is browsing the lobby. He spots Alice's table, sees the stakes match what he wants to play, and clicks sit. He picks a $100 buy-in. His wallet pops up; he signs the deposit. A few seconds later the contract holds his 100 USDC, a digital dollar that holds a stable value. Alice left Auto-Accept on, so Bob is seated right away with 10,000 chips in front of him (1 chip = $0.01).
 
-**Carol** does the same: $100 buy-in, Alice approves, seated with 10,000 chips.
+**Carol** does the same: $100 buy-in, seated with 10,000 chips.
 
 Alice doesn't have to play to earn — as soon as hands start running, she earns 25% of the platform fee on every pot. She decides to play too: she takes a seat at her own table, buys in for $100, and the table is three-handed.
 
@@ -57,7 +57,7 @@ If anyone wants to audit the result, the settlement is visible on Basescan — a
 
 ## Leaving
 
-A few hands later, Bob decides he's done. He clicks leave between hands. Bob clicks withdraw, signs the transaction from his wallet, and his current stack moves from the contract back to his wallet as USDC. He pays the Base gas on this — typically under a cent.
+A few hands later, Bob decides he's done. He clicks leave between hands. Bob clicks withdraw, signs the transaction from his wallet, and his current stack moves from the contract back to his wallet as USDC. Bob connected his own wallet, so he pays the Base gas on this, typically under a cent. A player who signed in with Google, X, Discord or email pays nothing; Stacked covers it.
 
 Carol keeps playing. Alice keeps hosting, with her Host fee balance growing as hands settle. When she's ready, she'll withdraw it the same way Bob withdrew his stack.
 
@@ -68,7 +68,7 @@ A few things worth noticing:
 - **Nothing was on-chain while the hand was in progress.** Cards, bets, raises, the showdown — all run on Stacked's servers. Wallet prompts only at the start (deposit) and the end (withdrawal).
 - **The contract is the source of truth for money.** Every player's stack matches the on-chain seat balance after every hand. If the live game ever disagreed with the contract, the contract would win.
 - **It's fast.** Settlement was under 5 seconds. Gameplay isn't slowed down by being on-chain.
-- **Stacked covers the gas where it shouldn't be friction.** Table deployment, settlement: on us. Deposits, withdrawals: on you, because you sign them.
+- **Stacked covers the gas where it shouldn't be friction.** Table deployment, settlement: on us. Deposits, withdrawals: on us too if you signed in with Google, X, Discord or email; on you if you connected your own wallet, because you sign them.
 - **Alice earned the whole time.** A Host's 25% share of the platform fee credits per hand, live, whether or not the Host plays. Multiply by hundreds of hands and that's the hosting side of Stacked.
 
 That's a hand. Multiply by hundreds and the only thing that changes is the cards.

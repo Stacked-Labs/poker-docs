@@ -9,8 +9,8 @@ Real-money tables on Stacked are staked in USDC (a digital dollar that holds a s
 ## Before you start
 
 - A connected wallet. See [Connect a wallet](/docs/getting-started/connect-a-wallet).
-- USDC on Base in that wallet. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
-- A small amount of ETH on Base for gas — the small network fee for a transaction you sign yourself. Gas on Base is typically under a cent per transaction.
+- USDC on Base in that wallet. Click **Add funds** in the header to buy it with a card or send it from an exchange. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
+- Only if you connected your own wallet: a small amount of ETH on Base for network fees (also called gas), the small charge for a transaction you sign yourself. It is typically under a cent per transaction. If you signed in with Google, X, Discord or email, Stacked covers these fees and you don't need ETH.
 
 ## Steps
 
@@ -18,8 +18,7 @@ Real-money tables on Stacked are staked in USDC (a digital dollar that holds a s
 2. **Click sit and choose your buy-in.** You pick how much USDC you want to put on the table. Stakes guide the choice: a common starting point is 50–100 big blinds.
 3. **Sign the deposit.** Your wallet pops up. If this is the first time you've deposited at this specific table, you may sign two transactions: a one-time USDC spending authorization and then the deposit itself. From then on, deposits to this table need only the deposit signature.
 4. **Wait for confirmation.** The deposit confirms on Base in a few seconds.
-5. **Wait for Host approval.** The Host sees your wallet and the buy-in you chose, and approves or declines. If they decline (or never respond), your USDC stays in the contract and you can click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
-6. **Play.** When the Host approves, you're seated. The next hand deals you in.
+5. **Play.** Tables seat you instantly by default, and the next hand deals you in. If the Host has turned off Auto-Accept, you wait for them to approve you first. If they decline (or never respond), your USDC stays in the contract and you can click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
 
 ## During the hand
 
@@ -29,7 +28,7 @@ Between hands, you'll see a brief on-chain settlement indicator. Settlement is f
 
 ## Leaving
 
-When you're done, click leave between hands (you can't leave mid-hand). The contract grants you withdrawal permission and you click withdraw to send your stack back to your wallet. You pay the gas on the withdrawal transaction.
+When you're done, click leave between hands (you can't leave mid-hand). The contract grants you withdrawal permission and you click withdraw to send your stack back to your wallet. If you connected your own wallet, you pay the network fee on the withdrawal. If you signed in with Google, X, Discord or email, Stacked covers it.
 
 ## What's next
 

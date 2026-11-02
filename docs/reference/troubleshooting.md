@@ -16,11 +16,11 @@ If the connect button doesn't respond, refresh the page. If you're using a brows
 
 **Stuck:** Base congestion can briefly slow transactions. Wait a minute and refresh — usually the transaction confirms.
 
-**Failed:** check that your wallet has enough ETH on Base for gas — the small network fee paid to process a transaction. A few cents' worth is plenty. If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.) — try again with the prompt's suggested values.
+**Failed:** if you connected your own wallet, check that it has enough ETH on Base for gas, the small network fee paid to process a transaction. A few cents' worth is plenty. (If you signed in with Google, X, Discord or email, Stacked covers gas, so skip this check.) If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.). Try again with the prompt's suggested values.
 
 ## Deposited, but I'm not seated
 
-You're in the pending list waiting for the Host to approve. The Host sees your wallet and buy-in; most respond quickly. If the Host declines or doesn't get to you, your USDC — a digital dollar that holds a stable value — is safe in the contract; click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
+Most tables seat you instantly, so first try refreshing. If you still see a pending status, this Host has turned off Auto-Accept and approves each player by hand. The Host sees your wallet and buy-in. If the Host declines or doesn't get to you, your USDC, a digital dollar that holds a stable value, is safe in the contract. Click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
 
 ## Disconnected mid-hand
 
@@ -43,9 +43,9 @@ If a hand finishes and the next one doesn't deal for an unusually long time, on-
 Two checks:
 
 - Do you have enough USDC on Base to cover the buy-in? (Not Ethereum mainnet — USDC has to be on Base.)
-- Do you have a small amount of ETH on Base for gas?
+- If you connected your own wallet: do you have a small amount of ETH on Base for gas? (If you signed in with Google, X, Discord or email, Stacked covers gas.)
 
-See [Get USDC on Base](/docs/getting-started/get-usdc-on-base) if your wallet is empty.
+If you're short on USDC, click **Add funds** in the header, or see [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
 
 ## Wrong amount of chips after sitting down
 

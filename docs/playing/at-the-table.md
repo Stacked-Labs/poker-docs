@@ -4,7 +4,7 @@ sidebar_position: 22
 
 # At the table
 
-Once the Host approves you, you're seated and the next hand deals you in.
+Once you're seated, the next hand deals you in.
 
 ## Acting on a hand
 

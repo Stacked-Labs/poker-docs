@@ -19,11 +19,11 @@ Stacked has two modes side by side in the same lobby: Free Play and real-money. 
 
 Free Play uses the same poker engine that runs real-money tables. Same dealer logic, same shuffler, same betting rounds, same UI. If you've spent time on Free Play and then sit down at a real-money table, nothing about the game itself will surprise you.
 
-The Host model is the same too. Anyone can create either kind of table; both require Host approval before a player sits.
+The Host model is the same too. Anyone can create either kind of table. Both seat players instantly by default, and on both the Host can turn off Auto-Accept to approve each player by hand.
 
 ## How they differ
 
-**Money.** Free Play chips are play-money — unlimited, no value, no real wins or losses. Each session starts fresh; there's no balance to track between visits. Real-money chips are backed by USDC (a digital dollar pegged 1:1 to USD) on Base (an Ethereum-based network with very low fees), at a fixed rate of 1 chip = $0.01.
+**Money.** Free Play chips are play-money: unlimited, no value, no real wins or losses. Each session starts fresh; there's no balance to track between visits. Real-money chips are backed by USDC (a digital dollar that holds a stable value) on Base (an Ethereum-based network with very low fees), at a fixed rate of 1 chip = $0.01.
 
 **On-chain activity.** Each real-money table is its own smart contract — a program on Base that holds the money and follows fixed rules no one can override — deployed when the Host creates the table. When you sit, your USDC moves into that contract; when you leave, it moves back to your wallet; in between, every hand settles on-chain. Free Play has no contract and no settlement — chips are tracked off-chain and forgotten when you leave.
 
@@ -42,4 +42,4 @@ You don't have to choose once. Tables show up together in the lobby with a tag i
 
 - [Your first Free Play hand →](/docs/getting-started/first-free-play-hand) — walkthrough.
 - [Your first real-money hand →](/docs/getting-started/first-real-money-hand) — walkthrough including USDC deposit.
-- [Joining a table →](/docs/playing/joining-a-table) — finding a table and getting approved by the Host.
+- [Joining a table →](/docs/playing/joining-a-table): finding a table and taking a seat.

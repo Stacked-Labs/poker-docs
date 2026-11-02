@@ -9,11 +9,11 @@ A lightweight view of what's on the way. No quarter commitments, no firm dates �
 ## Recently shipped
 
 - **Tournaments** — buy-in tournaments alongside cash games, with prize pools settled on-chain. See [Tournaments](/docs/playing/tournaments).
+- **Buy USDC with a card.** Signed-in players can buy USDC, a digital dollar that holds a stable value, with a card inside Stacked. Click **Add funds** in the header. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
 
 ## In progress
 
 - **Run it twice** — for all-in pots at the river, the remaining cards run multiple times to reduce variance. In active development.
-- **In-app onramp** — buy USDC (a digital dollar that holds a stable value) with a card or bank account inside Stacked. Today players bring their own USDC; this removes that step.
 
 ## On the roadmap
 

@@ -78,7 +78,7 @@ Do not use anywhere in player-facing copy:
 3. **Concrete numbers > vague adjectives.** Don't say "fast" — say "typically under 5 seconds, depending on Base network conditions." Don't say "low fees" — say "about $0.001 per hand."
 4. **Translate every developer-internal change to player impact.** Not "we refactored the lobby" — "tables now load faster."
 5. **No exclamation marks.** No emoji. No marketing puffery. Calm, factual, confident.
-6. **One concrete walkthrough per major feature.** A specific scenario with specific numbers ("Alice creates a $1/$2 table, Bob requests a seat, Alice approves, Bob deposits 100 USDC, the contract issues 10,000 chips...") — players model the system from examples, not abstractions.
+6. **One concrete walkthrough per major feature.** A specific scenario with specific numbers ("Alice creates a $1/$2 table, Bob deposits 100 USDC and is seated, the contract issues 10,000 chips..."). Players model the system from examples, not abstractions.
 
 ## Page-opening template
 
@@ -104,20 +104,20 @@ Do not use anywhere in player-facing copy:
 
 **We can claim, today:**
 - Per-hand on-chain settlement, every hand. Typically under 5 seconds, depending on Base network conditions.
-- **Stacked sponsors all backend gas: settlement gas (every hand) and table-deployment gas (when a Host creates a table) are paid by Stacked, not the player or Host.** Players only pay gas on actions they sign themselves — depositing into a table, withdrawing back to their wallet. Phrase as: "Stacked covers the gas, so you never pay to settle a hand" / "Creating a table is free — Stacked covers the deployment cost."
+- **Stacked sponsors all backend gas: settlement gas (every hand) and table-deployment gas (when a Host creates a table) are paid by Stacked, not the player or Host.** Players who signed in with Google, X, Discord or email (embedded wallet) pay no gas at all: deposits and withdrawals are sponsored too. Players who connected their own wallet pay gas on actions they sign themselves (depositing into a table, withdrawing back to their wallet), so they need a little ETH on Base. Always state the split; never write "you never need ETH". Phrase as: "Stacked covers the gas, so you never pay to settle a hand" / "Creating a table is free. Stacked covers the deployment cost."
 - ~$0.001 per settlement (Base gas).
 - 24-hour emergency self-withdraw if a settlement stalls — **lead with this on the custody/safety page.** It's the single strongest trust story.
 - Platform fee details (cash: 4% of pot, BB-tiered caps, 75/25 split; tournaments: buy-in tier schedule, 75/25 split) live on the dedicated Fees page (/docs/your-money/fees) only. Everywhere else: "Hosts earn 25% of the platform fee." Free Play pages don't mention the platform fee at all. Source of truth: cash fees in `poker-server/poker/rake.go`; tournament fee tiers in `poker-server/transport/http/tournament_handler.go` (`cryptoTournamentRakeBps`), not the older smart-contract docs.
 - Both BYO and embedded wallets supported.
 - Any popular wallet works (Coinbase Wallet, MetaMask, Rainbow, WalletConnect). Don't name the wallet-integration vendor.
 - Free table creation (gas sponsored at launch — phrase as current behavior, not a permanent guarantee).
-- All tables require Host approval before a player sits.
+- Tables auto-seat by default (Auto-Accept is on for every new table, cash and Free Play). A Host can turn Auto-Accept off in the table's Settings tab and approve each player by hand. Never write that every table requires Host approval.
 - Cash games and buy-in tournaments. Tournament mechanics and fees may be documented (see the Tournaments page and the tournament section of the Fees page).
 
 **We do not say:**
 - **No "no KYC" marketing claim.** Don't state or imply Stacked has "no KYC" / "no identity verification" / "no account verification." Stacked isn't implementing KYC today but **reserves the right to require identity checks later**, so we never promise their absence. Equally, don't announce KYC. Stay silent on KYC in player copy; strip any no-KYC claims if found.
 - No specific list of blocked jurisdictions until legal finalizes — the "Where Stacked is available" page ships with a placeholder.
-- No fiat-onramp claims that we can't back (need a separate confirmation pass before writing the deposit page).
+- No fiat-onramp claims beyond what ships: signed-in players can buy USDC by card inside the app (the "Add funds" button in the header, and at a table or tournament when short). Don't promise Apple Pay, Google Pay or bank transfer, and don't name the payment provider.
 - Contract addresses live on the **Smart contracts** technical reference page (/docs/reference/smart-contracts) only — both Base mainnet and Base Sepolia. Keep raw addresses and implementation/beacon/admin details on that page; never put them in player-voice pages.
 - No "provably fair" language. Today's RNG is server-side; commit-reveal / on-chain shuffle is on the roadmap, framed as "coming."
 - No claim that hands settle "instantly" — settlement is fast, but not synchronous to gameplay.

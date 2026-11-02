@@ -44,7 +44,7 @@ A tournament can be public, where anyone can register, or private. A private tou
 
 ## Gas
 
-Gas is the small network fee for an on-chain action. Stacked covers the gas to open a tournament and to pay out the prizes, so neither the Host nor the winners pay for those. You pay gas only on the actions you sign yourself — registering (paying your buy-in), buying back in, unregistering, or claiming a prize that wasn't delivered automatically.
+Gas is the small network fee for an on-chain action. Stacked covers the gas to open a tournament and to pay out the prizes, so neither the Host nor the winners pay for those. If you connected your own wallet, you pay gas only on the actions you sign yourself: registering (paying your buy-in), buying back in, unregistering, or claiming a prize that wasn't delivered automatically. If you signed in with Google, X, Discord or email, Stacked covers those too.
 
 ## Walkthrough
 

@@ -16,8 +16,7 @@ You don't need USDC. Free Play has no real money involved.
 
 1. **Open the lobby.** You'll see a list of active tables, with each tagged either Free Play or real-money. Look for a Free Play table at stakes you're comfortable with.
 2. **Click sit.** A prompt asks how many chips you want to start with. Pick any amount — Free Play chips have no real value.
-3. **Wait for the Host.** Every table on Stacked requires Host approval, including Free Play. You'll see your pending status at the table view; most Hosts respond quickly.
-4. **Play.** When the Host approves, you're seated. The next hand deals you in.
+3. **Play.** Tables seat you instantly by default, Free Play included. The next hand deals you in. If the Host has turned off Auto-Accept, you'll see a pending status until they approve you.
 
 ## What's the same as real-money
 
