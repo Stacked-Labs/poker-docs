@@ -15,13 +15,13 @@ The contracts are intentionally simple. They have:
 - Short functions with narrow input paths.
 - Narrow money paths. Every route that moves USDC out of a table pays it to the player it belongs to, to the Host's earnings, or to the platform fee when a hand settles. There is no function that sends your balance anywhere else.
 - Extensive unit-test coverage.
-- A 24-hour emergency exit that cannot be paused or switched off.
+- A 24-hour emergency exit for seated players that cannot be paused or switched off.
 
 ### What Stacked can change, stated plainly
 
 Table contracts are deployed from a shared implementation, and Stacked can update that implementation — an update applies to tables that already exist. We hold that ability on purpose: it's how a bug gets fixed for everyone at once, instead of stranding money at every open table. It is also a real power, and you should price it in. The honest version of our security story is "narrow money paths and a fallback you control" — not "nobody can touch it."
 
-Stacked can also close a table in an emergency. The only thing that action can do is return every player's balance to their own wallet.
+Stacked can also close a table in an emergency. The only thing that action can do is return every player's balance to their own wallet. And Stacked can pause deposits and ordinary withdrawals in an emergency: that delays a withdrawal, but it can't move money anywhere else, and it can't block the 24-hour emergency exit.
 
 **An external audit is on the roadmap and not yet complete.** Until that's done, the security story rests on simplicity, testing, the emergency exit, and what you can verify yourself on Basescan.
 

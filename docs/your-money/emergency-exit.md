@@ -27,6 +27,12 @@ The 24-hour clock resets every time a hand settles successfully on-chain at your
 
 If something goes wrong and settlements stop — for any reason — the clock starts on the last successful one. Once 24 hours have passed without another, the emergency exit unlocks for every player seated at the table.
 
+## Who can use it
+
+The emergency exit is for players still seated at the table. The clock counts from the last hand settled at the whole table, so while other players keep playing there and hands keep settling, it stays locked — and you can leave and withdraw the ordinary way.
+
+If you've already left the table but haven't withdrawn, use the ordinary withdrawal. If Stacked has paused withdrawals in an emergency, your stack stays in the contract, in your name, until they resume. A pause can delay a withdrawal; it can't send your money anywhere else.
+
 ## How to use it
 
 Open the table's **Settings → Players** tab. Once the 24-hour window has elapsed without a settlement, an emergency-withdraw option appears there. Click it, sign the transaction from your wallet, and the contract releases your current stack back to your wallet.

@@ -57,7 +57,7 @@ If anyone wants to audit the result, the settlement is visible on Basescan — a
 
 ## Leaving
 
-A few hands later, Bob decides he's done. He clicks leave between hands. Bob clicks withdraw, signs the transaction from his wallet, and his current stack moves from the contract back to his wallet as USDC. Bob connected his own wallet, so he pays the Base gas on this, typically under a cent. A player who signed in with Google, X, Discord or email pays nothing; Stacked covers it.
+A few hands later, Bob decides he's done. He clicks leave between hands. Bob clicks withdraw, signs the transaction from his wallet, and his current stack moves from the contract back to his wallet as USDC. Bob connected his own wallet, so he pays the Base gas on this, typically under a cent. A player who signed in with a social account, email or phone pays nothing; Stacked covers it.
 
 Carol keeps playing. Alice keeps hosting, with her Host fee balance growing as hands settle. When she's ready, she'll withdraw it the same way Bob withdrew his stack.
 
@@ -66,9 +66,9 @@ Carol keeps playing. Alice keeps hosting, with her Host fee balance growing as h
 A few things worth noticing:
 
 - **Nothing was on-chain while the hand was in progress.** Cards, bets, raises, the showdown — all run on Stacked's servers. Wallet prompts only at the start (deposit) and the end (withdrawal).
-- **The contract is the source of truth for money.** Every player's stack matches the on-chain seat balance after every hand. If the live game ever disagreed with the contract, the contract would win.
+- **The contract holds the money.** Every player's stack matches the on-chain seat balance after every hand, and only that player can withdraw it.
 - **It's fast.** Settlement was under 5 seconds. Gameplay isn't slowed down by being on-chain.
-- **Stacked covers the gas where it shouldn't be friction.** Table deployment, settlement: on us. Deposits, withdrawals: on us too if you signed in with Google, X, Discord or email; on you if you connected your own wallet, because you sign them.
+- **Stacked covers the gas where it shouldn't be friction.** Table deployment, settlement: on us. Deposits, withdrawals: on us too if you signed in with a social account, email or phone; on you if you connected your own wallet, because you sign them.
 - **Alice earned the whole time.** A Host's 25% share of the platform fee credits per hand, live, whether or not the Host plays. Multiply by hundreds of hands and that's the hosting side of Stacked.
 
 That's a hand. Multiply by hundreds and the only thing that changes is the cards.
