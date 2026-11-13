@@ -28,7 +28,7 @@ A few practical consequences:
 
 ## What the contract can and can't do
 
-The contract's logic is fixed at deployment. No party — including Stacked — can change a deployed table's rules.
+Players and Hosts can't change a table's contract rules. Stacked can update the shared code every table runs on — see [Code and contracts](#code-and-contracts) below for what that does and doesn't change.
 
 **The contract can:**
 
@@ -41,8 +41,8 @@ The contract's logic is fixed at deployment. No party — including Stacked — 
 
 - Send your funds anywhere outside its own rules — your stack only ever returns to your wallet.
 - Change the platform fee schedule on its own.
-- Hold your money against your will once you've left or after the 24-hour emergency window unlocks.
-- Be paused in a way that blocks the 24-hour emergency exit. Normal withdrawals can be paused; that fallback cannot.
+- Send your stack to anyone but you, once you've left or after the 24-hour emergency window unlocks.
+- Be paused in a way that blocks the 24-hour emergency exit. Normal withdrawals can be paused; that fallback cannot. The emergency exit is for players still seated, so if you've already left a table while withdrawals are paused, your stack waits in the contract, in your name, until they resume.
 
 ## Who does what
 
@@ -52,7 +52,7 @@ Three parties touch a real-money table. Each has a defined and limited role:
 |---|---|---|
 | **You (player)** | Deposit, play, withdraw, emergency-exit after 24h | Move another player's funds; change table rules |
 | **Host** | Approve players, kick, change stakes between hands, pause or end the table, withdraw the platform fee | Move any player's stack; change the platform fee schedule |
-| **Stacked** | Run the live game, deploy and operate tables, update table contract code, close a table in an emergency (which returns every balance to its owner) | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules; switch off the 24-hour emergency exit |
+| **Stacked** | Run the live game, deploy and operate tables, update table contract code, pause deposits and ordinary withdrawals in an emergency, close a table in an emergency (which returns every balance to its owner) | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules; switch off the 24-hour emergency exit |
 
 There are two systems at work, each doing what it's good at: Stacked runs the game — dealing, betting, turn order — while the on-chain contract holds the money and records each hand's result. Stacked can move chips between seat balances inside the contract as hands settle, but it can never redirect them anywhere outside the contract's rules.
 
@@ -70,7 +70,7 @@ If you want to see the code for a specific table, open its contract address on B
 
 ## Contract addresses
 
-Each real-money table's own contract address is shown in that table's settings — open it on Basescan to read the code. A single canonical list of Stacked's contracts will be published once they're finalized.
+Each real-money table's own contract address is shown in that table's settings — open it on Basescan to read the code. The shared factories and beacons behind every table and tournament are listed on [Smart contracts](/docs/reference/smart-contracts).
 
 ## What's next
 

@@ -16,7 +16,8 @@ Tournaments run on Base (an Ethereum-based network with very low fees), and each
 
 - **Register.** While registration is open, you pay the buy-in to enter. The buy-in is all-inclusive: the platform fee is already built into it, so there's nothing extra added on top.
 - **Late registration.** Most tournaments keep registration open for a window after play begins, so you can still join a little late.
-- **Re-entry.** If you bust during the late-registration window, you can buy back in once for another shot (depends on the tournament configuration). Once the window closes, busting out is final.
+- **Re-entry.** If you bust during the late-registration window, you can buy back in for another shot, as many times as the Host allows: from 1 to 10 re-entries, or none at all. Once the window closes, busting out is final.
+- **Free Tickets.** A Host can hand out free seats. A Free Ticket covers your first entry; any re-entry costs the normal buy-in. See [Free Tickets](/docs/hosting/free-tickets).
 - **Play down.** Tables combine as players are knocked out, until everyone left is at one final table and then one player has all the chips.
 - **Get paid.** When the tournament ends, the top finishers receive their share of the prize pool, sent straight to their wallets on-chain.
 
@@ -44,7 +45,7 @@ A tournament can be public, where anyone can register, or private. A private tou
 
 ## Gas
 
-Gas is the small network fee for an on-chain action. Stacked covers the gas to open a tournament and to pay out the prizes, so neither the Host nor the winners pay for those. If you connected your own wallet, you pay gas only on the actions you sign yourself: registering (paying your buy-in), buying back in, unregistering, or claiming a prize that wasn't delivered automatically. If you signed in with Google, X, Discord or email, Stacked covers those too.
+Gas is the small network fee for an on-chain action. Stacked covers the gas to open a tournament and to pay out the prizes, so neither the Host nor the winners pay for those. If you connected your own wallet, you pay gas only on the actions you sign yourself: registering (paying your buy-in), buying back in, unregistering, or claiming a prize that wasn't delivered automatically. If you signed in with a social account, email or phone, Stacked covers those too.
 
 ## Walkthrough
 

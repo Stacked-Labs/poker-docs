@@ -23,7 +23,7 @@ Card shuffling happens on Stacked's servers using cryptographic randomness. On-c
 ## Playing
 
 **Do I need a wallet to play Free Play?**
-Yes — sign-in is wallet-based. But Free Play doesn't require USDC, a digital dollar that holds a stable value. The embedded wallet path lets you sign in with email or a social account if you don't have a wallet yet.
+No. You can play Free Play as a guest: open the lobby or a friend's table link, pick a name and sit down. You need a wallet to play for real money with USDC, a digital dollar that holds a stable value. If you don't have one, sign in with a social account, email or phone and Stacked creates one for you.
 
 **Do I have to wait for the Host to approve me?**
 Usually not. Tables seat you instantly by default. A Host can turn off Auto-Accept to approve each player by hand, and at those tables you wait for the Host. See [Joining a table](/docs/playing/joining-a-table).
@@ -57,7 +57,7 @@ Tokens usable as bonus prizes come from a short curated list, so you can't add o
 The platform fee applies on real-money tables, taken from the pot and capped per hand. Hosts earn 25% of the fee on their tables. The platform fee also covers the gas (the network fee for an on-chain action) that Stacked sponsors on your behalf — the gas to settle every hand and to create a table — which is why settling hands and creating tables are free for everyone at the table. Full details on [How fees work](/docs/your-money/fees).
 
 **Do I pay gas?**
-Gas is the network fee for an on-chain action. If you signed in with Google, X, Discord or email, no: Stacked covers it. If you connected your own wallet, you pay gas only on deposits and withdrawals you sign yourself, so keep a small amount of ETH on Base. Either way, the platform fee covers the gas Stacked sponsors on settlement (every hand) and on table creation (when a Host creates a table).
+Gas is the network fee for an on-chain action. If you signed in with a social account, email or phone, no: Stacked covers it. If you connected your own wallet, you pay gas only on deposits and withdrawals you sign yourself, so keep a small amount of ETH on Base. Either way, the platform fee covers the gas Stacked sponsors on settlement (every hand) and on table creation (when a Host creates a table).
 
 **Where do I get USDC on Base?**
 Once you're signed in, click **Add funds** in the header. You can buy USDC with a card, or send it from an exchange like Coinbase (choose Base as the network). See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).

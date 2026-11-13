@@ -16,7 +16,7 @@ If the connect button doesn't respond, refresh the page. If you're using a brows
 
 **Stuck:** Base congestion can briefly slow transactions. Wait a minute and refresh — usually the transaction confirms.
 
-**Failed:** if you connected your own wallet, check that it has enough ETH on Base for gas, the small network fee paid to process a transaction. A few cents' worth is plenty. (If you signed in with Google, X, Discord or email, Stacked covers gas, so skip this check.) If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.). Try again with the prompt's suggested values.
+**Failed:** if you connected your own wallet, check that it has enough ETH on Base for gas, the small network fee paid to process a transaction. A few cents' worth is plenty. (If you signed in with a social account, email or phone, Stacked covers gas, so skip this check.) If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.). Try again with the prompt's suggested values.
 
 ## Deposited, but I'm not seated
 
@@ -43,7 +43,7 @@ If a hand finishes and the next one doesn't deal for an unusually long time, on-
 Two checks:
 
 - Do you have enough USDC on Base to cover the buy-in? (Not Ethereum mainnet — USDC has to be on Base.)
-- If you connected your own wallet: do you have a small amount of ETH on Base for gas? (If you signed in with Google, X, Discord or email, Stacked covers gas.)
+- If you connected your own wallet: do you have a small amount of ETH on Base for gas? (If you signed in with a social account, email or phone, Stacked covers gas.)
 
 If you're short on USDC, click **Add funds** in the header, or see [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
 

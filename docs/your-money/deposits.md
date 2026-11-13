@@ -10,7 +10,7 @@ A deposit is how you move USDC — a digital dollar that holds a stable value �
 
 - A connected wallet — any popular wallet (Coinbase Wallet, MetaMask, Rainbow, WalletConnect, and others), or the embedded wallet Stacked creates for you if you don't have one.
 - USDC on Base in that wallet. Base is an Ethereum-based network with very low fees. Signed in? Click **Add funds** in the header to buy USDC with a card or send it from an exchange. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
-- Network fees depend on how you signed in. A network fee (also called gas) is the small charge for recording a transaction on Base. If you signed in with Google, X, Discord, email or another sign-in option (not your own wallet), Stacked covers it. If you connected your own wallet, you pay it, so keep a small amount of ETH on Base in that wallet. It is typically under a cent.
+- Network fees depend on how you signed in. A network fee (also called gas) is the small charge for recording a transaction on Base. If you signed in with a social account, email or phone (not your own wallet), Stacked covers it. If you connected your own wallet, you pay it, so keep a small amount of ETH on Base in that wallet. It is typically under a cent.
 
 ## How depositing works
 
@@ -28,7 +28,7 @@ flowchart LR
 3. **Wait for confirmation.** The deposit confirms on Base in a few seconds.
 4. **Sit down.** Tables seat you instantly by default. Your chips show up at the table and the next hand deals you in.
 
-If you connected your own wallet, you pay the network fee on the deposit because it's a transaction you sign. If you signed in with Google, X, Discord or email, Stacked covers it. Either way, the fee to settle each hand once you're seated is on Stacked.
+If you connected your own wallet, you pay the network fee on the deposit because it's a transaction you sign. If you signed in with a social account, email or phone, Stacked covers it. Either way, the fee to settle each hand once you're seated is on Stacked.
 
 ## If the Host approves players by hand
 
