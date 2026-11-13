@@ -70,7 +70,7 @@ If you want to see the code for a specific table, open its contract address on B
 
 ## Contract addresses
 
-Each real-money table's own contract address is shown in that table's settings — open it on Basescan to read the code. A single canonical list of Stacked's contracts will be published once they're finalized.
+Each real-money table's own contract address is shown in that table's settings — open it on Basescan to read the code. The shared factories and beacons behind every table and tournament are listed on [Smart contracts](/docs/reference/smart-contracts).
 
 ## What's next
 
