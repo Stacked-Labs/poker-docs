@@ -2,29 +2,23 @@
 sidebar_position: 50
 ---
 
+import MoneyPath from '@site/src/components/MoneyPath';
+
 # How custody works
 
-Your USDC — a digital dollar that holds a stable value — sits in a smart contract on Base, not in a Stacked-controlled account. A smart contract is a small program that lives on-chain and can only do what its code allows.
+Every real-money buy-in sits in that table's own contract, not in a Stacked Poker account. A smart contract is a small program that can only do what its code allows.
 
 ## What holds your money
 
-Every real-money table on Stacked is its own smart contract, deployed to Base (an Ethereum-based network with very low fees) when the Host creates the table. When you sit down, your buy-in moves into that table's contract. When you leave, it moves back to your wallet. While you're playing, every settled hand updates your seat balance inside the contract.
+Every real-money table on Stacked is its own smart contract, deployed to Base (an Ethereum-based network with very low fees) when the Host creates the table. When you buy in, your money moves into that table's contract. When you stand up, your table stack returns to your wallet balance. At a cash table, every settled hand updates your table stack inside the contract.
 
-```mermaid
-flowchart LR
-    W1[Your wallet] -- "Deposit (you sign)" --> C["Table contract<br/>on Base"]
-    C -- "Withdraw (you sign)" --> W2[Your wallet]
-```
-
-Each hand settles *inside* the contract — your seat balance updates on-chain after every hand played.
-
-
+<MoneyPath />
 
 A few practical consequences:
 
-- **Stacked itself never holds your money.** It sits in the contract; only the contract's rules can move it.
-- **One contract per table.** If you play at three real-money tables, your funds are held across three separate contracts. Leaving one doesn't affect any other.
-- **Free Play has no contract.** Play-money chips aren't tracked on-chain. Only real-money tables involve a contract.
+- **Stacked itself never holds your money.** It sits in the contract, and only the contract's rules can move it.
+- **One contract per table.** If you play at three real-money tables, your money is held across three separate contracts. Leaving one doesn't affect any other.
+- **Free Play has no contract.** Play chips aren't tracked onchain. Only real-money tables involve a contract.
 
 ## What the contract can and can't do
 
@@ -32,17 +26,17 @@ Players and Hosts can't change a table's contract rules. Stacked can update the 
 
 **The contract can:**
 
-- Accept your deposit when you sit down.
-- Update seat balances on-chain after each hand.
-- Release your stack back to your wallet when you withdraw.
-- Release your stack via the [emergency exit](/docs/your-money/emergency-exit) if settlement stalls for 24 hours.
+- Accept your buy-in when you sit down.
+- Update table stacks onchain after each hand at a cash table.
+- Return your table stack to your wallet balance when you stand up.
+- Release your stack through the [24-hour exit](/docs/your-money/emergency-exit) if hands stop settling for 24 hours.
 
 **The contract cannot:**
 
-- Send your funds anywhere outside its own rules — your stack only ever returns to your wallet.
+- Send your money anywhere outside its own rules. Your table stack only ever returns to you.
 - Change the platform fee schedule on its own.
-- Send your stack to anyone but you, once you've left or after the 24-hour emergency window unlocks.
-- Be paused in a way that blocks the 24-hour emergency exit. Normal withdrawals can be paused; that fallback cannot. The emergency exit is for players still seated, so if you've already left a table while withdrawals are paused, your stack waits in the contract, in your name, until they resume.
+- Send your stack to anyone but you, once you've left or after the 24-hour exit unlocks.
+- Be paused in a way that blocks the 24-hour exit. Ordinary returns to your wallet can be paused; the 24-hour exit cannot. The exit is for players still seated, so if you've already left a table while returns are paused, your stack waits in the contract, in your name, until they resume.
 
 ## Who does what
 
@@ -50,44 +44,30 @@ Three parties touch a real-money table. Each has a defined and limited role:
 
 | Party | What they can do | What they can't do |
 |---|---|---|
-| **You (player)** | Deposit, play, withdraw, emergency-exit after 24h | Move another player's funds; change table rules |
-| **Host** | Approve players, kick, change stakes between hands, pause or end the table, withdraw the platform fee | Move any player's stack; change the platform fee schedule |
-| **Stacked** | Run the live game, deploy and operate tables, update table contract code, pause deposits and ordinary withdrawals in an emergency, close a table in an emergency (which returns every balance to its owner) | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules; switch off the 24-hour emergency exit |
+| **You (player)** | Buy in, play, stand up, use the 24-hour exit | Move another player's money; change table rules |
+| **Host** | Approve players if they turn off auto-seating, kick, change stakes between hands, pause or end the table, collect their share of the platform fee | Move any player's stack; change the platform fee schedule |
+| **Stacked** | Run the live game, deploy and operate tables, update table contract code, pause buy-ins and ordinary returns to your wallet in an emergency, close a table in an emergency (which returns every balance to its owner) | Hold player money; move money outside the contract's rules; switch off the 24-hour exit |
 
-There are two systems at work, each doing what it's good at: Stacked runs the game — dealing, betting, turn order — while the on-chain contract holds the money and records each hand's result. Stacked can move chips between seat balances inside the contract as hands settle, but it can never redirect them anywhere outside the contract's rules.
-
-## Stacked vs club apps
-
-In a club app, the club or its agent holds everyone's balance. On Stacked, your Host runs the game and never touches the money.
-
-| | Club apps | Stacked |
-|---|---|---|
-| **Who holds buy-ins** | The club or its agent. | The table's own contract, on-chain. |
-| **Cashing out** | Ask the agent and wait. | You withdraw and sign it yourself. |
-| **If the app goes quiet** | Your balance can go with it. | Withdraw it yourself after 24 hours. |
-| **What the Host earns** | Agent margins you rarely see. | 25% of the platform fee, shown up front. |
-| **Proof** | Their word. | Every hand settles on-chain, where anyone can read it. |
-
-This is about real-money tables. Free Play has no money to hold.
+There are two systems at work, each doing what it's good at. Stacked's servers run the game: dealing, betting and turn order. The table's contract holds the money and records each cash-table hand's result.
 
 ## Code and contracts
 
-Stacked's table contracts are deployed and source-verified on [Basescan](https://basescan.org), so the actual code each contract runs is readable on the block explorer. We don't currently maintain a public GitHub repo for the contracts — that may change later.
+Stacked's table contracts are deployed and source-verified on [Basescan](https://basescan.org), so the actual code each contract runs is readable on the block explorer. We don't currently maintain a public GitHub repo for the contracts. That may change later.
 
-The contracts are intentionally simple: short functions, narrow deposit and withdrawal paths, and no route that sends your balance anywhere but back to you. They have extensive unit-test coverage.
+The contracts are intentionally simple: short functions, narrow paths in and out, and no route that sends your money anywhere but back to you. They have extensive unit-test coverage.
 
-Table contracts are deployed from a shared implementation that Stacked can update, and an update applies to tables that already exist — that's how a bug gets fixed for everyone at once rather than stranding money at every open table. We'd rather tell you that than let you find it on the block explorer. What it doesn't change: the money paths still only ever pay you, and the 24-hour emergency exit still can't be switched off. See [Security & contracts](/docs/about/security) for the full picture.
+Table contracts are deployed from a shared implementation that Stacked can update, and an update applies to tables that already exist. That's how a bug gets fixed for everyone at once rather than stranding money at every open table. We'd rather tell you that than let you find it on the block explorer. What it doesn't change: the money paths still only ever pay you, and the 24-hour exit still can't be switched off. See [Security and contracts](/docs/about/security) for the full picture.
 
-**An external audit is on the roadmap and not yet complete.** Until that audit lands, the trust story rests on three things: testing, narrow money paths, and the 24-hour emergency exit.
+**An external audit is on the roadmap and not yet complete.** Until that audit lands, the trust story rests on three things: testing, narrow money paths, and the 24-hour exit.
 
 If you want to see the code for a specific table, open its contract address on Basescan and read it directly.
 
 ## Contract addresses
 
-Each real-money table's own contract address is shown in that table's settings — open it on Basescan to read the code. The shared factories and beacons behind every table and tournament are listed on [Smart contracts](/docs/reference/smart-contracts).
+Each real-money table's own contract address is shown in that table's settings. Open it on Basescan to read the code. The shared factories and beacons behind every table and tournament are listed on [Smart contracts](/docs/reference/smart-contracts).
 
 ## What's next
 
-- [24-hour emergency exit →](/docs/your-money/emergency-exit) — the safety net behind on-chain custody.
-- [Per-hand settlement →](/docs/your-money/settlement) — what happens on-chain after every hand.
-- [Deposits →](/docs/your-money/deposits) and [Withdrawals →](/docs/your-money/withdrawals) — the ordinary paths in and out.
+- [The 24-hour exit →](/docs/your-money/emergency-exit): the safety net behind your table's contract.
+- [How hands settle →](/docs/your-money/settlement): what happens onchain after every cash-table hand.
+- [Buying in →](/docs/your-money/deposits) and [Cash out →](/docs/your-money/withdrawals): the ordinary paths in and out.

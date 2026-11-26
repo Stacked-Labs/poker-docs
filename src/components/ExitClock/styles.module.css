@@ -1,0 +1,92 @@
+.figure {
+  margin: 1.75rem 0;
+  padding: 22px 20px 18px;
+  border: 1px solid var(--stacked-line);
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+}
+
+.track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
+}
+
+/* The rail the steps sit on */
+.track::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--stacked-felt) 0 34%, var(--ifm-color-emphasis-300) 34% 100%);
+}
+
+.step {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding-right: 16px;
+  margin: 0;
+  min-width: 0;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ifm-background-surface-color);
+  border: 3px solid var(--stacked-felt);
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.open {
+  background: var(--stacked-felt);
+}
+
+.when {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.what {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--ifm-color-content-secondary);
+}
+
+[data-theme="dark"] .dot {
+  border-color: var(--stacked-act);
+}
+
+[data-theme="dark"] .open {
+  background: var(--stacked-act);
+}
+
+@media (max-width: 640px) {
+  .track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding-left: 28px;
+  }
+  .track::before {
+    top: 8px;
+    bottom: 8px;
+    left: 7px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: var(--ifm-color-emphasis-300);
+  }
+  .dot {
+    position: absolute;
+    left: -28px;
+    top: 2px;
+    margin: 0;
+  }
+}

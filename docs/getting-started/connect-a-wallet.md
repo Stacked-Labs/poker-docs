@@ -2,36 +2,38 @@
 sidebar_position: 11
 ---
 
-# Connect a wallet
+# Sign in
 
-You need a wallet to play for real money or host a real-money table. (Free Play doesn't need one — you can play as a guest.) There are two paths — bring an existing wallet or have Stacked create one for you.
+Sign in to play for real money or to host a real-money table. Free Play needs no signup: you can play as a guest.
 
-## Bring your own wallet
+There are two ways in: bring a wallet you already have, or let Stacked Poker create one for you. A wallet is the app that holds your USDC, a digital dollar that holds a stable value.
 
-If you already have a wallet, connect it from the Stacked landing page. Stacked supports popular wallets — including **Coinbase Wallet**, **MetaMask**, **Rainbow**, **WalletConnect**-compatible wallets, and others.
+## Sign in with your own wallet
 
-When you click connect, two things happen:
+If you already have a wallet, sign in with it from the Stacked home page. Stacked works with popular wallets, including **Coinbase Wallet**, **MetaMask**, **Rainbow**, **WalletConnect**-compatible wallets, and others.
 
-1. Your wallet pops up to authorize the connection.
-2. You sign a short message proving you control the wallet — this is the Stacked sign-in. You sign in by signing a short message with your wallet. The signed message is how Stacked knows it's you on subsequent visits.
+When you choose your wallet, two things happen:
 
-The signature is free — it's a wallet message, not an on-chain transaction. No gas, no USDC needed at this step.
+1. Your wallet pops up to confirm it's you.
+2. You sign a short message proving you control the wallet. That signed message is how Stacked knows it's you on later visits.
 
-## Don't have a wallet yet?
+The signature is free. It's a wallet message, not an onchain transaction, so there's no network fee and you don't need any USDC at this step.
 
-If you don't have a wallet, Stacked can create an embedded wallet for you. Sign in with Google, Discord, Telegram, X, Apple, Twitch, email or your phone number, and Stacked provisions a wallet behind the scenes. Each sign-in method gets its own wallet, so sign in the same way every time to see the same balance. You can use it exactly the same way as a self-custody wallet: deposit USDC, sit at tables, withdraw. Stacked covers the network fees on this wallet, so you don't need to hold ETH for them.
+## No wallet yet?
 
-The embedded wallet is yours. You can export the keys later if you ever want to move to a different wallet app.
+Sign in with Google, Discord, Telegram, X, Apple, Twitch, email or your phone number, and Stacked creates a wallet for you. Each sign-in method gets its own wallet, so sign in the same way every time to see the same balance. You use it just like any other wallet: add funds, take a seat, cash out. Stacked covers the network fees on this wallet, so you don't need to hold any ETH, the coin that pays those fees on Base.
 
-## What network and token
+It's your wallet. You can export its keys later if you ever want to move to a different wallet app.
 
-Stacked runs on **Base**, an Ethereum-based network built by Coinbase, with very low transaction fees. All real-money tables use **USDC** (a digital dollar that holds a stable value) on Base.
+## Network and token
 
-If you're connecting a wallet that supports multiple networks, you'll want it set to Base. Most modern wallets switch networks automatically when an app requests it.
+Real-money tables use USDC on Base, an Ethereum-based network with very low fees.
+
+If your wallet supports several networks, set it to Base. Most modern wallets switch networks automatically when an app asks.
 
 ## What's next
 
-- [Get USDC on Base →](/docs/getting-started/get-usdc-on-base) — funding your wallet for real-money tables.
-- [Your first Free Play hand →](/docs/getting-started/first-free-play-hand) — no USDC required.
-- [Joining a table →](/docs/playing/joining-a-table) — once your wallet is connected.
-- [Host a table →](/docs/hosting/overview) — Hosts earn 25% of the platform fee on real-money play.
+- [Add funds →](/docs/getting-started/get-usdc-on-base): put USDC in your wallet balance for real-money tables.
+- [Your first Free Play hand →](/docs/getting-started/first-free-play-hand): no USDC needed.
+- [Joining a table →](/docs/playing/joining-a-table): once you're signed in.
+- [Host a table →](/docs/hosting/overview): Hosts earn 25% of the platform fee on real-money play.

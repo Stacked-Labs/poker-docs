@@ -7,7 +7,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Crypto-native poker, real cash games settled in USDC on Base. Built for players, not converts."
+      description="Help for Stacked Poker: how to play, host a game, and where your money sits."
     >
       <main>
         <HomepageLanding />

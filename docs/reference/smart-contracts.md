@@ -4,16 +4,16 @@ sidebar_position: 84
 
 # Smart contracts
 
-The addresses of the on-chain contracts Stacked runs on Base, so anyone can read the code and verify activity for themselves. This is a technical reference — you don't need anything here to play.
+This page lists the addresses of the onchain contracts behind Stacked Poker's real-money tables and tournaments, so anyone can read the code and check activity for themselves. It is a technical reference. You don't need anything here to play.
 
 ## How the contracts are organized
 
 Stacked uses two independent contract systems on Base, an Ethereum-based network with very low fees:
 
 - **Cash tables.** Each real-money cash table is its own contract, created by a shared **PokerFactory** when the Host creates the table. You can open any table's contract on Basescan from the table view.
-- **Tournaments.** Each tournament is its own contract, created by a shared **TournamentFactory** when the tournament opens. The tournament system runs its own separate operator registry, so a tournament issue can never affect cash-table funds.
+- **Tournaments.** Each tournament is its own contract, created by a shared **TournamentFactory** when the tournament opens, separate from the cash-table contracts.
 
-In both systems, every table or tournament runs the code its **beacon** points to. The factory and beacon addresses below stay fixed. The implementation addresses change whenever Stacked updates the contract code (see [Security & contracts](/docs/about/security)), so the live one is always what the factory or beacon reports on Basescan: use **Read as Proxy** on a factory, or `implementation()` on a beacon. The implementations listed here were read on 13 November 2026.
+In both systems, every table or tournament runs the code its **beacon** points to. The factory and beacon addresses below stay fixed. The implementation addresses change whenever Stacked updates the contract code (see [Security and contracts](/docs/about/security)), so the live one is always what the factory or beacon reports on Basescan: use **Read as Proxy** on a factory, or `implementation()` on a beacon. The implementations listed here were read on 13 November 2026.
 
 All contracts are source-verified on [Basescan](https://basescan.org), the public block explorer for Base, so the exact code each one runs is open to inspect. The tournament contracts are covered by an automated test suite; an external security audit is on the roadmap and not yet complete.
 
@@ -53,6 +53,6 @@ All contracts are source-verified on [Basescan](https://basescan.org), the publi
 
 ## What's next
 
-- [Tournaments →](/docs/playing/tournaments) — how tournaments work for players.
-- [How fees work →](/docs/your-money/fees) — the full fee schedule.
-- [Security & contracts →](/docs/about/security) — the broader contract security story.
+- [Tournaments →](/docs/playing/tournaments): how tournaments work for players.
+- [How fees work →](/docs/your-money/fees): the full fee schedule.
+- [Security and contracts →](/docs/about/security): the broader contract security story.

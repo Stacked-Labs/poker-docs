@@ -1,0 +1,132 @@
+.figure {
+  margin: 1.75rem 0;
+  padding: 20px;
+  border: 1px solid var(--stacked-line);
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(72px, auto) minmax(0, 1.4fr) minmax(72px, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.tile {
+  display: grid;
+  gap: 2px;
+  padding: 14px 14px;
+  border: 1px solid var(--stacked-line);
+  border-radius: 12px;
+  background: var(--ifm-background-color);
+  min-width: 0;
+}
+
+.kicker {
+  font-size: 0.8125rem;
+  color: var(--stacked-mute);
+}
+
+[data-theme="dark"] .kicker {
+  color: rgba(251, 246, 236, 0.6);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.felt {
+  display: grid;
+  gap: 4px;
+  padding: 16px 16px;
+  border-radius: 14px;
+  background: var(--stacked-felt);
+  box-shadow: 0 0 0 3px var(--stacked-rail);
+  color: #ffffff;
+  min-width: 0;
+}
+
+.kickerLight {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nameLight {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.25;
+}
+
+.sub {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.arrow {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  min-width: 56px;
+  height: 2px;
+  background: var(--ifm-color-content);
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-left: 8px solid var(--ifm-color-content);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.caption {
+  margin-top: 14px;
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .arrow {
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    padding-left: 18px;
+  }
+  .line {
+    width: 2px;
+    height: 22px;
+    min-width: 0;
+    order: -1;
+  }
+  .line::after {
+    right: auto;
+    left: -4px;
+    top: auto;
+    bottom: -1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid var(--ifm-color-content);
+    border-bottom: none;
+  }
+}

@@ -15,6 +15,10 @@
  *   --stacked-yellow-deep  ->  --stacked-brass (#925F11), warnings
  *   --stacked-cold         ->  --stacked-cream (#FBF6EC) for type on dark, --stacked-sunken (#ECE6D9) for filled surfaces
  *   Font: Poppins          ->  Barlow, loaded by the Google Fonts link in docusaurus.config.ts
+ *
+ * Rules from poker-game/DESIGN.md that this file follows: hover changes colour only (no lifts,
+ * glows or scale), no glass or blur, sentence case everywhere (no uppercase labels), one felt
+ * primary per screen (the Play button in the navbar; the hero button on the homepage).
  */
 
 :root {
@@ -34,6 +38,9 @@
   --stacked-rail: #0E0F11;
   --stacked-live: #D42A22;
   --stacked-brass: #925F11;
+  --stacked-line: #E9E2D2;
+  --stacked-card-red: #C2372B;
+  --stacked-gold: #F5B700;
 
   /* Roles that switch with the colour mode */
   --stacked-accent: var(--stacked-felt); /* links, hover and current-page text */
@@ -64,7 +71,7 @@
   --ifm-link-hover-color: #185A40;
 
   /* Navbar: paper */
-  --ifm-navbar-background-color: rgba(255, 253, 248, 0.85);
+  --ifm-navbar-background-color: #FFFDF8;
   --ifm-navbar-link-color: #1B1D1C;
   --ifm-navbar-link-hover-color: #1E6B4C;
 
@@ -80,7 +87,29 @@
   --ifm-color-warning: var(--stacked-brass);
   --ifm-color-danger: var(--stacked-live);
 
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 92%;
+  --ifm-font-family-base: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ifm-heading-font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ifm-font-family-monospace: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ifm-font-size-base: 106.25%; /* 17 px body on desktop */
+  --ifm-line-height-base: 1.6;
+  --ifm-heading-font-weight: 700;
+  --ifm-h1-font-size: 2.25rem; /* type-page, 36 px */
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.1875rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-heading-line-height: 1.2;
+  --ifm-global-radius: 10px;
+  --ifm-toc-border-color: var(--stacked-line);
+  --ifm-color-emphasis-200: var(--stacked-line);
+  --ifm-color-emphasis-300: #D6CFBF;
+  --ifm-table-border-color: var(--stacked-line);
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: #ECE6D9;
+  --ifm-hr-background-color: var(--stacked-line);
+  --ifm-menu-color: #3D3F3B;
+  --ifm-menu-color-background-hover: rgba(27, 29, 28, 0.05);
+  --ifm-navbar-height: 64px;
   --docusaurus-highlighted-code-line-bg: rgba(30, 107, 76, 0.18);
 }
 
@@ -92,6 +121,13 @@
  * on html[data-theme='dark'], which outranks a bare [data-theme="dark"].
  */
 html[data-theme="dark"] {
+  --stacked-line: rgba(251, 246, 236, 0.12);
+  --stacked-card-red: #F0655C;
+  --stacked-sunken: rgba(251, 246, 236, 0.06);
+  --ifm-color-emphasis-300: rgba(251, 246, 236, 0.18);
+  --ifm-table-head-background: rgba(251, 246, 236, 0.06);
+  --ifm-menu-color: rgba(251, 246, 236, 0.8);
+  --ifm-menu-color-background-hover: rgba(251, 246, 236, 0.06);
   --stacked-accent: var(--stacked-felt-pale); /* poker-game's dark link colour */
   --stacked-primary: var(--stacked-act);
   --stacked-primary-hover: var(--stacked-felt);
@@ -121,7 +157,7 @@ html[data-theme="dark"] {
   --ifm-tabs-color-active: #7CA894;
 
   /* Navbar: rail */
-  --ifm-navbar-background-color: rgba(14, 15, 17, 0.95);
+  --ifm-navbar-background-color: #0E0F11;
   --ifm-navbar-link-color: #FBF6EC;
   --ifm-navbar-link-hover-color: #7CA894;
 
@@ -138,158 +174,179 @@ html[data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgba(42, 132, 99, 0.18);
 }
 
-* {
-  font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+/* ===== Base type ===== */
+body {
+  font-family: var(--ifm-font-family-base);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===== Navbar ===== */
-/*
- * The frosted-glass blur lives on a ::before pseudo-element, NOT on .navbar itself.
- * `backdrop-filter` (like `filter`/`transform`) on an element makes it the containing
- * block for its `position: fixed` descendants. Docusaurus renders the mobile menu
- * (.navbar-sidebar, which is position:fixed/top:0/bottom:0) INSIDE .navbar — so putting
- * the blur on .navbar trapped the full-screen mobile menu inside the 64px navbar box,
- * collapsing the Docs menu to an unusable sliver. Keeping the blur on the pseudo-element
- * preserves the look without breaking the mobile menu.
- */
+@media (max-width: 600px) {
+  :root {
+    --ifm-font-size-base: 100%;
+    --ifm-h1-font-size: 1.75rem; /* type-page, 28 px on phones */
+    --ifm-h2-font-size: 1.3125rem;
+  }
+}
+
+.markdown h1:first-child {
+  letter-spacing: -0.015em;
+  margin-bottom: 0.6em;
+}
+
+.markdown h2 {
+  margin-top: 2.2em;
+  letter-spacing: -0.01em;
+}
+
+.markdown h3 {
+  margin-top: 1.8em;
+}
+
+.markdown > p:first-of-type {
+  font-size: 1.1em;
+  color: var(--ifm-color-content-secondary);
+}
+
+.markdown a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--ifm-link-color) 45%, transparent);
+}
+
+.markdown a:hover {
+  text-decoration-color: currentColor;
+}
+
+.markdown strong {
+  font-weight: 700;
+}
+
+article {
+  max-width: 760px;
+}
+
+/* ===== Navbar: paper bar, hairline under it ===== */
 .navbar {
-  background-color: transparent !important;
-  border-bottom: 1px solid rgba(27, 29, 28, 0.08);
   height: 64px;
   padding: 0 clamp(16px, 3vw, 28px);
-  box-shadow: 0 1px 0 rgba(27, 29, 28, 0.04), 0 4px 16px rgba(27, 29, 28, 0.06);
-}
-
-.navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-color: rgba(255, 253, 248, 0.85);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
-  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--stacked-line);
+  box-shadow: none;
 }
 
 [data-theme="dark"] .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px rgba(0, 0, 0, 0.32);
-}
-
-[data-theme="dark"] .navbar::before {
-  background-color: rgba(14, 15, 17, 0.95);
+  border-bottom-color: rgba(251, 246, 236, 0.08);
 }
 
 .navbar__inner {
   align-items: center;
 }
 
+.navbar__brand {
+  margin-right: 20px;
+  gap: 10px;
+  color: var(--stacked-mute);
+}
+
+[data-theme="dark"] .navbar__brand {
+  color: rgba(251, 246, 236, 0.6);
+}
+
+.navbar__logo {
+  height: 20px;
+  width: auto;
+  margin-right: 0;
+}
+
+.navbar__logo img {
+  height: 20px;
+  width: auto;
+}
+
+/* "Docs", set beside the wordmark: a meta label after a hairline, never a second logo */
+.navbar__title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  color: inherit;
+  padding-left: 10px;
+  border-left: 1px solid var(--stacked-line);
+}
+
+[data-theme="dark"] .navbar__title {
+  border-left-color: rgba(251, 246, 236, 0.16);
+}
+
 .navbar__item,
-.navbar__link,
-.navbar__items button {
+.navbar__link {
   font-size: 0.9375rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--stacked-ink);
+  color: var(--ifm-color-content);
   padding: 8px 12px;
   border-radius: 8px;
   transition: color 120ms ease, background-color 120ms ease;
 }
 
-.navbar__link:hover,
-.navbar__item a:hover {
+.navbar__link:hover {
   color: var(--stacked-accent);
-  background-color: rgba(30, 107, 76, 0.08);
+  background-color: var(--ifm-menu-color-background-hover);
+  text-decoration: none;
 }
 
 .navbar__link--active {
   color: var(--stacked-accent);
 }
 
-[data-theme="dark"] .navbar__item,
-[data-theme="dark"] .navbar__link,
-[data-theme="dark"] .navbar__items button {
-  color: rgba(251, 246, 236, 0.86);
+/* The one primary on doc pages: Play, felt with white text */
+.navbar__cta.navbar__link,
+.navbar__cta {
+  background-color: var(--stacked-primary);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  margin-left: 6px;
+  border-radius: 10px;
+  box-shadow: 0 2px 0 var(--stacked-felt-deep);
 }
 
-[data-theme="dark"] .navbar__link:hover,
-[data-theme="dark"] .navbar__item a:hover {
-  color: var(--stacked-accent);
-  background-color: rgba(255, 255, 255, 0.04);
+.navbar__cta:hover {
+  background-color: var(--stacked-primary-hover);
+  color: #ffffff;
 }
 
-[data-theme="dark"] .navbar__link--active {
-  color: var(--stacked-accent);
+.navbar__cta svg {
+  display: none; /* no external-link arrow on the button */
 }
 
-.navbar__brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--stacked-ink);
-  margin-right: 18px;
-  gap: 9px;
-}
-
-[data-theme="dark"] .navbar__brand {
-  color: var(--stacked-cream);
-}
-
-.navbar__logo {
-  height: 30px;
-  width: auto;
-  margin-right: 0;
-}
-
-.navbar__logo img {
-  height: 30px;
-  width: auto;
-}
-
-.navbar__title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: 1.25rem;
-  line-height: 1;
-  color: inherit;
-}
-
-/* Social icon chips: SVG via mask so we can recolor per mode */
+/* Social icons: SVG masks, recoloured per mode */
 .navbar_logo {
   width: 1.25rem;
   height: 1.25rem;
-  margin-left: 14px;
-  background-color: var(--stacked-ink);
+  margin-left: 12px;
+  padding: 0 !important;
+  background-color: var(--ifm-color-content);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  opacity: 0.72;
-  transition: opacity 120ms ease, transform 120ms ease, background-color 120ms ease;
-  border-radius: 6px;
+  opacity: 0.7;
+  transition: opacity 120ms ease, background-color 120ms ease;
   background-image: none !important;
 }
 
 .navbar_logo:hover {
   opacity: 1;
-  transform: translateY(-1px);
   background-color: var(--stacked-accent);
 }
 
-[data-theme="dark"] .navbar_logo {
-  background-color: var(--stacked-cream);
-}
-
-[data-theme="dark"] .navbar_logo:hover {
-  background-color: var(--stacked-accent);
+.navbar_logo svg {
+  display: none;
 }
 
 .navbar-sidebar__brand {
-  background-color: rgba(255, 253, 248, 0.95);
-}
-
-[data-theme="dark"] .navbar-sidebar__brand {
-  background-color: var(--stacked-rail);
+  background-color: var(--ifm-background-surface-color);
 }
 
 .navbar_github {
@@ -312,263 +369,288 @@ html[data-theme="dark"] {
   mask-image: url("/img/socials/telegram.svg");
 }
 
-/* Brand-color hover per platform — overrides the generic .navbar_logo:hover */
-.navbar_x:hover { background-color: #000000; }
-[data-theme="dark"] .navbar_x:hover { background-color: #FFFFFF; }
+@media (max-width: 996px) {
+  .navbar_logo {
+    display: none;
+  }
+}
 
-.navbar_discord:hover,
-[data-theme="dark"] .navbar_discord:hover { background-color: #5865F2; }
-
-.navbar_telegram:hover,
-[data-theme="dark"] .navbar_telegram:hover { background-color: #229ED9; }
-
-.navbar_github:hover { background-color: #181717; }
-[data-theme="dark"] .navbar_github:hover { background-color: #FFFFFF; }
-
-/* Color-mode toggle (do NOT match .navbar__toggle burger or the mobile sidebar's close X) */
-.navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
-  border: 1px solid rgba(27, 29, 28, 0.12);
+/* Colour-mode toggle (not the burger or the mobile menu's close button) */
+.navbar [class*="colorModeToggle"] .clean-btn {
+  border: 1px solid var(--stacked-line);
   border-radius: 8px;
-  margin-left: 14px;
+  margin-left: 12px;
   width: 34px;
   height: 34px;
   align-items: center;
   justify-content: center;
-  color: var(--stacked-ink);
-  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  color: var(--ifm-color-content);
+  transition: background-color 120ms ease, color 120ms ease;
 }
 
-.navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
-  background-color: rgba(30, 107, 76, 0.08);
-  border-color: rgba(30, 107, 76, 0.32);
+.navbar [class*="colorModeToggle"] .clean-btn:hover {
+  background-color: var(--ifm-menu-color-background-hover);
   color: var(--stacked-accent);
 }
 
-[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
-  border-color: rgba(251, 246, 236, 0.14);
-  color: rgba(251, 246, 236, 0.78);
-}
-
-[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(251, 246, 236, 0.28);
-  color: var(--stacked-cream);
-}
-
-/* Mobile burger toggle: keep Docusaurus defaults but tone color */
 .navbar__toggle {
-  color: var(--stacked-ink);
+  color: var(--ifm-color-content);
 }
 
-[data-theme="dark"] .navbar__toggle {
-  color: var(--stacked-cream);
-}
-
-.clean-btn:focus-visible {
+:focus-visible {
   outline: 2px solid var(--stacked-accent);
   outline-offset: 2px;
 }
 
-[data-theme="dark"] .clean-btn:focus-visible {
-  outline-color: var(--stacked-accent);
+/* ===== Sidebar ===== */
+.theme-doc-sidebar-container {
+  border-right-color: var(--stacked-line) !important;
+}
+
+.menu {
+  padding: 16px 12px !important;
+}
+
+.menu__link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 7px 12px;
+}
+
+.menu__list-item-collapsible .menu__link--sublist,
+.menu__link--sublist-caret {
+  font-weight: 700;
+  color: var(--ifm-color-content);
+}
+
+.menu__link--active:not(.menu__link--sublist),
+.menu__link--active:not(.menu__link--sublist):hover {
+  background-color: rgba(30, 107, 76, 0.1);
+  font-weight: 700;
+  color: var(--stacked-accent);
+}
+
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist),
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist):hover {
+  background-color: rgba(124, 168, 148, 0.14);
+}
+
+/* ===== Breadcrumbs, table of contents, pager ===== */
+.breadcrumbs__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: transparent;
+  color: var(--ifm-color-content);
+  font-weight: 600;
+}
+
+.table-of-contents__link {
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.table-of-contents__link--active {
+  color: var(--stacked-accent);
+  font-weight: 600;
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--stacked-line);
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+  transition: border-color 120ms ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--stacked-accent);
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.8125rem;
+  color: var(--stacked-mute);
+}
+
+[data-theme="dark"] .pagination-nav__sublabel {
+  color: rgba(251, 246, 236, 0.6);
+}
+
+.pagination-nav__label {
+  font-weight: 700;
+}
+
+/* ===== Admonitions: paper cards with a coloured edge, never a full colour fill ===== */
+.theme-admonition {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--stacked-line);
+  border-left-width: 4px;
+  border-radius: 12px;
+  box-shadow: none;
+  color: var(--ifm-color-content);
+}
+
+.theme-admonition [class*="admonitionHeading"] {
+  text-transform: none;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.alert--success { border-left-color: var(--stacked-felt); }
+.alert--info,
+.alert--secondary { border-left-color: var(--ifm-color-info); }
+.alert--warning { border-left-color: var(--stacked-brass); }
+.alert--danger { border-left-color: var(--stacked-live); }
+
+[data-theme="dark"] .alert--success { border-left-color: var(--stacked-act); }
+[data-theme="dark"] .alert--warning { border-left-color: #FBBF24; }
+[data-theme="dark"] .alert--danger { border-left-color: #F0655C; }
+
+.theme-admonition [class*="admonitionIcon"] svg {
+  fill: currentColor;
+}
+
+.alert--success [class*="admonitionIcon"] { color: var(--stacked-felt); }
+.alert--warning [class*="admonitionIcon"] { color: var(--stacked-brass); }
+.alert--danger [class*="admonitionIcon"] { color: var(--stacked-live); }
+
+/* ===== Tables ===== */
+.markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--stacked-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 700px) {
+  .markdown table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.markdown table th {
+  background: var(--ifm-table-head-background);
+  font-weight: 700;
+  text-align: left;
+}
+
+.markdown table th,
+.markdown table td {
+  border: none;
+  border-bottom: 1px solid var(--stacked-line);
+  padding: 10px 14px;
+}
+
+.markdown table tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown table tr {
+  background: transparent;
+  border: none;
 }
 
 /* ===== Footer ===== */
 .footer {
-  background-color: var(--stacked-bone) !important;
-  color: var(--stacked-ink);
-  padding: 32px 0 20px;
-  border-top: 1px solid rgba(27, 29, 28, 0.08);
-}
-
-[data-theme="dark"] .footer {
-  background-color: var(--stacked-rail) !important;
-  color: var(--stacked-cream);
-  border-top-color: rgba(255, 255, 255, 0.04);
-}
-
-/* Layout: logo column + links columns side-by-side */
-.footer > .container {
-  position: relative;
-  padding-left: 88px;
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-color-content);
+  padding: 40px 0 28px;
+  border-top: 1px solid var(--stacked-line);
 }
 
 .footer__links {
-  margin-bottom: 16px !important;
+  margin-bottom: 20px !important;
 }
 
 .footer__col {
   margin-bottom: 0 !important;
 }
 
-/* Pull logo out of bottom flow into top-left */
+.footer__title {
+  color: var(--ifm-color-content);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 10px;
+}
+
+.footer__item {
+  padding: 3px 0;
+}
+
+.footer__link-item {
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 120ms ease;
+}
+
+.footer__link-item:hover {
+  color: var(--stacked-accent);
+  text-decoration: none;
+}
+
+.footer__link-item svg {
+  display: none;
+}
+
 .footer__bottom {
-  display: block;
   text-align: left;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(27, 29, 28, 0.08);
-}
-
-[data-theme="dark"] .footer__bottom {
-  border-top-color: rgba(255, 255, 255, 0.04);
-}
-
-.footer__bottom > .margin-bottom--sm {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 !important;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--stacked-line);
+  display: grid;
+  gap: 12px;
 }
 
 .footer__logo {
-  max-height: 44px;
+  height: 22px;
   width: auto;
   margin: 0;
 }
 
-.footer__title {
-  color: var(--stacked-ink);
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.92;
-  margin-bottom: 10px;
-}
-
-[data-theme="dark"] .footer__title {
-  color: var(--stacked-cream);
-}
-
-.footer__item {
-  padding: 2px 0;
-}
-
-.footer__item a,
-.footer__link-item {
-  color: var(--stacked-ink-2);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  transition: color 160ms ease, transform 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: inline-block;
-}
-
-[data-theme="dark"] .footer__item a,
-[data-theme="dark"] .footer__link-item {
-  color: rgba(251, 246, 236, 0.72);
-}
-
-.footer__item a:hover,
-.footer__link-item:hover {
-  color: var(--stacked-accent);
-  text-decoration: none;
-  transform: translateX(2px);
-}
-
 .footer__copyright {
   color: var(--stacked-mute);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.55;
   margin: 0;
   text-align: left;
 }
 
 [data-theme="dark"] .footer__copyright {
-  color: rgba(251, 246, 236, 0.5);
+  color: rgba(251, 246, 236, 0.55);
 }
 
-@media (max-width: 768px) {
-  .footer > .container {
-    padding-left: 0;
-  }
-  .footer__bottom > .margin-bottom--sm {
-    position: static;
-    margin-bottom: 16px !important;
-  }
-  .footer__bottom {
-    text-align: left;
-  }
-}
-
-/* ===== Buttons (tactile recipe) ===== */
+/* ===== Buttons (Infima) ===== */
 .button {
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 12px 24px;
-  transition:
-    transform 80ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 80ms ease,
-    background-color 80ms ease;
   text-transform: none;
 }
 
-.button--secondary,
-.button--secondary:link,
-.button--secondary:visited,
-.button--secondary:hover,
-.button--secondary:active,
-.button--secondary:focus {
-  color: #FFFFFF !important;
+.button--primary {
+  color: #ffffff;
+  box-shadow: 0 2px 0 var(--stacked-felt-deep);
 }
 
-.button--secondary {
-  background-color: var(--stacked-primary);
-  border: none;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 2px 0 var(--stacked-felt-deep);
-}
-
-.button--secondary:hover {
-  background-color: var(--stacked-primary-hover);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 2px 0 var(--stacked-felt-deep);
-}
-
-.button--secondary:active,
-.button--secondary.button:active {
-  transform: translateY(2px);
-  background-color: var(--stacked-primary-hover);
-  box-shadow:
-    0 0 0 var(--stacked-felt-deep),
-    inset 0 2px 4px rgba(0, 0, 0, 0.18);
-}
-
-.button--white {
-  background-color: transparent;
-  color: var(--stacked-cream);
-  border: 2px solid rgba(251, 246, 236, 0.65);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-}
-
-.button--white:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
-  border-color: var(--stacked-cream);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-}
-
-.button--white:active,
-.button--white.button:active {
-  transform: translateY(2px);
-  background-color: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.35);
-}
-
-.button:active {
-  transform: translateY(2px);
-}
-
-/* ===== Details / collapsible ===== */
+/* ===== Details ===== */
 details {
-  background-color: var(--stacked-sunken) !important;
-  border: 1px solid rgba(27, 29, 28, 0.12);
-  border-radius: 10px;
+  background-color: var(--ifm-background-surface-color) !important;
+  border: 1px solid var(--stacked-line) !important;
+  border-radius: 12px;
   padding: 12px 16px;
   margin-bottom: 10px;
+  box-shadow: none !important;
+  --docusaurus-details-decoration-color: var(--stacked-accent);
 }
 
 details summary {
@@ -576,55 +658,25 @@ details summary {
   cursor: pointer;
 }
 
-details[open] {
-  background-color: var(--stacked-paper) !important;
+details > div > div {
+  border-top-color: var(--stacked-line) !important;
 }
 
-[data-theme="dark"] details {
-  background-color: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(251, 246, 236, 0.10);
-}
-
-[data-theme="dark"] details[open] {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* ===== Sidebar ===== */
-.menu__link--active,
-.menu__link--active:hover {
-  background-color: rgba(30, 107, 76, 0.1);
-  font-weight: 700;
-  color: var(--stacked-accent);
-}
-
-[data-theme="dark"] .menu__link--active,
-[data-theme="dark"] .menu__link--active:hover {
-  background-color: rgba(42, 132, 99, 0.18);
-  color: var(--stacked-accent);
-}
-
-/* ===== Code blocks ===== */
+/* ===== Code ===== */
 .theme-code-block {
   border-radius: 12px !important;
-}
-
-[data-theme="dark"] .theme-code-block {
-  border-radius: 12px !important;
+  border: 1px solid var(--stacked-line);
+  box-shadow: none !important;
 }
 
 code {
   background-color: var(--stacked-sunken);
-  padding: 0 6px;
+  padding: 1px 6px;
   border-radius: 6px;
   color: inherit;
   border: none;
 }
 
-[data-theme="dark"] code {
-  background-color: rgba(251, 246, 236, 0.08);
-}
-
-/* Don't double-style code inside pre/code blocks */
 .theme-code-block code,
 pre code {
   background-color: transparent;
@@ -632,12 +684,68 @@ pre code {
   border-radius: 0;
 }
 
-/* Responsive Mermaid diagrams: scale SVG down to container width, allow horizontal scroll if still too wide. */
+/* ===== Mermaid diagrams: scale to the column, scroll if still too wide ===== */
 .docusaurus-mermaid-container {
   overflow-x: auto;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
+  padding: 16px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--stacked-line);
+  border-radius: 16px;
 }
+
 .docusaurus-mermaid-container svg {
   max-width: 100%;
   height: auto;
+}
+
+/* ===== Images inside pages ===== */
+.markdown img {
+  border-radius: 12px;
+}
+
+@media (max-width: 996px) {
+  .footer__col {
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Diagrams in dark: the mermaid theme variables are light, so restate the parts that would vanish
+   on the rail ground. */
+[data-theme="dark"] .docusaurus-mermaid-container .node rect,
+[data-theme="dark"] .docusaurus-mermaid-container .node polygon,
+[data-theme="dark"] .docusaurus-mermaid-container .node circle,
+[data-theme="dark"] .docusaurus-mermaid-container rect.actor,
+[data-theme="dark"] .docusaurus-mermaid-container .note {
+  fill: #1B1D1C !important;
+  stroke: #7CA894 !important;
+}
+
+[data-theme="dark"] .docusaurus-mermaid-container .nodeLabel,
+[data-theme="dark"] .docusaurus-mermaid-container .edgeLabel,
+[data-theme="dark"] .docusaurus-mermaid-container text {
+  color: #FBF6EC !important;
+  fill: #FBF6EC !important;
+}
+
+[data-theme="dark"] .docusaurus-mermaid-container .edgeLabel,
+[data-theme="dark"] .docusaurus-mermaid-container .edgeLabel rect,
+[data-theme="dark"] .docusaurus-mermaid-container .labelBkg {
+  background-color: #1B1D1C !important;
+  fill: #1B1D1C !important;
+}
+
+[data-theme="dark"] .docusaurus-mermaid-container .flowchart-link,
+[data-theme="dark"] .docusaurus-mermaid-container path.path,
+[data-theme="dark"] .docusaurus-mermaid-container .messageLine0,
+[data-theme="dark"] .docusaurus-mermaid-container .messageLine1,
+[data-theme="dark"] .docusaurus-mermaid-container line {
+  stroke: #CCC6B7 !important;
+}
+
+[data-theme="dark"] .docusaurus-mermaid-container marker path,
+[data-theme="dark"] .docusaurus-mermaid-container .arrowheadPath,
+[data-theme="dark"] .docusaurus-mermaid-container .arrowMarkerPath {
+  fill: #CCC6B7 !important;
+  stroke: #CCC6B7 !important;
 }

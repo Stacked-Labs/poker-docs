@@ -16,13 +16,13 @@ Used lightly, that's a fair trade. Used heavily, it's a wall: every task is one 
 
 ## The five tasks, and what we verify
 
-Some tasks are verified by Stacked. The rest are taken on trust, and the app is honest with players about which is which: only verified tasks carry a verified mark.
+Some tasks are verified by Stacked Poker. The rest are taken on trust, and the app is honest with players about which is which: only verified tasks carry a verified mark.
 
 | Task | What the player does | Verified? |
 |---|---|---|
-| **Join Discord** | Connects their Discord account to Stacked, joins your server, then taps **Verify**. | **Verified.** We confirm they're in your server. |
+| **Join Discord** | Links their Discord account to Stacked, joins your server, then taps **Verify**. | **Verified.** We confirm they're in your server. |
 | **Hold a token** | Taps **Verify** while holding at least the amount you set. | **Verified.** We confirm the balance on Base. |
-| **Follow on X** | Connects their X account to Stacked, then opens your profile. | On trust. It completes when they open your profile. |
+| **Follow on X** | Links their X account to Stacked, then opens your profile. | On trust. It completes when they open your profile. |
 | **Join Telegram** | Opens your group link. | On trust. It completes when they open the link. |
 | **Visit a link** | Opens your link. | On trust. It completes when they open it. |
 
@@ -45,7 +45,7 @@ To see exactly what players are asked to do, use **Preview player checklist**.
 
 ### Hold a token
 
-A Hold a token task asks players to hold at least an amount you set of a token on Base, the Ethereum-based network Stacked runs on. A token is a digital asset in a player's wallet: a community's own coin, for example, or a collectible.
+A Hold a token task asks players to hold at least an amount you set of a token on Base, the Ethereum-based network Stacked runs on. A token is a digital asset in a player's wallet, such as a community's own coin or a collectible.
 
 - **Pick the token from the list.** Tokens come from a short list Stacked keeps, so you can't paste in any token address. If the list is empty, the app says there are no tokens to pick from yet. If you want your community's token on it, ask us on [Discord](https://discord.gg/xdaC5gRP4E).
 - **Set the minimum.** Players see it on the task, for example "Needs 1,000 of your token on Base." They never see each other's balances.
@@ -73,7 +73,7 @@ You see totals per task and for the whole checklist. You never see which player 
 
 ## What players see
 
-Players meet the checklist when they press **Register** (or **Join tournament** on Free Play), in the lobby or on your tournament page. It also appears before they claim a free ticket. They can do the tasks ahead of time too, from the **Entry tasks** button on your tournament page, including before registration opens. A player who has finished everything registers normally, with no checklist in the way.
+Players meet the checklist when they press **Register** (or **Join tournament** on Free Play), under Events or on your tournament page. It also appears before they claim a free ticket. They can do the tasks ahead of time too, from the **Entry tasks** button on your tournament page, including before registration opens. A player who has finished everything registers normally, with no checklist in the way.
 
 Each task has one button that opens your link: **Follow** for X, **Join** for Discord and Telegram, **Open** for a link, and **Get it** for a token (when you've added a Get it link). Discord tasks read "Join the server, then tap Verify". Hold a token tasks have a **Verify** button too.
 

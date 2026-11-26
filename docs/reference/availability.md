@@ -4,23 +4,19 @@ sidebar_position: 82
 
 # Where Stacked is available
 
+This page says where Stacked Poker can't be used. The list is still being finalized.
+
 :::info
 
-This page is being finalized. We're working through the geographic availability list with our legal team. Until that's locked, treat the information here as preliminary.
+We're working through the geographic availability list with our legal team. Until that's locked, treat the information here as preliminary.
 
 :::
 
-Stacked is designed to be permissionless — connect a wallet, sit at a table, play. That said, some jurisdictions block access to online poker platforms by law, and Stacked respects those restrictions.
+Stacked is built so you can sign in, take a seat and play. Some places block online poker by law, though, and Stacked respects those restrictions.
 
 ## Blocked regions
 
 _The specific list of blocked regions will appear here once finalized._
-
-If access is restricted in your region, Stacked may block sign-in from your network connection. We won't take steps beyond that — no probabilistic geofencing.
-
-## Sanctioned jurisdictions
-
-Stacked does not operate in jurisdictions subject to comprehensive US, UK, or EU sanctions. _Specific list pending._
 
 ## Your local laws
 
@@ -28,5 +24,5 @@ You're responsible for knowing whether real-money online poker is permitted wher
 
 ## What's next
 
-- [How custody works →](/docs/your-money/custody) — how on-chain custody works.
-- [FAQ →](/docs/reference/faq) — common questions.
+- [How custody works →](/docs/your-money/custody): where your real-money buy-in sits.
+- [FAQ →](/docs/reference/faq): common questions.

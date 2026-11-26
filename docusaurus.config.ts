@@ -6,9 +6,9 @@ const SITE_URL = "https://stackedpoker.io";
 const SITE_TITLE = "Stacked Poker Docs";
 const SITE_TAGLINE = "Host a game for your group chat, or run your own tournament.";
 const SITE_DESCRIPTION =
-  "Documentation for Stacked Poker. Learn how to play poker in your browser — free play or real stakes settled in USDC on Base. No downloads.";
+  "Help for Stacked Poker: browser poker that any player can host, with every real-money buy-in held in that table's own contract. Free Play, cash tables and tournaments.";
 const SITE_KEYWORDS =
-  "stacked poker, online poker, crypto poker, USDC poker, Base poker, texas holdem, onchain poker, web3 poker, poker docs";
+  "stacked poker, online poker, host a poker game, home game, poker with friends, poker tournament, texas holdem, USDC poker, free poker, poker help";
 const SITE_TWITTER = "@stacked_poker";
 const SITE_OG_IMAGE = "img/preview-social-card.png";
 
@@ -18,7 +18,7 @@ const jsonLd = {
   name: "Stacked Poker",
   url: "https://stackedpoker.io",
   description:
-    "Play poker in your browser. Free play, or real stakes in USDC on Base. No downloads.",
+    "Browser poker that any player can host, with every real-money buy-in held in that table's own contract.",
   applicationCategory: "GameApplication",
   operatingSystem: "Web",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -28,7 +28,7 @@ const jsonLd = {
     url: "https://stackedpoker.io",
     logo: {
       "@type": "ImageObject",
-      url: "https://stackedpoker.io/IconMain.png",
+      url: "https://docs.stackedpoker.io/img/brand/stacked-icon-512.png",
     },
     sameAs: [
       "https://x.com/stacked_poker",
@@ -55,7 +55,6 @@ const config: Config = {
   projectName: "Stacked", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -94,7 +93,7 @@ const config: Config = {
       attributes: {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/img/IconLogo.png",
+        href: "/img/brand/apple-touch-icon.png",
       },
     },
     {
@@ -103,7 +102,7 @@ const config: Config = {
         rel: "icon",
         type: "image/png",
         sizes: "512x512",
-        href: "/img/IconMain.png",
+        href: "/img/brand/stacked-icon-512.png",
       },
     },
     {
@@ -146,7 +145,8 @@ const config: Config = {
     { tagName: "meta", attributes: { name: "twitter:image", content: `${SITE_URL}/${SITE_OG_IMAGE}` } },
   ],
 
-  markdown: { mermaid: true },
+  markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: "warn" } },
+  // Diagrams are scoped to the felt palette in src/css/custom.css; this keeps their structure plain.
   themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
@@ -155,24 +155,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/Stacked-Labs",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/Stacked-Labs",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -184,18 +168,30 @@ const config: Config = {
     customCss: [require.resolve("./src/css/custom.css")],
     image: SITE_OG_IMAGE,
     navbar: {
-      title: "Stacked",
+      title: "Docs",
       logo: {
-        alt: "Stacked Logo",
-        src: "img/stacked-mark-navy.svg",
-        srcDark: "img/stacked-mark-white.svg",
+        alt: "Stacked Poker",
+        src: "img/brand/stacked-logo-ink.svg",
+        srcDark: "img/brand/stacked-logo-white.svg",
+        href: "/",
       },
       items: [
         {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Docs",
+          label: "Guides",
+        },
+        {
+          to: "/docs/reference/faq",
+          position: "left",
+          label: "FAQ",
+        },
+        {
+          href: "https://stackedpoker.io",
+          position: "right",
+          label: "Play",
+          className: "navbar__cta",
         },
         {
           href: "https://x.com/stacked_poker",
@@ -218,27 +214,30 @@ const config: Config = {
           position: "right",
         },
       ],
-      hideOnScroll: true,
+      hideOnScroll: false,
     },
     footer: {
       style: "light",
       logo: {
-        alt: "Stacked Logo",
-        src: "img/stacked-mark-navy.svg",
-        srcDark: "img/stacked-mark-white.svg",
-        width: 34,
-        height: 36,
+        alt: "Stacked Poker",
+        src: "img/brand/stacked-logo-ink.svg",
+        srcDark: "img/brand/stacked-logo-white.svg",
+        height: 22,
       },
       links: [
         {
-          title: "Product",
+          title: "Stacked Poker",
           items: [
             {
-              label: "Play Now",
-              href: "https://stackedpoker.io",
+              label: "Play",
+              href: "https://stackedpoker.io/public-games",
             },
             {
-              label: "Host a game",
+              label: "Events",
+              href: "https://stackedpoker.io/public-games?format=tournaments",
+            },
+            {
+              label: "Host",
               href: "https://stackedpoker.io/create-game",
             },
             {
@@ -248,23 +247,27 @@ const config: Config = {
           ],
         },
         {
-          title: "Resources",
+          title: "Help",
           items: [
             {
-              label: "What is Stacked?",
+              label: "What is Stacked Poker?",
               to: "/docs/welcome/what-is-stacked",
             },
             {
-              label: "Getting started",
-              to: "/docs/getting-started/connect-a-wallet",
-            },
-            {
-              label: "How Stacked works",
-              to: "/docs/about/how-stacked-works",
+              label: "Your first Free Play hand",
+              to: "/docs/getting-started/first-free-play-hand",
             },
             {
               label: "Hosting",
               to: "/docs/hosting/overview",
+            },
+            {
+              label: "Where your money sits",
+              to: "/docs/your-money/custody",
+            },
+            {
+              label: "The 24-hour exit",
+              to: "/docs/your-money/emergency-exit",
             },
             {
               label: "FAQ",
@@ -294,10 +297,37 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `The easiest way to play poker with friends, onchain. No downloads, no hassle — just pure poker action.<br/>© ${new Date().getFullYear()} Stacked Labs. All rights reserved.`,
+      copyright: `Stacked Poker is browser poker that any player can host, with every real-money buy-in held in that table's own contract.<br/>© ${new Date().getFullYear()} Stacked Labs`,
     },
     colorMode: {
+      defaultMode: "light",
+      respectPrefersColorScheme: false,
       disableSwitch: false,
+    },
+    mermaid: {
+      theme: { light: "base", dark: "base" },
+      options: {
+        fontFamily: "Barlow, system-ui, sans-serif",
+        themeVariables: {
+          primaryColor: "#FFFDF8",
+          primaryBorderColor: "#1E6B4C",
+          primaryTextColor: "#1B1D1C",
+          secondaryColor: "#E4EBE3",
+          tertiaryColor: "#F3EEE4",
+          lineColor: "#3D3F3B",
+          textColor: "#1B1D1C",
+          noteBkgColor: "#FBF6EC",
+          noteBorderColor: "#CCC6B7",
+          actorBkg: "#FFFDF8",
+          actorBorder: "#1E6B4C",
+          actorTextColor: "#1B1D1C",
+          signalColor: "#3D3F3B",
+          signalTextColor: "#1B1D1C",
+          labelBoxBkgColor: "#FFFDF8",
+          labelBoxBorderColor: "#1E6B4C",
+          fontSize: "15px",
+        },
+      },
     },
     prism: {
       theme: prismThemes.github,

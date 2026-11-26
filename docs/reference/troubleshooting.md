@@ -6,53 +6,53 @@ sidebar_position: 83
 
 Quick fixes for the issues that come up most. If something here doesn't help, reach out in the community channel.
 
-## Wallet won't connect
+## I can't sign in with my wallet
 
-**Most common cause:** wallet on the wrong network. Stacked runs on Base, an Ethereum-based network with very low fees; switch your wallet to Base and try again. Most wallets switch automatically when prompted.
+**Most common cause:** the wallet is on the wrong network. Stacked Poker runs on Base, an Ethereum-based network with very low fees. Switch your wallet to Base and try again. Most wallets switch automatically when prompted.
 
-If the connect button doesn't respond, refresh the page. If you're using a browser extension wallet, make sure it's unlocked.
+If the sign-in button doesn't respond, refresh the page. If you use a browser extension wallet, make sure it's unlocked.
 
-## Transaction stuck or failed
+## A transaction is stuck or failed
 
-**Stuck:** Base congestion can briefly slow transactions. Wait a minute and refresh — usually the transaction confirms.
+**Stuck:** Base congestion can briefly slow transactions. Wait a minute and refresh. Usually the transaction confirms.
 
-**Failed:** if you connected your own wallet, check that it has enough ETH on Base for gas, the small network fee paid to process a transaction. A few cents' worth is plenty. (If you signed in with a social account, email or phone, Stacked covers gas, so skip this check.) If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed, etc.). Try again with the prompt's suggested values.
+**Failed:** if you signed in with your own wallet, check that it has enough ETH (the coin that pays network fees on Base) for gas, the small network fee paid to process a transaction. A few cents' worth is plenty. If you signed in with a social account, email or phone, Stacked covers gas, so skip this check. If gas is fine and the transaction still fails, the contract may have rejected it (wrong amount, table closed and so on). Try again with the amounts the prompt suggests.
 
-## Deposited, but I'm not seated
+## I bought in, but I'm not seated
 
-Most tables seat you instantly, so first try refreshing. If you still see a pending status, this Host has turned off Auto-Accept and approves each player by hand. The Host sees your wallet and buy-in. If the Host declines or doesn't get to you, your USDC, a digital dollar that holds a stable value, is safe in the contract. Click withdraw to pull it back. See [Withdrawals](/docs/your-money/withdrawals).
+Most tables seat you instantly, so first try refreshing. If you still see a pending status, this Host has turned off Auto-Accept and approves each player by hand. If the Host declines or doesn't get to you, your USDC is safe in the contract. USDC is a digital dollar that holds a stable value. You can take your buy-in back to your wallet balance. See [Cash out](/docs/your-money/withdrawals).
 
-## Disconnected mid-hand
+## I lost my connection mid-hand
 
-The action timer keeps running. If you don't reconnect and act before it expires, the system folds you. If you reconnect in time, you can keep playing.
+The action timer keeps running. If you don't come back and act before it expires, you fold. If you come back in time, you can keep playing.
 
-## Can't leave the table
+## I can't leave the table
 
 You can only leave between hands. Finish the current hand first, then the leave button activates.
 
-## Can't withdraw
+## My stack hasn't come back to my wallet balance
 
-Withdrawals happen between hands. If you just left the table, give it a moment for the contract to grant you withdrawal permission, then try again. The withdraw transaction has to be signed from your wallet; check that your wallet is connected and on Base.
+Your stack returns once you've stood up between hands. If you signed in with your own wallet, the confirmation has to be signed from it, so check that it's signed in and on Base.
 
 ## Settlement seems stuck
 
-If a hand finishes and the next one doesn't deal for an unusually long time, on-chain settlement for that hand may be taking longer than usual. The table pauses while this resolves. If settlements stall for 24 hours, the [24-hour emergency exit](/docs/your-money/emergency-exit) unlocks and you can withdraw your stack directly from the contract.
+If a cash-table hand finishes and the next one doesn't deal for an unusually long time, settling that hand may be taking longer than usual. The table pauses while this resolves. If hands stop settling for 24 hours, [the 24-hour exit](/docs/your-money/emergency-exit) unlocks and you can withdraw your own stack from the contract.
 
-## "Insufficient funds" when depositing
+## "Insufficient funds" when buying in
 
 Two checks:
 
-- Do you have enough USDC on Base to cover the buy-in? (Not Ethereum mainnet — USDC has to be on Base.)
-- If you connected your own wallet: do you have a small amount of ETH on Base for gas? (If you signed in with a social account, email or phone, Stacked covers gas.)
+- Do you have enough USDC on Base to cover the buy-in? It has to be on Base, not Ethereum mainnet.
+- If you signed in with your own wallet: do you have a small amount of ETH on Base for gas? If you signed in with a social account, email or phone, Stacked covers gas.
 
-If you're short on USDC, click **Add funds** in the header, or see [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
+If you're short on USDC, tap **Add funds** in the header, or see [Add funds](/docs/getting-started/get-usdc-on-base).
 
-## Wrong amount of chips after sitting down
+## The number of chips looks wrong after sitting down
 
-Chip-to-USDC conversion is fixed at 1 chip = $0.01. So a 100 USDC buy-in becomes 10,000 chips at the table. If the numbers seem off, try refreshing.
+At a real-money cash table, one chip is $0.01. A $100 buy-in becomes 10,000 chips at the table. If the numbers seem off, try refreshing.
 
 ## What's next
 
-- [FAQ →](/docs/reference/faq) — common questions about how things work.
-- [How custody works →](/docs/your-money/custody) — what to expect when something goes wrong.
-- [24-hour emergency exit →](/docs/your-money/emergency-exit) — the safety net for stalled settlements.
+- [FAQ →](/docs/reference/faq): common questions about how things work.
+- [How custody works →](/docs/your-money/custody): what to expect when something goes wrong.
+- [The 24-hour exit →](/docs/your-money/emergency-exit): the safety net when hands stop settling.

@@ -1,6 +1,6 @@
 .calc {
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 12px;
+  border: 1px solid var(--stacked-line);
+  border-radius: 16px;
   padding: 20px 22px;
   margin: 24px 0;
   background: var(--ifm-background-surface-color);
@@ -63,10 +63,8 @@
 
 .table th {
   font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-700);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-size: 0.875rem;
+  color: var(--ifm-color-content);
 }
 
 .note {
