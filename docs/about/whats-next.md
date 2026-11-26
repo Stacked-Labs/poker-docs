@@ -10,10 +10,10 @@ A lightweight view of what's on the way. No quarter commitments, no firm dates �
 
 - **Tournaments** — buy-in tournaments alongside cash games, with prize pools settled on-chain. See [Tournaments](/docs/playing/tournaments).
 - **Buy USDC with a card.** Signed-in players can buy USDC, a digital dollar that holds a stable value, with a card inside Stacked. Click **Add funds** in the header. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
-
-## In progress
-
-- **Run it twice** — for all-in pots at the river, the remaining cards run multiple times to reduce variance. In active development.
+- **Run it twice** — on cash tables, when players are all-in before the river, everyone still in the hand can agree to deal the remaining cards twice. See [At the table](/docs/playing/at-the-table#run-it-twice).
+- **Nicknames** — choose the name other players see at the table and on the leaderboard. See [At the table](/docs/playing/at-the-table#your-name-at-the-table).
+- **Free Tickets** — Hosts can give players a free seat in a tournament. See [Free Tickets](/docs/hosting/free-tickets).
+- **Referrals** — invite friends and earn a share of the platform fee their games generate. See [Referrals and points](/docs/playing/referrals-and-points).
 
 ## On the roadmap
 

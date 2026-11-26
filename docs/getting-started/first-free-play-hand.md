@@ -8,7 +8,7 @@ Free Play is the zero-risk way to try Stacked. No USDC (a digital dollar that ho
 
 ## Before you start
 
-You need one thing: a connected wallet. Popular wallets work — Coinbase Wallet, MetaMask, Rainbow, WalletConnect — or the embedded wallet Stacked creates for you. See [Connect a wallet](/docs/getting-started/connect-a-wallet) if you haven't done that yet.
+Nothing. Free Play works as a guest, with no sign-up: you pick a name when you sit down. If you'd rather sign in, popular wallets work — Coinbase Wallet, MetaMask, Rainbow, WalletConnect — or the embedded wallet Stacked creates for you. See [Connect a wallet](/docs/getting-started/connect-a-wallet).
 
 You don't need USDC. Free Play has no real money involved.
 

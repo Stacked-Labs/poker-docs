@@ -4,7 +4,7 @@ sidebar_position: 11
 
 # Connect a wallet
 
-You need a wallet to use Stacked. There are two paths — bring an existing wallet or have Stacked create one for you.
+You need a wallet to play for real money or host a real-money table. (Free Play doesn't need one — you can play as a guest.) There are two paths — bring an existing wallet or have Stacked create one for you.
 
 ## Bring your own wallet
 
@@ -19,7 +19,7 @@ The signature is free — it's a wallet message, not an on-chain transaction. No
 
 ## Don't have a wallet yet?
 
-If you don't have a wallet, Stacked can create an embedded wallet for you. Sign in with an email or a social account and Stacked provisions a wallet behind the scenes. You can use it exactly the same way as a self-custody wallet: deposit USDC, sit at tables, withdraw. Stacked covers the network fees on this wallet, so you don't need to hold ETH for them.
+If you don't have a wallet, Stacked can create an embedded wallet for you. Sign in with Google, Discord, Telegram, X, Apple, Twitch, email or your phone number, and Stacked provisions a wallet behind the scenes. Each sign-in method gets its own wallet, so sign in the same way every time to see the same balance. You can use it exactly the same way as a self-custody wallet: deposit USDC, sit at tables, withdraw. Stacked covers the network fees on this wallet, so you don't need to hold ETH for them.
 
 The embedded wallet is yours. You can export the keys later if you ever want to move to a different wallet app.
 

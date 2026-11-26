@@ -19,7 +19,7 @@ flowchart LR
 1. **Leave the table.** Click leave at the table between hands. You can't leave mid-hand; you finish the current hand first. Once you're no longer seated, the withdraw button unlocks.
 2. **Click withdraw.** Sign the transaction from your wallet. The contract sends your stack directly to your wallet — no queue, no Stacked approval, no schedule. The amount is exactly your seat balance at the moment you left.
 
-Gas is the small network fee for a transaction you sign yourself. If you connected your own wallet, you pay the gas on the withdrawal. On Base, the low-fee network Stacked runs on, it is typically under a cent. If you signed in with Google, X, Discord or email, Stacked covers it.
+Gas is the small network fee for a transaction you sign yourself. If you connected your own wallet, you pay the gas on the withdrawal. On Base, the low-fee network Stacked runs on, it is typically under a cent. If you signed in with a social account, email or phone, Stacked covers it.
 
 ## Other ways you end up withdrawing
 

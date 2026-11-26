@@ -10,7 +10,7 @@ Real-money tables on Stacked are staked in USDC (a digital dollar that holds a s
 
 - A connected wallet. See [Connect a wallet](/docs/getting-started/connect-a-wallet).
 - USDC on Base in that wallet. Click **Add funds** in the header to buy it with a card or send it from an exchange. See [Get USDC on Base](/docs/getting-started/get-usdc-on-base).
-- Only if you connected your own wallet: a small amount of ETH on Base for network fees (also called gas), the small charge for a transaction you sign yourself. It is typically under a cent per transaction. If you signed in with Google, X, Discord or email, Stacked covers these fees and you don't need ETH.
+- Only if you connected your own wallet: a small amount of ETH on Base for network fees (also called gas), the small charge for a transaction you sign yourself. It is typically under a cent per transaction. If you signed in with a social account, email or phone, Stacked covers these fees and you don't need ETH.
 
 ## Steps
 
@@ -28,7 +28,7 @@ Between hands, you'll see a brief on-chain settlement indicator. Settlement is f
 
 ## Leaving
 
-When you're done, click leave between hands (you can't leave mid-hand). The contract grants you withdrawal permission and you click withdraw to send your stack back to your wallet. If you connected your own wallet, you pay the network fee on the withdrawal. If you signed in with Google, X, Discord or email, Stacked covers it.
+When you're done, click leave between hands (you can't leave mid-hand). The contract grants you withdrawal permission and you click withdraw to send your stack back to your wallet. If you connected your own wallet, you pay the network fee on the withdrawal. If you signed in with a social account, email or phone, Stacked covers it.
 
 ## What's next
 

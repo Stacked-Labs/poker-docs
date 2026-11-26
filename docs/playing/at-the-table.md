@@ -14,6 +14,10 @@ Each decision has an **action timer** — a countdown that starts when it's your
 
 Your actions during a hand are off-chain: real-money or Free Play, while a hand is in progress nothing is being signed by your wallet. The blockchain only sees the result of the hand once it settles.
 
+## Your name at the table
+
+Seats and the leaderboard show your nickname. Set it from your profile: 3 to 16 characters, using letters, numbers, underscores, hyphens and periods. If you've also linked an X account, your nickname still shows by default, and you can choose to show your X handle instead. If you haven't set a nickname, other players see a shortened wallet address. Playing Free Play as a guest, you pick a name when you sit down.
+
 ## Sit out and come back
 
 If you need a break — bathroom, phone call, doorbell — click **sit out**. You stay seated and your stack stays at the table, but you're dealt out of upcoming hands. When you're ready, click **I'm back** to rejoin the next deal.
@@ -34,12 +38,11 @@ Free Play tables don't have this — nothing settles on-chain.
 
 When you're done, click **leave** between hands (you can't leave mid-hand — finish the current one first). The contract grants you withdrawal permission and you click withdraw to pull your stack back to your wallet. Full walkthrough on [Withdrawals](/docs/your-money/withdrawals).
 
-## Coming soon
+## Run it twice
 
-A few additions are in the works:
+On cash tables, when players are all-in before the river, Stacked asks everyone still in the hand whether to run it twice. If every one of them agrees, the remaining cards are dealt twice and each board decides half of the pot. If anyone says no, or doesn't answer in time, the cards are dealt once as usual. Running it twice doesn't change what you win on average; it makes the result less swingy.
 
-- **Run it twice** (and more) — for all-in pots that get to the river, the remaining cards run multiple times to reduce variance.
-- More table features as we build them.
+Run it twice is on by default at new cash tables, and the Host can turn it off in the table's settings. Tournaments always deal once.
 
 ## What's next
 

@@ -28,21 +28,19 @@ flowchart LR
 
 While you're playing, Stacked's servers track the state of the table: who has which cards, whose turn it is, what the pot is. None of this is on-chain. Your actions during a hand aren't signed by your wallet, and nothing is recorded to Base while the hand is in progress.
 
-When a hand finishes, it settles on the table's contract: the chip movements are recorded on-chain and everyone's seat balances update. Settlement is fast — under 5 seconds on Base — and runs in the background, so it never interrupts play. You pay no gas for it; Stacked covers that cost. **The contract is the source of truth for money; Stacked's servers are the source of truth for gameplay.**
-
-If they ever disagree on a balance, the contract wins.
+When a hand finishes, it settles on the table's contract: the chip movements are recorded on-chain and everyone's seat balances update. Settlement is fast — under 5 seconds on Base — and runs in the background, so it never interrupts play. You pay no gas for it; Stacked covers that cost. **Stacked's servers decide each hand; the contract holds the money and records every result.** What you can withdraw is what the contract holds in your seat balance, and the contract only ever pays that out to you.
 
 ## What this means for trust
 
 Stacked's servers can:
 
 - Run the game incorrectly (in theory) — though hand outcomes are deterministic from the cards and actions; bugs would show up immediately.
-- Settle a hand wrong (in theory) — but the contract enforces its own rules, and the 24-hour emergency exit gives you an unconditional way out if anything goes wrong.
+- Record a hand's result wrong (in theory). The contract records the result Stacked reports; it limits where money can go — to players, the Host's earnings or the platform fee — but it doesn't replay the hand. Every result is public on Basescan, so a wrong one would be visible, and if settlement ever stops, the 24-hour emergency exit lets seated players take their stacks out themselves.
 
 Stacked's servers can't:
 
 - Move your money. Funds sit in the contract, and Stacked doesn't have the keys to override the contract's rules.
-- Hold your stack against your will. Once you leave the table, the contract grants you withdrawal permission and only your signature releases the funds.
+- Send your stack anywhere but your own wallet. Once you leave the table, the contract grants you withdrawal permission and only your signature releases the funds. In an emergency, Stacked can pause ordinary withdrawals, which delays them but can't move your money anywhere else.
 
 This is the trade-off: you trust Stacked to run the game fairly, but not to hold your money. The on-chain part is what makes that distinction enforceable instead of a promise.
 

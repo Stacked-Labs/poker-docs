@@ -19,7 +19,7 @@ If your wallet supports Base and signs Ethereum messages, it almost certainly wo
 
 ## Embedded wallet
 
-If you don't have a wallet, Stacked can create an embedded wallet for you. You sign in with an email or a social account and Stacked sets up the wallet behind the scenes.
+If you don't have a wallet, Stacked can create an embedded wallet for you. You sign in with Google, Discord, Telegram, X, Apple, Twitch, email or your phone number, and Stacked sets up the wallet behind the scenes. Each sign-in method gets its own wallet, so use the same one every time.
 
 The embedded wallet is yours — you can export the keys later if you ever want to move to a different wallet app.
 

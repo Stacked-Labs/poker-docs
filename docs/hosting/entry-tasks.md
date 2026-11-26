@@ -106,4 +106,5 @@ Entry tasks work the same way on Free Play tournaments, where players **join** r
 
 - [Hosting a table →](/docs/hosting/overview): what a Host does and how to start.
 - [Tournaments →](/docs/playing/tournaments): buy-ins, late registration, re-entry and prize pools.
+- [Free Tickets →](/docs/hosting/free-tickets): give players a free seat in your tournament.
 - [Contact and community →](/docs/about/contact): where to find the team.
