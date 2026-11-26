@@ -3,6 +3,8 @@ sidebar_position: 53
 sidebar_label: Cash out
 ---
 
+import MoneyPath from '@site/src/components/MoneyPath';
+
 # Cash out
 
 Cash out is the button that returns your table stack to your wallet balance after you stand up. Money in your wallet balance can then go to an exchange or another wallet.
@@ -11,10 +13,7 @@ Cash out is the button that returns your table stack to your wallet balance afte
 
 There are three steps: stand up between hands, tap **Cash out**, and confirm. The table's contract then sends your stack to your wallet balance.
 
-```mermaid
-flowchart LR
-    C[Table contract] -->|Stand up, Cash out| W[Wallet balance]
-```
+<MoneyPath direction="out" />
 
 1. **Stand up.** Leave your seat between hands. You can't leave mid-hand: you finish the current hand first. Once you're no longer seated, Cash out is available.
 2. **Tap Cash out.** The contract sends your stack straight to your wallet balance, with no queue, no Stacked approval and no schedule. The amount is exactly your table stack at the moment you left.

@@ -90,3 +90,8 @@
     margin: 0;
   }
 }
+
+/* Markdown's list spacing (li + li) would drop steps 2 and 3 below step 1 */
+.track .step + .step {
+  margin-top: 0;
+}

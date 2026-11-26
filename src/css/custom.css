@@ -95,7 +95,7 @@
   --ifm-line-height-base: 1.6;
   --ifm-heading-font-weight: 700;
   --ifm-h1-font-size: 2.25rem; /* type-page, 36 px */
-  --ifm-h2-font-size: 1.5rem;
+  --ifm-h2-font-size: 1.875rem; /* 30 px: a clear step above H3 */
   --ifm-h3-font-size: 1.1875rem;
   --ifm-h4-font-size: 1rem;
   --ifm-heading-line-height: 1.2;
@@ -132,9 +132,10 @@ html[data-theme="dark"] {
   --stacked-primary: var(--stacked-act);
   --stacked-primary-hover: var(--stacked-felt);
 
-  /* Rail ground; surfaces sit on ink, where poker-game's dark card sits */
-  --ifm-background-color: #0E0F11;
-  --ifm-background-surface-color: #1B1D1C;
+  /* The app's dark ramp (poker-game globals.css --dark-ground / --dark-card): charcoal with a
+     faint felt hue, not the blue-black of rail */
+  --ifm-background-color: oklch(16.5% 0.004 160);
+  --ifm-background-surface-color: oklch(22.6% 0.004 160);
 
   /* Cream text */
   --ifm-color-content: #FBF6EC;
@@ -157,11 +158,11 @@ html[data-theme="dark"] {
   --ifm-tabs-color-active: #7CA894;
 
   /* Navbar: rail */
-  --ifm-navbar-background-color: #0E0F11;
+  --ifm-navbar-background-color: oklch(16.5% 0.004 160);
   --ifm-navbar-link-color: #FBF6EC;
   --ifm-navbar-link-hover-color: #7CA894;
 
-  --ifm-footer-background-color: #0E0F11;
+  --ifm-footer-background-color: oklch(16.5% 0.004 160);
   --ifm-footer-link-color: #FBF6EC;
   --ifm-footer-color: #FBF6EC;
 
@@ -194,18 +195,28 @@ body {
   margin-bottom: 0.6em;
 }
 
+/* Sections: space and size do the work, no rules. H2 sits close to its own text. */
 .markdown h2 {
-  margin-top: 2.2em;
-  letter-spacing: -0.01em;
+  margin-top: 2.1em;
+  margin-bottom: 0.45em;
+  letter-spacing: -0.015em;
 }
 
 .markdown h3 {
-  margin-top: 1.8em;
+  margin-top: 1.7em;
+  margin-bottom: 0.4em;
 }
 
 .markdown > p:first-of-type {
   font-size: 1.1em;
   color: var(--ifm-color-content-secondary);
+}
+
+@media (max-width: 600px) {
+  .markdown > p:first-of-type {
+    font-size: 1.0625em;
+    line-height: 1.45;
+  }
 }
 
 .markdown a {
@@ -223,8 +234,23 @@ body {
   font-weight: 700;
 }
 
-article {
-  max-width: 760px;
+/* Doc column: clear of the sidebar, a reading measure, and the pager on the same column */
+article,
+.pagination-nav {
+  max-width: 680px; /* about 72 characters of 17 px Barlow */
+}
+
+@media (min-width: 997px) {
+  main[class*="docMainContainer"] > .container {
+    padding-left: clamp(32px, 4vw, 56px);
+    padding-right: 24px;
+  }
+}
+
+/* A lone Next or Previous card fills the row instead of floating */
+/* Breadcrumb home icon on the H1's edge */
+.theme-doc-breadcrumbs .breadcrumbs__item:first-child .breadcrumbs__link {
+  padding-left: 0;
 }
 
 /* ===== Navbar: paper bar, hairline under it ===== */
@@ -301,6 +327,9 @@ article {
 /* The one primary on doc pages: Play, felt with white text */
 .navbar__cta.navbar__link,
 .navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   background-color: var(--stacked-primary);
   color: #ffffff !important;
   padding: 8px 16px;
@@ -318,61 +347,8 @@ article {
   display: none; /* no external-link arrow on the button */
 }
 
-/* Social icons: SVG masks, recoloured per mode */
-.navbar_logo {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-left: 12px;
-  padding: 0 !important;
-  background-color: var(--ifm-color-content);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  opacity: 0.7;
-  transition: opacity 120ms ease, background-color 120ms ease;
-  background-image: none !important;
-}
-
-.navbar_logo:hover {
-  opacity: 1;
-  background-color: var(--stacked-accent);
-}
-
-.navbar_logo svg {
-  display: none;
-}
-
 .navbar-sidebar__brand {
   background-color: var(--ifm-background-surface-color);
-}
-
-.navbar_github {
-  -webkit-mask-image: url("/img/socials/github-mark.svg");
-  mask-image: url("/img/socials/github-mark.svg");
-}
-
-.navbar_x {
-  -webkit-mask-image: url("/img/socials/x.svg");
-  mask-image: url("/img/socials/x.svg");
-}
-
-.navbar_discord {
-  -webkit-mask-image: url("/img/socials/discord.svg");
-  mask-image: url("/img/socials/discord.svg");
-}
-
-.navbar_telegram {
-  -webkit-mask-image: url("/img/socials/telegram.svg");
-  mask-image: url("/img/socials/telegram.svg");
-}
-
-@media (max-width: 996px) {
-  .navbar_logo {
-    display: none;
-  }
 }
 
 /* Colour-mode toggle (not the burger or the mobile menu's close button) */
@@ -560,7 +536,13 @@ article {
   border: none;
 }
 
-/* ===== Footer ===== */
+/* ===== Footer: on the same 1120 px container as the homepage ===== */
+.footer > .container {
+  max-width: 1120px;
+  padding-left: clamp(16px, 4vw, 32px);
+  padding-right: clamp(16px, 4vw, 32px);
+}
+
 .footer {
   background-color: var(--ifm-background-color) !important;
   color: var(--ifm-color-content);
@@ -610,12 +592,6 @@ article {
   border-top: 1px solid var(--stacked-line);
   display: grid;
   gap: 12px;
-}
-
-.footer__logo {
-  height: 22px;
-  width: auto;
-  margin: 0;
 }
 
 .footer__copyright {
@@ -684,21 +660,6 @@ pre code {
   border-radius: 0;
 }
 
-/* ===== Mermaid diagrams: scale to the column, scroll if still too wide ===== */
-.docusaurus-mermaid-container {
-  overflow-x: auto;
-  margin: 1.75rem 0;
-  padding: 16px;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--stacked-line);
-  border-radius: 16px;
-}
-
-.docusaurus-mermaid-container svg {
-  max-width: 100%;
-  height: auto;
-}
-
 /* ===== Images inside pages ===== */
 .markdown img {
   border-radius: 12px;
@@ -710,42 +671,24 @@ pre code {
   }
 }
 
-/* Diagrams in dark: the mermaid theme variables are light, so restate the parts that would vanish
-   on the rail ground. */
-[data-theme="dark"] .docusaurus-mermaid-container .node rect,
-[data-theme="dark"] .docusaurus-mermaid-container .node polygon,
-[data-theme="dark"] .docusaurus-mermaid-container .node circle,
-[data-theme="dark"] .docusaurus-mermaid-container rect.actor,
-[data-theme="dark"] .docusaurus-mermaid-container .note {
-  fill: #1B1D1C !important;
-  stroke: #7CA894 !important;
+
+
+/* Pager: arrows, not guillemets */
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: "← ";
 }
 
-[data-theme="dark"] .docusaurus-mermaid-container .nodeLabel,
-[data-theme="dark"] .docusaurus-mermaid-container .edgeLabel,
-[data-theme="dark"] .docusaurus-mermaid-container text {
-  color: #FBF6EC !important;
-  fill: #FBF6EC !important;
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: " →";
 }
 
-[data-theme="dark"] .docusaurus-mermaid-container .edgeLabel,
-[data-theme="dark"] .docusaurus-mermaid-container .edgeLabel rect,
-[data-theme="dark"] .docusaurus-mermaid-container .labelBkg {
-  background-color: #1B1D1C !important;
-  fill: #1B1D1C !important;
-}
-
-[data-theme="dark"] .docusaurus-mermaid-container .flowchart-link,
-[data-theme="dark"] .docusaurus-mermaid-container path.path,
-[data-theme="dark"] .docusaurus-mermaid-container .messageLine0,
-[data-theme="dark"] .docusaurus-mermaid-container .messageLine1,
-[data-theme="dark"] .docusaurus-mermaid-container line {
-  stroke: #CCC6B7 !important;
-}
-
-[data-theme="dark"] .docusaurus-mermaid-container marker path,
-[data-theme="dark"] .docusaurus-mermaid-container .arrowheadPath,
-[data-theme="dark"] .docusaurus-mermaid-container .arrowMarkerPath {
-  fill: #CCC6B7 !important;
-  stroke: #CCC6B7 !important;
+/* Phones: keep Play in the bar (Infima hides every bar item below 997 px) */
+@media (max-width: 996px) {
+  .navbar__items--right .navbar__cta {
+    display: inline-flex !important;
+    align-items: center;
+    height: 36px;
+    padding: 0 14px;
+    line-height: 1;
+  }
 }

@@ -2,6 +2,8 @@
 sidebar_position: 90
 ---
 
+import MoneyPath from '@site/src/components/MoneyPath';
+
 # How Stacked works
 
 Stacked Poker is two systems, each doing what it's good at: Stacked's servers run the live game, and each real-money table's own contract holds the money.
@@ -18,11 +20,7 @@ The live game (card shuffling, betting rounds, turn order, the action timer, cha
 
 Your own money flows in a simple loop:
 
-```mermaid
-flowchart LR
-    W[Your wallet balance] -- buy in --> C[Table contract]
-    C -- table stack returns --> W
-```
+<MoneyPath inLabel="Buy in" outLabel="Table stack returns" />
 
 ## How the two parts fit together
 

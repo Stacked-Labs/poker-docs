@@ -25,12 +25,14 @@
 
 .prefix {
   padding: 0 10px;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--ifm-color-content-secondary);
   font-variant-numeric: tabular-nums;
   user-select: none;
 }
 
 .input {
+  font: inherit;
+  font-weight: 600;
   border: 0;
   outline: 0;
   padding: 8px 12px 8px 0;
@@ -41,34 +43,57 @@
   font-variant-numeric: tabular-nums;
 }
 
-.input:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+.inputRow:focus-within {
+  outline: 2px solid var(--stacked-accent);
   outline-offset: 2px;
-  border-radius: 4px;
 }
 
-.table {
+/* Plain rows on the calculator's own sheet: no second card, no header band */
+.calc .table {
+  display: table;
   width: 100%;
-  margin: 18px 0 8px;
+  margin: 18px 0 10px;
+  border: 0;
+  border-radius: 0;
   border-collapse: collapse;
+  overflow: visible;
+  background: transparent;
   font-variant-numeric: tabular-nums;
 }
 
-.table th,
-.table td {
-  text-align: left;
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+.calc .table thead,
+.calc .table tr {
+  background: transparent;
+  border: 0;
 }
 
-.table th {
-  font-weight: 600;
+.amount {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.mult {
+  color: var(--ifm-color-content-secondary);
   font-size: 0.875rem;
-  color: var(--ifm-color-content);
+}
+
+.calc .table th,
+.calc .table td {
+  text-align: left;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--stacked-line);
+  background: transparent;
+}
+
+.calc .table th {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
 }
 
 .note {
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
   margin: 4px 0 0;
 }

@@ -2,17 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import styles from "./HomepageLanding.module.css";
 
-type Suit = "spade" | "heart" | "club" | "diamond";
-
-const PIPS: Record<Suit, string> = {
-  spade: "♠",
-  heart: "♥",
-  club: "♣",
-  diamond: "♦",
-};
-
 type Section = {
-  suit: Suit;
   title: string;
   line: string;
   to: string;
@@ -21,7 +11,6 @@ type Section = {
 
 const SECTIONS: Section[] = [
   {
-    suit: "spade",
     title: "Getting started",
     line: "Sign in, play your first Free Play hand, then your first real-money hand.",
     to: "/docs/getting-started/first-free-play-hand",
@@ -32,7 +21,6 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    suit: "heart",
     title: "Playing",
     line: "Joining a table, what you see once you sit down, cash games and tournaments.",
     to: "/docs/playing/joining-a-table",
@@ -43,7 +31,6 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    suit: "club",
     title: "Hosting",
     line: "Make a table or run a tournament for your group, and what you earn from it.",
     to: "/docs/hosting/overview",
@@ -54,7 +41,6 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    suit: "diamond",
     title: "Your money",
     line: "Adding funds, cashing out, fees, and where your buy-in sits while you play.",
     to: "/docs/your-money/custody",
@@ -72,7 +58,7 @@ const QUESTIONS: { q: string; to: string }[] = [
   { q: "What happens if hands stop settling?", to: "/docs/your-money/emergency-exit" },
   { q: "Which wallets can I sign in with?", to: "/docs/reference/supported-wallets" },
   { q: "Where can I play from?", to: "/docs/reference/availability" },
-  { q: "Something isn't working", to: "/docs/reference/troubleshooting" },
+  { q: "What if something isn't working?", to: "/docs/reference/troubleshooting" },
 ];
 
 const HomepageLanding = () => {
@@ -123,19 +109,11 @@ const HomepageLanding = () => {
 
       <section className={styles.index} aria-labelledby="index-title">
         <h2 id="index-title" className={styles.sectionHead}>
-          Find your way
+          Guides
         </h2>
         <ol className={styles.rows}>
           {SECTIONS.map((s) => (
             <li key={s.title} className={styles.row}>
-              <span
-                className={`${styles.pip} ${
-                  s.suit === "heart" || s.suit === "diamond" ? styles.red : ""
-                }`}
-                aria-hidden="true"
-              >
-                {PIPS[s.suit]}
-              </span>
               <div className={styles.rowText}>
                 <Link to={s.to} className={styles.rowTitle}>
                   {s.title}

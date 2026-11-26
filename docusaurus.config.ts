@@ -145,9 +145,7 @@ const config: Config = {
     { tagName: "meta", attributes: { name: "twitter:image", content: `${SITE_URL}/${SITE_OG_IMAGE}` } },
   ],
 
-  markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: "warn" } },
-  // Diagrams are scoped to the felt palette in src/css/custom.css; this keeps their structure plain.
-  themes: ["@docusaurus/theme-mermaid"],
+  markdown: { hooks: { onBrokenMarkdownLinks: "warn" } },
 
   presets: [
     [
@@ -193,37 +191,11 @@ const config: Config = {
           label: "Play",
           className: "navbar__cta",
         },
-        {
-          href: "https://x.com/stacked_poker",
-          className: "navbar_logo navbar_x",
-          position: "right",
-        },
-        {
-          href: "https://discord.gg/xdaC5gRP4E",
-          className: "navbar_logo navbar_discord",
-          position: "right",
-        },
-        {
-          href: "https://t.me/stackedpoker",
-          className: "navbar_logo navbar_telegram",
-          position: "right",
-        },
-        {
-          href: "https://github.com/Stacked-Labs",
-          className: "navbar_logo navbar_github",
-          position: "right",
-        },
       ],
       hideOnScroll: false,
     },
     footer: {
       style: "light",
-      logo: {
-        alt: "Stacked Poker",
-        src: "img/brand/stacked-logo-ink.svg",
-        srcDark: "img/brand/stacked-logo-white.svg",
-        height: 22,
-      },
       links: [
         {
           title: "Stacked Poker",
@@ -303,31 +275,6 @@ const config: Config = {
       defaultMode: "light",
       respectPrefersColorScheme: false,
       disableSwitch: false,
-    },
-    mermaid: {
-      theme: { light: "base", dark: "base" },
-      options: {
-        fontFamily: "Barlow, system-ui, sans-serif",
-        themeVariables: {
-          primaryColor: "#FFFDF8",
-          primaryBorderColor: "#1E6B4C",
-          primaryTextColor: "#1B1D1C",
-          secondaryColor: "#E4EBE3",
-          tertiaryColor: "#F3EEE4",
-          lineColor: "#3D3F3B",
-          textColor: "#1B1D1C",
-          noteBkgColor: "#FBF6EC",
-          noteBorderColor: "#CCC6B7",
-          actorBkg: "#FFFDF8",
-          actorBorder: "#1E6B4C",
-          actorTextColor: "#1B1D1C",
-          signalColor: "#3D3F3B",
-          signalTextColor: "#1B1D1C",
-          labelBoxBkgColor: "#FFFDF8",
-          labelBoxBorderColor: "#1E6B4C",
-          fontSize: "15px",
-        },
-      },
     },
     prism: {
       theme: prismThemes.github,

@@ -75,12 +75,15 @@ Bob then starts hosting a weekly tournament. Alice gets 1,000 points the first t
 ## FAQ
 
 **Does my friend pay more because I referred them?**
+
 No. Your share comes out of Stacked's share of the platform fee.
 
 **My friend already joined through someone else's link. Can I still refer them?**
+
 No. The first referrer is permanent.
 
 **Do I get anything from Free Play?**
+
 No. Free Play has no platform fee, so there is nothing to share.
 
 ## What's next

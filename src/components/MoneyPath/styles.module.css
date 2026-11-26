@@ -1,35 +1,31 @@
+/* No outer card: the felt panel is the figure's one object, the wallet tiles sit on the page */
 .figure {
   margin: 1.75rem 0;
-  padding: 20px;
-  border: 1px solid var(--stacked-line);
-  border-radius: 16px;
-  background: var(--ifm-background-surface-color);
 }
 
 .row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(72px, auto) minmax(0, 1.4fr) minmax(72px, auto) minmax(0, 1fr);
-  align-items: center;
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) minmax(92px, auto) minmax(0, 1.4fr) minmax(92px, auto) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
+}
+
+.rowOut {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(92px, auto) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
 }
 
 .tile {
   display: grid;
+  align-content: center;
   gap: 2px;
-  padding: 14px 14px;
+  padding: 16px;
   border: 1px solid var(--stacked-line);
   border-radius: 12px;
-  background: var(--ifm-background-color);
+  background: var(--ifm-background-surface-color);
   min-width: 0;
-}
-
-.kicker {
-  font-size: 0.8125rem;
-  color: var(--stacked-mute);
-}
-
-[data-theme="dark"] .kicker {
-  color: rgba(251, 246, 236, 0.6);
 }
 
 .name {
@@ -40,18 +36,14 @@
 
 .felt {
   display: grid;
+  align-content: center;
   gap: 4px;
-  padding: 16px 16px;
+  padding: 16px 18px;
   border-radius: 14px;
   background: var(--stacked-felt);
-  box-shadow: 0 0 0 3px var(--stacked-rail);
+  box-shadow: 0 0 0 2px var(--stacked-rail);
   color: #ffffff;
   min-width: 0;
-}
-
-.kickerLight {
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.75);
 }
 
 .nameLight {
@@ -68,8 +60,9 @@
 
 .arrow {
   display: grid;
+  align-content: center;
   justify-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .label {
@@ -104,7 +97,8 @@
 }
 
 @media (max-width: 720px) {
-  .row {
+  .row,
+  .rowOut {
     grid-template-columns: minmax(0, 1fr);
   }
   .arrow {

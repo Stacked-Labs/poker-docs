@@ -6,6 +6,8 @@ type Props = {
   inLabel?: string;
   /** Label on the way out. */
   outLabel?: string;
+  /** "round" shows wallet, contract, wallet. "out" shows only the way back: contract, wallet. */
+  direction?: "round" | "out";
 };
 
 /**
@@ -16,20 +18,24 @@ type Props = {
 export default function MoneyPath({
   inLabel = "Buy in",
   outLabel = "Stand up, Cash out",
+  direction = "round",
 }: Props): JSX.Element {
+  const round = direction === "round";
   return (
     <figure className={styles.figure} aria-label="Where your money sits">
-      <div className={styles.row}>
-        <div className={styles.tile}>
-          <span className={styles.kicker}>You</span>
-          <span className={styles.name}>Wallet balance</span>
-        </div>
-        <div className={styles.arrow}>
-          <span className={styles.label}>{inLabel}</span>
-          <span className={styles.line} aria-hidden="true" />
-        </div>
+      <div className={round ? styles.row : styles.rowOut}>
+        {round && (
+          <>
+            <div className={styles.tile}>
+              <span className={styles.name}>Wallet balance</span>
+            </div>
+            <div className={styles.arrow}>
+              <span className={styles.label}>{inLabel}</span>
+              <span className={styles.line} aria-hidden="true" />
+            </div>
+          </>
+        )}
         <div className={styles.felt}>
-          <span className={styles.kickerLight}>While you play</span>
           <span className={styles.nameLight}>The table's own contract</span>
           <span className={styles.sub}>Holds your table stack. Not a Stacked account.</span>
         </div>
@@ -38,7 +44,6 @@ export default function MoneyPath({
           <span className={styles.line} aria-hidden="true" />
         </div>
         <div className={styles.tile}>
-          <span className={styles.kicker}>You</span>
           <span className={styles.name}>Wallet balance</span>
         </div>
       </div>

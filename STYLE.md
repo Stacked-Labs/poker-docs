@@ -82,7 +82,7 @@ Player docs are public, and competitors read them. Reveal **what players get**, 
 - **How settlement works after each hand.** No "the backend sends a settlement transaction/report to the contract," no settlement reports, webhooks, events (e.g. a "ChipsSettled" event), settlement wallets, or any backend↔contract message choreography. Say only that the hand settles onchain when it ends.
 - **Infrastructure and vendors.** Never name third-party infra (e.g. thirdweb) or the relayer/"engine" that submits transactions and sponsors gas. For wallets, say "popular wallets" or list the brands (Coinbase Wallet, MetaMask, Rainbow, WalletConnect); for the provided wallet, "an embedded wallet Stacked creates for you."
 - **The backend stack.** Never name the language or framework (no "Go backend"). Say "Stacked's servers."
-- **Revealing diagrams.** No architecture/sequence diagrams showing backend↔contract messaging, settlement reports, events, gas-payment edges, or internal platform-fee routing. Keep diagrams to the player's own money flow (your wallet → table contract → your wallet), ≤3–4 nodes, no internal mechanism.
+- **Revealing diagrams.** No architecture/sequence diagrams showing backend↔contract messaging, settlement reports, events, gas-payment edges, or internal platform-fee routing. Keep diagrams to the player's own money flow (your wallet → table contract → your wallet), ≤3–4 nodes, no internal mechanism. Draw that flow with the `MoneyPath` component (`direction="out"` for the way back only), not Mermaid: the site no longer loads Mermaid.
 
 **Keep (these are player-facing outcomes and trust facts, not blueprints):**
 - Each real-money table is its own smart contract deployed on Base when the Host creates it (per-table contracts).

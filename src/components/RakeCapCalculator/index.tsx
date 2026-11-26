@@ -77,7 +77,16 @@ export default function RakeCapCalculator(): JSX.Element {
           {rows.map((r) => (
             <tr key={r.label}>
               <td>{r.label}</td>
-              <td>{valid ? formatBB(r.mult) : "Enter a big blind"}</td>
+              <td>
+                {valid ? (
+                  <>
+                    <span className={styles.amount}>${r.capDollars.toFixed(2)}</span>
+                    <span className={styles.mult}>{formatBB(r.mult)}</span>
+                  </>
+                ) : (
+                  "Enter a big blind"
+                )}
+              </td>
             </tr>
           ))}
         </tbody>

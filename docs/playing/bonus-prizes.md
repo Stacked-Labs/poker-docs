@@ -85,21 +85,27 @@ Had only 6 players registered, below Alice's minimum, the tournament would have 
 ## FAQ
 
 **Does the bonus prize get smaller if lots of people enter?**
+
 No. It's a flat amount. More entries grow the USDC prize pool (in the usual setup), but the bonus prize is whatever the Host funded.
 
 **Is a fee taken out of the bonus prize?**
+
 No. The full amount is paid to the finishers. The platform fee applies to buy-ins. See [How fees work](/docs/your-money/fees).
 
 **What if the Host doesn't fund it?**
+
 Then registration never opens and there's no tournament to enter. A bonus prize you can see on a tournament you can register for has already been paid in.
 
 **Can a tournament have more than one bonus prize?**
+
 Not today. There's one bonus token per tournament, alongside the USDC prizes.
 
 **What if something goes wrong and the tournament doesn't pay out?**
+
 The same 24-hour safety net that covers everything else on Stacked covers this too. If a tournament stalls and isn't paid out, anyone can open refunds 24 hours after its advertised end time, and every entrant reclaims their share of the USDC in the contract. The bonus prize isn't split among the players in that case. It goes back to the Host who funded it, because nobody finished the tournament to win it. See [The 24-hour exit](/docs/your-money/emergency-exit).
 
 **I hold a token and want it listed. What do I do?**
+
 [Ask on Discord](https://discord.gg/xdaC5gRP4E). See [Getting a token added](#getting-a-token-added) above.
 
 ## What's next
