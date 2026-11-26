@@ -1,104 +1,145 @@
 /**
- * Stacked brand theme — penthouse, not casino floor.
- * Light mode leads with felt-green; dark mode leads with chip-yellow.
+ * Stacked docs theme: Bone and felt (approved 25 Nov 2026).
+ * Values are copied from poker-game/app/globals.css, which wins if they ever differ. What each
+ * colour is allowed to mean is in poker-game/DESIGN.md Part A.
+ * Light is the default: bone ground, paper surfaces, ink text, felt for links and the primary.
+ * Dark is second and PROVISIONAL (see the dark block).
+ *
+ * Variable names retired with this change, and what replaced them:
+ *   --stacked-midnight     ->  --stacked-ink (#1B1D1C)
+ *   --stacked-navy         ->  --stacked-ink-2 (#3D3F3B)
+ *   --stacked-pink         ->  removed. Hovers use --stacked-accent; danger is --stacked-live (#D42A22)
+ *   --stacked-green        ->  --stacked-felt (#1E6B4C)
+ *   --stacked-green-dark   ->  --stacked-felt-hover (#185A40); #2A8463 is now --stacked-act
+ *   --stacked-yellow       ->  removed as an accent: gold is for wins only. Dark accents use --stacked-felt-pale
+ *   --stacked-yellow-deep  ->  --stacked-brass (#925F11), warnings
+ *   --stacked-cold         ->  --stacked-cream (#FBF6EC) for type on dark, --stacked-sunken (#ECE6D9) for filled surfaces
+ *   Font: Poppins          ->  Barlow, loaded by the Google Fonts link in docusaurus.config.ts
  */
 
 :root {
-  /* Stacked brand tokens */
-  --stacked-midnight: #0B1430;
-  --stacked-navy: #334479;
-  --stacked-pink: #EB0B5C;
-  --stacked-green: #36A37B;
-  --stacked-green-dark: #2A8463;
-  --stacked-yellow: #FDC51D;
-  --stacked-yellow-deep: #B78900;
-  --stacked-cold: #ECEEF5;
-  --stacked-ink: #191414;
+  /* Bone and felt tokens, by the brand's names */
+  --stacked-bone: #F3EEE4;
+  --stacked-paper: #FFFDF8;
+  --stacked-ink: #1B1D1C;
+  --stacked-ink-2: #3D3F3B;
+  --stacked-mute: #5E605B;
+  --stacked-sunken: #ECE6D9;
+  --stacked-felt: #1E6B4C;
+  --stacked-felt-hover: #185A40;
+  --stacked-felt-deep: #134A34;
+  --stacked-act: #2A8463;
+  --stacked-felt-pale: #7CA894;
+  --stacked-cream: #FBF6EC;
+  --stacked-rail: #0E0F11;
+  --stacked-live: #D42A22;
+  --stacked-brass: #925F11;
 
-  /* Infima primary — felt-green family in light mode */
-  --ifm-color-primary: #36A37B;
-  --ifm-color-primary-dark: #2A8463;
-  --ifm-color-primary-darker: #22674E;
-  --ifm-color-primary-darkest: #1B523E;
-  --ifm-color-primary-light: #4AB68D;
-  --ifm-color-primary-lighter: #5FC79E;
-  --ifm-color-primary-lightest: #74D8AF;
+  /* Roles that switch with the colour mode */
+  --stacked-accent: var(--stacked-felt); /* links, hover and current-page text */
+  --stacked-primary: var(--stacked-felt); /* filled buttons, white text */
+  --stacked-primary-hover: var(--stacked-felt-hover);
+
+  /* Infima primary: felt, with shades from the felt ramp in globals.css */
+  --ifm-color-primary: #1E6B4C;
+  --ifm-color-primary-dark: #185A40;
+  --ifm-color-primary-darker: #134A34;
+  --ifm-color-primary-darkest: #0D3424;
+  --ifm-color-primary-light: #2A8463;
+  --ifm-color-primary-lighter: #7CA894;
+  --ifm-color-primary-lightest: #AAC6B7;
 
   --ifm-color-white: #ffffff;
 
-  /* Page surfaces */
-  --ifm-background-color: #FFFFFF;
-  --ifm-background-surface-color: #ECEEF5;
+  /* Page surfaces: bone ground, paper for cards, menus and the top bar */
+  --ifm-background-color: #F3EEE4;
+  --ifm-background-surface-color: #FFFDF8;
 
-  /* Content */
-  --ifm-color-content: #0B1430;
-  --ifm-color-content-secondary: #334479;
+  /* Content: ink, with ink-2 for secondary copy */
+  --ifm-color-content: #1B1D1C;
+  --ifm-color-content-secondary: #3D3F3B;
 
-  /* Links */
-  --ifm-link-color: #36A37B;
-  --ifm-link-hover-color: #2A8463;
+  /* Links: felt */
+  --ifm-link-color: #1E6B4C;
+  --ifm-link-hover-color: #185A40;
 
-  /* Navbar — light glass in light mode, midnight in dark */
-  --ifm-navbar-background-color: rgba(255, 255, 255, 0.85);
-  --ifm-navbar-link-color: #0B1430;
-  --ifm-navbar-link-hover-color: #36A37B;
+  /* Navbar: paper */
+  --ifm-navbar-background-color: rgba(255, 253, 248, 0.85);
+  --ifm-navbar-link-color: #1B1D1C;
+  --ifm-navbar-link-hover-color: #1E6B4C;
 
-  /* Footer */
-  --ifm-footer-background-color: #FFFFFF;
-  --ifm-footer-link-color: #0B1430;
-  --ifm-footer-color: #0B1430;
-  --ifm-footer-title-color: #0B1430;
+  /* Footer: the page ground */
+  --ifm-footer-background-color: #F3EEE4;
+  --ifm-footer-link-color: #1B1D1C;
+  --ifm-footer-color: #1B1D1C;
+  --ifm-footer-title-color: #1B1D1C;
 
-  /* Admonitions */
-  --ifm-color-success: #36A37B;
-  --ifm-color-info: #334479;
-  --ifm-color-warning: #B78900;
-  --ifm-color-danger: #EB0B5C;
+  /* Admonitions: success is felt, info is ink-2, warning is brass, danger is live red */
+  --ifm-color-success: #1E6B4C;
+  --ifm-color-info: #3D3F3B;
+  --ifm-color-warning: var(--stacked-brass);
+  --ifm-color-danger: var(--stacked-live);
 
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(54, 163, 123, 0.18);
+  --docusaurus-highlighted-code-line-bg: rgba(30, 107, 76, 0.18);
 }
 
-[data-theme="dark"] {
-  --stacked-dark-bg: #191919;
-  --stacked-dark-surface: #141418;
-  --ifm-background-color: #191919;
-  --ifm-background-surface-color: #141418;
+/*
+ * Dark mode is PROVISIONAL. The brand's dark theme (a deep felt ground, rail bars and sheets,
+ * cream text) ships after light. Until then dark keeps working on a rail ground with cream text
+ * and act as the primary. Do not treat these values as the final dark design.
+ * The selector is html[data-theme="dark"] on purpose: Infima sets its own dark ground and text
+ * on html[data-theme='dark'], which outranks a bare [data-theme="dark"].
+ */
+html[data-theme="dark"] {
+  --stacked-accent: var(--stacked-felt-pale); /* poker-game's dark link colour */
+  --stacked-primary: var(--stacked-act);
+  --stacked-primary-hover: var(--stacked-felt);
 
-  --ifm-color-content: #ECEEF5;
-  --ifm-color-content-secondary: rgba(236, 238, 245, 0.72);
+  /* Rail ground; surfaces sit on ink, where poker-game's dark card sits */
+  --ifm-background-color: #0E0F11;
+  --ifm-background-surface-color: #1B1D1C;
 
-  /* Chip-yellow leads in dark mode for contrast */
-  --ifm-color-primary: #FDC51D;
-  --ifm-color-primary-dark: #E5B219;
-  --ifm-color-primary-darker: #B78900;
-  --ifm-color-primary-darkest: #8C6900;
-  --ifm-color-primary-light: #FDD04A;
-  --ifm-color-primary-lighter: #FED970;
-  --ifm-color-primary-lightest: #FEE39A;
+  /* Cream text */
+  --ifm-color-content: #FBF6EC;
+  --ifm-color-content-secondary: rgba(251, 246, 236, 0.72);
 
-  --ifm-link-color: #FDC51D;
-  --ifm-link-hover-color: #E5B219;
+  /* act as the primary, with shades from the felt ramp */
+  --ifm-color-primary: #2A8463;
+  --ifm-color-primary-dark: #1E6B4C;
+  --ifm-color-primary-darker: #185A40;
+  --ifm-color-primary-darkest: #134A34;
+  --ifm-color-primary-light: #7CA894;
+  --ifm-color-primary-lighter: #AAC6B7;
+  --ifm-color-primary-lightest: #CEDDD2;
 
-  /* Navbar — penthouse-midnight in dark */
-  --ifm-navbar-background-color: rgba(46, 46, 54, 0.95);
-  --ifm-navbar-link-color: #ECEEF5;
-  --ifm-navbar-link-hover-color: #FDC51D;
+  /* act is about 4.2:1 as text on rail, so accent text takes the paler felt (7.2:1) */
+  --ifm-link-color: #7CA894;
+  --ifm-link-hover-color: #AAC6B7;
+  --ifm-menu-color-active: #7CA894;
+  --ifm-breadcrumb-color-active: #7CA894;
+  --ifm-tabs-color-active: #7CA894;
 
-  --ifm-footer-background-color: #191919;
-  --ifm-footer-link-color: #ECEEF5;
-  --ifm-footer-color: #ECEEF5;
+  /* Navbar: rail */
+  --ifm-navbar-background-color: rgba(14, 15, 17, 0.95);
+  --ifm-navbar-link-color: #FBF6EC;
+  --ifm-navbar-link-hover-color: #7CA894;
 
-  --ifm-color-success: #36A37B;
-  --ifm-color-info: #5A6FA5;
-  --ifm-color-warning: #FDC51D;
-  --ifm-color-danger: #EB0B5C;
+  --ifm-footer-background-color: #0E0F11;
+  --ifm-footer-link-color: #FBF6EC;
+  --ifm-footer-color: #FBF6EC;
 
-  --docusaurus-highlighted-code-line-bg: rgba(54, 163, 123, 0.18);
+  /* The dark values of success, warning and destructive in globals.css */
+  --ifm-color-success: #8CCFB0;
+  --ifm-color-info: #CCC6B7;
+  --ifm-color-warning: #FBBF24;
+  --ifm-color-danger: #F0655C;
+
+  --docusaurus-highlighted-code-line-bg: rgba(42, 132, 99, 0.18);
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 /* ===== Navbar ===== */
@@ -113,10 +154,10 @@
  */
 .navbar {
   background-color: transparent !important;
-  border-bottom: 1px solid rgba(11, 20, 48, 0.08);
+  border-bottom: 1px solid rgba(27, 29, 28, 0.08);
   height: 64px;
   padding: 0 clamp(16px, 3vw, 28px);
-  box-shadow: 0 1px 0 rgba(11, 20, 48, 0.04), 0 4px 16px rgba(11, 20, 48, 0.06);
+  box-shadow: 0 1px 0 rgba(27, 29, 28, 0.04), 0 4px 16px rgba(27, 29, 28, 0.06);
 }
 
 .navbar::before {
@@ -124,7 +165,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 253, 248, 0.85);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   backdrop-filter: saturate(180%) blur(12px);
 }
@@ -135,7 +176,7 @@
 }
 
 [data-theme="dark"] .navbar::before {
-  background-color: rgba(46, 46, 54, 0.95);
+  background-color: rgba(14, 15, 17, 0.95);
 }
 
 .navbar__inner {
@@ -148,7 +189,7 @@
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--stacked-midnight);
+  color: var(--stacked-ink);
   padding: 8px 12px;
   border-radius: 8px;
   transition: color 120ms ease, background-color 120ms ease;
@@ -156,40 +197,40 @@
 
 .navbar__link:hover,
 .navbar__item a:hover {
-  color: var(--stacked-green);
-  background-color: rgba(54, 163, 123, 0.08);
+  color: var(--stacked-accent);
+  background-color: rgba(30, 107, 76, 0.08);
 }
 
 .navbar__link--active {
-  color: var(--stacked-green);
+  color: var(--stacked-accent);
 }
 
 [data-theme="dark"] .navbar__item,
 [data-theme="dark"] .navbar__link,
 [data-theme="dark"] .navbar__items button {
-  color: rgba(236, 238, 245, 0.86);
+  color: rgba(251, 246, 236, 0.86);
 }
 
 [data-theme="dark"] .navbar__link:hover,
 [data-theme="dark"] .navbar__item a:hover {
-  color: var(--stacked-yellow);
+  color: var(--stacked-accent);
   background-color: rgba(255, 255, 255, 0.04);
 }
 
 [data-theme="dark"] .navbar__link--active {
-  color: var(--stacked-yellow);
+  color: var(--stacked-accent);
 }
 
 .navbar__brand {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--stacked-midnight);
+  color: var(--stacked-ink);
   margin-right: 18px;
   gap: 9px;
 }
 
 [data-theme="dark"] .navbar__brand {
-  color: var(--stacked-cold);
+  color: var(--stacked-cream);
 }
 
 .navbar__logo {
@@ -216,7 +257,7 @@
   width: 1.25rem;
   height: 1.25rem;
   margin-left: 14px;
-  background-color: var(--stacked-midnight);
+  background-color: var(--stacked-ink);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
@@ -232,23 +273,23 @@
 .navbar_logo:hover {
   opacity: 1;
   transform: translateY(-1px);
-  background-color: var(--stacked-green);
+  background-color: var(--stacked-accent);
 }
 
 [data-theme="dark"] .navbar_logo {
-  background-color: var(--stacked-cold);
+  background-color: var(--stacked-cream);
 }
 
 [data-theme="dark"] .navbar_logo:hover {
-  background-color: var(--stacked-yellow);
+  background-color: var(--stacked-accent);
 }
 
 .navbar-sidebar__brand {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 253, 248, 0.95);
 }
 
 [data-theme="dark"] .navbar-sidebar__brand {
-  background-color: #191919;
+  background-color: var(--stacked-rail);
 }
 
 .navbar_github {
@@ -286,63 +327,63 @@
 
 /* Color-mode toggle (do NOT match .navbar__toggle burger or the mobile sidebar's close X) */
 .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
-  border: 1px solid rgba(11, 20, 48, 0.12);
+  border: 1px solid rgba(27, 29, 28, 0.12);
   border-radius: 8px;
   margin-left: 14px;
   width: 34px;
   height: 34px;
   align-items: center;
   justify-content: center;
-  color: var(--stacked-midnight);
+  color: var(--stacked-ink);
   transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 
 .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
-  background-color: rgba(54, 163, 123, 0.08);
-  border-color: rgba(54, 163, 123, 0.32);
-  color: var(--stacked-green);
+  background-color: rgba(30, 107, 76, 0.08);
+  border-color: rgba(30, 107, 76, 0.32);
+  color: var(--stacked-accent);
 }
 
 [data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
-  border-color: rgba(236, 238, 245, 0.14);
-  color: rgba(236, 238, 245, 0.78);
+  border-color: rgba(251, 246, 236, 0.14);
+  color: rgba(251, 246, 236, 0.78);
 }
 
 [data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
   background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(236, 238, 245, 0.28);
-  color: var(--stacked-cold);
+  border-color: rgba(251, 246, 236, 0.28);
+  color: var(--stacked-cream);
 }
 
 /* Mobile burger toggle: keep Docusaurus defaults but tone color */
 .navbar__toggle {
-  color: var(--stacked-midnight);
+  color: var(--stacked-ink);
 }
 
 [data-theme="dark"] .navbar__toggle {
-  color: var(--stacked-cold);
+  color: var(--stacked-cream);
 }
 
 .clean-btn:focus-visible {
-  outline: 2px solid var(--stacked-green);
+  outline: 2px solid var(--stacked-accent);
   outline-offset: 2px;
 }
 
 [data-theme="dark"] .clean-btn:focus-visible {
-  outline-color: var(--stacked-yellow);
+  outline-color: var(--stacked-accent);
 }
 
 /* ===== Footer ===== */
 .footer {
-  background-color: #FFFFFF !important;
-  color: #0B1430;
+  background-color: var(--stacked-bone) !important;
+  color: var(--stacked-ink);
   padding: 32px 0 20px;
-  border-top: 1px solid rgba(11, 20, 48, 0.08);
+  border-top: 1px solid rgba(27, 29, 28, 0.08);
 }
 
 [data-theme="dark"] .footer {
-  background-color: #191919 !important;
-  color: var(--stacked-cold);
+  background-color: var(--stacked-rail) !important;
+  color: var(--stacked-cream);
   border-top-color: rgba(255, 255, 255, 0.04);
 }
 
@@ -366,7 +407,7 @@
   text-align: left;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid rgba(11, 20, 48, 0.08);
+  border-top: 1px solid rgba(27, 29, 28, 0.08);
 }
 
 [data-theme="dark"] .footer__bottom {
@@ -387,7 +428,7 @@
 }
 
 .footer__title {
-  color: #0B1430;
+  color: var(--stacked-ink);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -397,7 +438,7 @@
 }
 
 [data-theme="dark"] .footer__title {
-  color: var(--stacked-cold);
+  color: var(--stacked-cream);
 }
 
 .footer__item {
@@ -406,7 +447,7 @@
 
 .footer__item a,
 .footer__link-item {
-  color: rgba(11, 20, 48, 0.72);
+  color: var(--stacked-ink-2);
   font-size: 0.9375rem;
   font-weight: 500;
   transition: color 160ms ease, transform 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -415,18 +456,18 @@
 
 [data-theme="dark"] .footer__item a,
 [data-theme="dark"] .footer__link-item {
-  color: rgba(236, 238, 245, 0.72);
+  color: rgba(251, 246, 236, 0.72);
 }
 
 .footer__item a:hover,
 .footer__link-item:hover {
-  color: var(--stacked-pink);
+  color: var(--stacked-accent);
   text-decoration: none;
   transform: translateX(2px);
 }
 
 .footer__copyright {
-  color: rgba(11, 20, 48, 0.55);
+  color: var(--stacked-mute);
   font-size: 0.8125rem;
   line-height: 1.55;
   margin: 0;
@@ -434,7 +475,7 @@
 }
 
 [data-theme="dark"] .footer__copyright {
-  color: rgba(236, 238, 245, 0.5);
+  color: rgba(251, 246, 236, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -473,40 +514,40 @@
 }
 
 .button--secondary {
-  background-color: var(--stacked-green);
+  background-color: var(--stacked-primary);
   border: none;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 2px 0 #22674E;
+    0 2px 0 var(--stacked-felt-deep);
 }
 
 .button--secondary:hover {
-  background-color: var(--stacked-green-dark);
+  background-color: var(--stacked-primary-hover);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 2px 0 #22674E;
+    0 2px 0 var(--stacked-felt-deep);
 }
 
 .button--secondary:active,
 .button--secondary.button:active {
   transform: translateY(2px);
-  background-color: var(--stacked-green-dark);
+  background-color: var(--stacked-primary-hover);
   box-shadow:
-    0 0 0 #22674E,
+    0 0 0 var(--stacked-felt-deep),
     inset 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .button--white {
   background-color: transparent;
-  color: var(--stacked-cold);
-  border: 2px solid rgba(236, 238, 245, 0.65);
+  color: var(--stacked-cream);
+  border: 2px solid rgba(251, 246, 236, 0.65);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 .button--white:hover {
   background-color: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
-  border-color: var(--stacked-cold);
+  border-color: var(--stacked-cream);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
 }
 
@@ -523,8 +564,8 @@
 
 /* ===== Details / collapsible ===== */
 details {
-  background-color: var(--stacked-cold) !important;
-  border: 1px solid rgba(11, 20, 48, 0.12);
+  background-color: var(--stacked-sunken) !important;
+  border: 1px solid rgba(27, 29, 28, 0.12);
   border-radius: 10px;
   padding: 12px 16px;
   margin-bottom: 10px;
@@ -536,12 +577,12 @@ details summary {
 }
 
 details[open] {
-  background-color: #FFFFFF !important;
+  background-color: var(--stacked-paper) !important;
 }
 
 [data-theme="dark"] details {
   background-color: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(236, 238, 245, 0.10);
+  border: 1px solid rgba(251, 246, 236, 0.10);
 }
 
 [data-theme="dark"] details[open] {
@@ -551,15 +592,15 @@ details[open] {
 /* ===== Sidebar ===== */
 .menu__link--active,
 .menu__link--active:hover {
-  background-color: rgba(54, 163, 123, 0.10);
+  background-color: rgba(30, 107, 76, 0.1);
   font-weight: 700;
-  color: var(--stacked-green-dark);
+  color: var(--stacked-accent);
 }
 
 [data-theme="dark"] .menu__link--active,
 [data-theme="dark"] .menu__link--active:hover {
-  background-color: rgba(253, 197, 29, 0.12);
-  color: var(--stacked-yellow);
+  background-color: rgba(42, 132, 99, 0.18);
+  color: var(--stacked-accent);
 }
 
 /* ===== Code blocks ===== */
@@ -572,7 +613,7 @@ details[open] {
 }
 
 code {
-  background-color: rgba(54, 163, 123, 0.10);
+  background-color: var(--stacked-sunken);
   padding: 0 6px;
   border-radius: 6px;
   color: inherit;
@@ -580,7 +621,7 @@ code {
 }
 
 [data-theme="dark"] code {
-  background-color: rgba(253, 197, 29, 0.14);
+  background-color: rgba(251, 246, 236, 0.08);
 }
 
 /* Don't double-style code inside pre/code blocks */

@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const SITE_URL = "https://stackedpoker.io";
 const SITE_TITLE = "Stacked Poker Docs";
-const SITE_TAGLINE = "Your table. Your money.";
+const SITE_TAGLINE = "Host a game for your group chat, or run your own tournament.";
 const SITE_DESCRIPTION =
   "Documentation for Stacked Poker. Learn how to play poker in your browser — free play or real stakes settled in USDC on Base. No downloads.";
 const SITE_KEYWORDS =
@@ -85,7 +85,8 @@ const config: Config = {
       tagName: "link",
       attributes: {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+        // Barlow in three widths, the same six files poker-game loads in app/layout.tsx.
+        href: "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@1,800&family=Barlow+Semi+Condensed:wght@700&display=swap",
       },
     },
     {
@@ -107,7 +108,8 @@ const config: Config = {
     },
     {
       tagName: "meta",
-      attributes: { name: "theme-color", content: "#0B1430" },
+      // Bone, the page ground (poker-game uses the same value for its light theme colour).
+      attributes: { name: "theme-color", content: "#F3EEE4" },
     },
     {
       tagName: "meta",
@@ -236,11 +238,11 @@ const config: Config = {
               href: "https://stackedpoker.io",
             },
             {
-              label: "Create Game",
+              label: "Host a game",
               href: "https://stackedpoker.io/create-game",
             },
             {
-              label: "Leaderboard",
+              label: "Ranks",
               href: "https://stackedpoker.io/leaderboard",
             },
           ],
