@@ -25,7 +25,7 @@ function fullCapDollars(bbDollars: number): number {
 }
 
 function formatBB(multiplier: number): string {
-  if (!Number.isFinite(multiplier) || multiplier <= 0) return "—";
+  if (!Number.isFinite(multiplier) || multiplier <= 0) return "n/a";
   // Two decimals for small multiples, one when ≥10
   return multiplier >= 10
     ? `${multiplier.toFixed(1)}× BB`
@@ -77,16 +77,25 @@ export default function RakeCapCalculator(): JSX.Element {
           {rows.map((r) => (
             <tr key={r.label}>
               <td>{r.label}</td>
-              <td>{valid ? formatBB(r.mult) : "—"}</td>
+              <td>
+                {valid ? (
+                  <>
+                    <span className={styles.amount}>${r.capDollars.toFixed(2)}</span>
+                    <span className={styles.mult}>{formatBB(r.mult)}</span>
+                  </>
+                ) : (
+                  "Enter a big blind"
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
 
       <p className={styles.note}>
-        The platform fee is still {RAKE_RATE_PCT}% of the pot — the cap only kicks in once
-        the pot is large enough to exceed it. The cap is bounded by an absolute
-        floor of $0.01 and a ceiling of $6.00 per hand.
+        The platform fee is still {RAKE_RATE_PCT}% of the pot. The cap only applies
+        once a pot is large enough to reach it, and it never goes below $0.01 or
+        above $6.00 per hand.
       </p>
     </div>
   );

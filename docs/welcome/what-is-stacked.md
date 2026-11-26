@@ -2,41 +2,47 @@
 sidebar_position: 1
 ---
 
-# What is Stacked?
+import MoneyPath from '@site/src/components/MoneyPath';
 
-Your table. Your money.
+# What is Stacked Poker?
 
-![Stacked poker table — green felt with the Stacked wordmark.](/img/tables/table-horizontal-green.webp)
+Stacked Poker is browser poker that any player can host, with every real-money buy-in held in that table's own contract. Host a game for your group chat, or run your own tournament.
 
-Stacked is a poker platform where every table is created by a player and every real-money hand settles to USDC on Base. USDC is a digital dollar that holds a stable value; Base is an Ethereum-based network with very low fees. Hosts create the tables and decide who sits at them. Stacked runs the game itself — dealing, betting rounds, turn order — while a smart contract (a small program on Base that holds and moves money by fixed rules) holds the money and settles every hand. Two systems, each doing what it's good at.
+<MoneyPath />
+
+## What it is
+
+Every table on Stacked is created by a player, the Host. The Host sets the stakes and invites who they want. Real-money tables are played in USDC, a digital dollar that holds a stable value.
+
+Two systems work together, each doing what it's good at. Stacked's servers run the game: dealing, betting rounds and turn order. The table's contract holds the money. A contract is a small program on Base, an Ethereum-based network with very low fees, that holds money and moves it by fixed rules.
 
 ## How it works
 
-A few ideas tie the whole thing together.
-
 ### Anyone can host
 
-Every table on Stacked is created by a player. **On real-money tables you host, you earn 25% of the platform fee**, paid out on-chain whenever you withdraw. You set the stakes and invite who you want. Players sit down instantly by default, and you can switch to approving each one yourself. ([How fees work →](/docs/your-money/fees))
+**On real-money tables you host, you earn 25% of the platform fee.** It's credited onchain as hands settle, and you can collect it any time. You set the stakes and invite who you want. Players take a seat instantly by default, and you can switch to approving each one yourself. ([How fees work →](/docs/your-money/fees))
 
-### Your money is on-chain, not with us
+### Your money sits in the table's contract, not with us
 
-Each real-money table is its own smart contract on Base. When you sit down, your USDC moves into the table contract; when you leave, it moves back to your wallet. Stacked itself never holds player funds. If a settlement ever stalls, you can withdraw your stack directly from the contract after 24 hours — no support ticket, no permission needed.
+Each real-money table is its own contract on Base. When you buy in, your USDC moves into that contract. When you leave, your table stack returns to your wallet balance. Stacked itself never holds player funds. If hands stop settling for 24 hours, you can withdraw your own stack straight from the contract: no support ticket, no permission needed.
 
-### Settlement happens every hand
+### Cash-table hands settle onchain one by one
 
-After every real-money hand, the contract updates balances on-chain. Settlement is typically under 5 seconds, depending on Base network conditions, and **Stacked covers the gas — you never pay to settle a hand**. (Gas is the small network fee paid to record a transaction on Base.) There's no batch, no end-of-session reconciliation; your stack at the table matches what's on-chain, hand to hand.
+After every real-money cash-table hand, the contract updates balances onchain. Settlement typically takes under 5 seconds, depending on Base network conditions, and **Stacked covers the gas, so you never pay to settle a hand**. (Gas is the small network fee paid to record a transaction on Base.) There's no batch and no end-of-session reconciliation: your table stack matches what's onchain, hand to hand.
 
-### Just connect a wallet
+Tournament hands don't settle one by one. A tournament pays out through its event contract when it ends. See [Tournaments](/docs/playing/tournaments).
 
-Connect a popular wallet — Coinbase Wallet, MetaMask, Rainbow, WalletConnect — or use an embedded wallet Stacked creates for you if you don't have one. A wallet is the app you use to hold your USDC and sign your own deposits and withdrawals.
+### Sign in with a wallet you have, or one we create
+
+Sign in with a popular wallet (Coinbase Wallet, MetaMask, Rainbow, WalletConnect), or let Stacked create a wallet for you. A wallet is the app that holds your USDC. If you use your own wallet, it asks you to confirm your own buy-ins and the return of your table stack.
 
 ## Free Play
 
-If you want to try Stacked without putting USDC on the table, every Host can also create **Free Play** tables — play-money chips, no real value, no platform fee. Free Play tables share the same lobby as real-money tables and are clearly tagged so you always know which mode you're in.
+To try Stacked without putting USDC on the table, play **Free Play**. Free Play needs no signup. It uses play chips with no real value, charges no platform fee, and pays Hosts nothing. Free Play tables show up in Play beside real-money tables and are clearly tagged, so you always know which mode you're in.
 
 ## What's next
 
-- [Connect a wallet](/docs/getting-started/connect-a-wallet) — to deposit USDC and join a real-money table.
-- [Try a Free Play hand](/docs/getting-started/first-free-play-hand) — no USDC required.
-- [How a hand of Stacked works](/docs/welcome/how-a-hand-works) — step-by-step walkthrough.
-- [Hosting a table](/docs/hosting/overview) — create a table and earn 25% of the platform fee on it.
+- [Sign in](/docs/getting-started/connect-a-wallet): to add funds and join a real-money table.
+- [Try a Free Play hand](/docs/getting-started/first-free-play-hand): no USDC needed.
+- [How a hand of Stacked works](/docs/welcome/how-a-hand-works): a step-by-step walkthrough.
+- [Hosting a table](/docs/hosting/overview): create a table and earn 25% of the platform fee on it.

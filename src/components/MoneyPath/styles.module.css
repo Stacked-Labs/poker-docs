@@ -1,0 +1,126 @@
+/* No outer card: the felt panel is the figure's one object, the wallet tiles sit on the page */
+.figure {
+  margin: 1.75rem 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(92px, auto) minmax(0, 1.4fr) minmax(92px, auto) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
+}
+
+.rowOut {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(92px, auto) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
+}
+
+.tile {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: 16px;
+  border: 1px solid var(--stacked-line);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  min-width: 0;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.felt {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--stacked-felt);
+  box-shadow: 0 0 0 2px var(--stacked-rail);
+  color: #ffffff;
+  min-width: 0;
+}
+
+.nameLight {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.25;
+}
+
+.sub {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.arrow {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  min-width: 56px;
+  height: 2px;
+  background: var(--ifm-color-content);
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-left: 8px solid var(--ifm-color-content);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.caption {
+  margin-top: 14px;
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+@media (max-width: 720px) {
+  .row,
+  .rowOut {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .arrow {
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    padding-left: 18px;
+  }
+  .line {
+    width: 2px;
+    height: 22px;
+    min-width: 0;
+    order: -1;
+  }
+  .line::after {
+    right: auto;
+    left: -4px;
+    top: auto;
+    bottom: -1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid var(--ifm-color-content);
+    border-bottom: none;
+  }
+}

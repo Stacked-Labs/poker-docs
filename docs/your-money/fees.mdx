@@ -6,21 +6,21 @@ import RakeCapCalculator from '@site/src/components/RakeCapCalculator';
 
 # How fees work
 
-The platform fee is the small fee Stacked takes from each real-money pot to keep the platform running.
+The platform fee is the small fee Stacked Poker takes on real-money play to keep the platform running, and this page has every number. At a cash table it comes out of each pot; at a tournament it is part of the buy-in.
 
 ## The basics
 
-On every real-money hand, **4% of the pot is taken as the platform fee** when the hand settles. The fee comes out of the pot itself — it's not added on top of bets, and players don't pay it as a separate line item. The winner takes the rest of the pot; of the fee, 25% goes to the Host of the table and the remainder is Stacked's share. Free Play tables have no platform fee.
+On every real-money cash-table hand, **4% of the pot is taken as the platform fee** when the hand settles. The fee comes out of the pot itself. It's not added on top of bets, and players don't pay it as a separate line item. The winner takes the rest of the pot; of the fee, 25% goes to the Host of the table and the remainder is Stacked's share. Free Play tables have no platform fee.
 
-The platform fee also funds the gas (the network fee for an on-chain action) Stacked pays to settle every hand and to deploy each table. That's why settling hands and creating tables are free for everyone at the table. If you connected your own wallet, you pay only the small network gas on the deposits and withdrawals you sign yourself. If you signed in with Google, X, Discord or email, Stacked covers those too.
+The platform fee also funds the gas (the network fee for an onchain action) Stacked pays to settle every hand and to deploy each table. That's why settling hands and creating tables are free for everyone at the table. If you signed in with your own wallet, you pay only the small network gas on the actions you sign yourself, like buying in. If you signed in with a social account, email or phone, Stacked covers those too.
 
 The 4% is **capped per hand**. The cap scales with the table's big blind so a single oversized pot at high stakes doesn't generate a disproportionate fee. There's also a short-handed discount: heads-up and 3–4-handed tables pay less than full ring.
 
 ## Why a curve, not fixed tiers
 
-On Stacked, **the Host picks the small blind and big blind freely when they create a table** — there's no fixed list of stakes to choose from. A traditional poker room can publish a tier schedule ($0.50 / $1, $1 / $2, $2 / $5, etc.) because the room defines those stakes. We can't: a Host might run $0.07 / $0.15, $0.40 / $0.80, or anything else they like.
+On Stacked, **the Host picks the small blind and big blind freely when they create a table**. There's no fixed list of stakes to choose from. A traditional poker room can publish a tier schedule ($0.50 / $1, $1 / $2, $2 / $5, etc.) because the room defines those stakes. We can't: a Host might run $0.07 / $0.15, $0.40 / $0.80, or anything else they like.
 
-So instead of bucketing tables into tiers, the cap is a **smooth curve** that produces a sensible cap for any big blind a Host can set. Two tables with neighbouring big blinds end up with neighbouring caps — no cliffs at tier boundaries, no arbitrage from creating a table just under a tier line.
+So instead of bucketing tables into tiers, the cap is a **smooth curve** that produces a sensible cap for any big blind a Host can set. Two tables with neighbouring big blinds end up with neighbouring caps: no cliffs at tier boundaries, and nothing to gain from creating a table just under a tier line.
 
 ## The cap, expressed in big blinds
 
@@ -42,7 +42,7 @@ The cap is also bounded in absolute terms: it never falls below **$0.01** and ne
 
 ## Calculator
 
-Plug in any big blind to see the cap for that table. Caps are shown as a multiple of the big blind so you can compare across stakes at a glance.
+Enter any big blind to see the cap for that table, in dollars and as a multiple of the big blind, so you can compare across stakes at a glance.
 
 <RakeCapCalculator />
 
@@ -69,20 +69,22 @@ If that same table drops to three players for a stretch, the cap halves to about
 
 ## How the platform fee is split
 
-Every dollar of the platform fee splits two ways. The Host's share is the structural piece that makes the marketplace work — without it, there's no reason to run a public table.
+Every dollar of the platform fee splits two ways. The Host's share is what gives a player a reason to run a public table.
 
-- **25% goes to the Host** of the table — credited to the Host's withdrawable balance at that table's smart contract (the on-chain program that holds the table's funds). See [Hosting earnings](/docs/hosting/earnings).
+- **25% goes to the Host** of the table, credited to the Host's balance at that table's smart contract (the onchain program that holds the table's funds). The Host can collect it any time. See [What Hosts earn](/docs/hosting/earnings).
 - **75% goes to Stacked**, which also funds the gas Stacked sponsors to settle hands and deploy tables.
+
+If a player or Host was invited by a friend, 20% of Stacked's share of the fees they generate goes to that friend for 12 months. It comes out of Stacked's share only: the pot, the Host's share and every player's stack are unchanged. See [Referrals and points](/docs/playing/referrals-and-points).
 
 ## Tournament fees
 
-Tournaments charge the platform fee differently from cash games. There's no per-pot fee during a tournament; instead, the fee is part of the buy-in, taken once when the tournament starts. A player's buy-in covers their place in the prize pool plus this fee — nothing is added on top.
+Tournaments charge the platform fee differently from cash games. There's no per-pot fee during a tournament; instead, the fee is part of the buy-in, taken once when the tournament starts. A player's buy-in covers their place in the prize pool plus this fee. Nothing is added on top.
 
 The tournament fee is a percentage of the buy-in, and it steps down as buy-ins get larger:
 
 | Buy-in | Platform fee |
 |---|---|
-| Freeroll (no buy-in) | 0% |
+| Free to enter (no buy-in) | 0% |
 | Under $10 | 8% |
 | $10 – $24.99 | 6% |
 | $25 – $99.99 | 5% |
@@ -92,17 +94,17 @@ The tournament fee is a percentage of the buy-in, and it steps down as buy-ins g
 
 So a $20 buy-in carries a 6% fee: $1.20 of each $20 entry is the platform fee, and $18.80 goes into the prize pool. With 40 entries, that's $48 of total fee and a $752 prize pool from the buy-ins.
 
-The split is the same as cash games: **25% of the tournament fee goes to the Host** of the tournament, and **75% goes to Stacked**. The Host's share is held by the tournament contract and paid out once the tournament has finished and prizes are settled. Freerolls carry no fee, so there's no Host share on a freeroll. For how tournaments work end to end, see [Tournaments](/docs/playing/tournaments).
+The split is the same as cash games: **25% of the tournament fee goes to the Host** of the tournament, and **75% goes to Stacked**. The Host's share is held by the tournament contract and paid out once the tournament has finished and prizes are settled. Events with no buy-in carry no fee, so there's no Host share on them. For how tournaments work end to end, see [Tournaments](/docs/playing/tournaments).
 
 ## Variations
 
-There's one platform fee schedule today, applied uniformly to every real-money table. The rate, the cap curve, and the short-handed discounts are all tunable — Stacked may adjust them over time as we calibrate. If anything changes meaningfully, this page updates with it. We may also add promotional fee-free periods, discounts, or special table types in the future; those will be documented here when they exist.
+There's one platform fee schedule today, applied uniformly to every real-money table. The rate, the cap curve and the short-handed discounts are all tunable, and Stacked may adjust them over time. If anything changes meaningfully, this page updates with it. If we add fee-free periods, discounts or special table types, they will be documented here when they exist.
 
 ## Free Play
 
-Free Play tables don't generate any platform fee. No fee, no Host earnings — Free Play exists for trying things out and playing with friends, not for revenue.
+Free Play tables don't generate any platform fee. No fee, no Host earnings. Free Play exists for trying things out and playing with friends, not for revenue.
 
 ## What's next
 
-- [Hosting earnings →](/docs/hosting/earnings) — the Host's 25% share, in detail.
-- [Per-hand settlement →](/docs/your-money/settlement) — what happens on-chain after each hand.
+- [What Hosts earn →](/docs/hosting/earnings): the Host's 25% share, in detail.
+- [How hands settle →](/docs/your-money/settlement): what happens onchain after each cash-table hand.

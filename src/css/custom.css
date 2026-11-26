@@ -1,533 +1,632 @@
 /**
- * Stacked brand theme — penthouse, not casino floor.
- * Light mode leads with felt-green; dark mode leads with chip-yellow.
+ * Stacked docs theme: Bone and felt (approved 25 Nov 2026).
+ * Values are copied from poker-game/app/globals.css, which wins if they ever differ. What each
+ * colour is allowed to mean is in poker-game/DESIGN.md Part A.
+ * Light is the default: bone ground, paper surfaces, ink text, felt for links and the primary.
+ * Dark is second and PROVISIONAL (see the dark block).
+ *
+ * Variable names retired with this change, and what replaced them:
+ *   --stacked-midnight     ->  --stacked-ink (#1B1D1C)
+ *   --stacked-navy         ->  --stacked-ink-2 (#3D3F3B)
+ *   --stacked-pink         ->  removed. Hovers use --stacked-accent; danger is --stacked-live (#D42A22)
+ *   --stacked-green        ->  --stacked-felt (#1E6B4C)
+ *   --stacked-green-dark   ->  --stacked-felt-hover (#185A40); #2A8463 is now --stacked-act
+ *   --stacked-yellow       ->  removed as an accent: gold is for wins only. Dark accents use --stacked-felt-pale
+ *   --stacked-yellow-deep  ->  --stacked-brass (#925F11), warnings
+ *   --stacked-cold         ->  --stacked-cream (#FBF6EC) for type on dark, --stacked-sunken (#ECE6D9) for filled surfaces
+ *   Font: Poppins          ->  Barlow, loaded by the Google Fonts link in docusaurus.config.ts
+ *
+ * Rules from poker-game/DESIGN.md that this file follows: hover changes colour only (no lifts,
+ * glows or scale), no glass or blur, sentence case everywhere (no uppercase labels), one felt
+ * primary per screen (the Play button in the navbar; the hero button on the homepage).
  */
 
 :root {
-  /* Stacked brand tokens */
-  --stacked-midnight: #0B1430;
-  --stacked-navy: #334479;
-  --stacked-pink: #EB0B5C;
-  --stacked-green: #36A37B;
-  --stacked-green-dark: #2A8463;
-  --stacked-yellow: #FDC51D;
-  --stacked-yellow-deep: #B78900;
-  --stacked-cold: #ECEEF5;
-  --stacked-ink: #191414;
+  /* Bone and felt tokens, by the brand's names */
+  --stacked-bone: #F3EEE4;
+  --stacked-paper: #FFFDF8;
+  --stacked-ink: #1B1D1C;
+  --stacked-ink-2: #3D3F3B;
+  --stacked-mute: #5E605B;
+  --stacked-sunken: #ECE6D9;
+  --stacked-felt: #1E6B4C;
+  --stacked-felt-hover: #185A40;
+  --stacked-felt-deep: #134A34;
+  --stacked-act: #2A8463;
+  --stacked-felt-pale: #7CA894;
+  --stacked-cream: #FBF6EC;
+  --stacked-rail: #0E0F11;
+  --stacked-live: #D42A22;
+  --stacked-brass: #925F11;
+  --stacked-line: #E9E2D2;
+  --stacked-card-red: #C2372B;
+  --stacked-gold: #F5B700;
 
-  /* Infima primary — felt-green family in light mode */
-  --ifm-color-primary: #36A37B;
-  --ifm-color-primary-dark: #2A8463;
-  --ifm-color-primary-darker: #22674E;
-  --ifm-color-primary-darkest: #1B523E;
-  --ifm-color-primary-light: #4AB68D;
-  --ifm-color-primary-lighter: #5FC79E;
-  --ifm-color-primary-lightest: #74D8AF;
+  /* Roles that switch with the colour mode */
+  --stacked-accent: var(--stacked-felt); /* links, hover and current-page text */
+  --stacked-primary: var(--stacked-felt); /* filled buttons, white text */
+  --stacked-primary-hover: var(--stacked-felt-hover);
+
+  /* Infima primary: felt, with shades from the felt ramp in globals.css */
+  --ifm-color-primary: #1E6B4C;
+  --ifm-color-primary-dark: #185A40;
+  --ifm-color-primary-darker: #134A34;
+  --ifm-color-primary-darkest: #0D3424;
+  --ifm-color-primary-light: #2A8463;
+  --ifm-color-primary-lighter: #7CA894;
+  --ifm-color-primary-lightest: #AAC6B7;
 
   --ifm-color-white: #ffffff;
 
-  /* Page surfaces */
-  --ifm-background-color: #FFFFFF;
-  --ifm-background-surface-color: #ECEEF5;
+  /* Page surfaces: bone ground, paper for cards, menus and the top bar */
+  --ifm-background-color: #F3EEE4;
+  --ifm-background-surface-color: #FFFDF8;
 
-  /* Content */
-  --ifm-color-content: #0B1430;
-  --ifm-color-content-secondary: #334479;
+  /* Content: ink, with ink-2 for secondary copy */
+  --ifm-color-content: #1B1D1C;
+  --ifm-color-content-secondary: #3D3F3B;
 
-  /* Links */
-  --ifm-link-color: #36A37B;
-  --ifm-link-hover-color: #2A8463;
+  /* Links: felt */
+  --ifm-link-color: #1E6B4C;
+  --ifm-link-hover-color: #185A40;
 
-  /* Navbar — light glass in light mode, midnight in dark */
-  --ifm-navbar-background-color: rgba(255, 255, 255, 0.85);
-  --ifm-navbar-link-color: #0B1430;
-  --ifm-navbar-link-hover-color: #36A37B;
+  /* Navbar: paper */
+  --ifm-navbar-background-color: #FFFDF8;
+  --ifm-navbar-link-color: #1B1D1C;
+  --ifm-navbar-link-hover-color: #1E6B4C;
 
-  /* Footer */
-  --ifm-footer-background-color: #FFFFFF;
-  --ifm-footer-link-color: #0B1430;
-  --ifm-footer-color: #0B1430;
-  --ifm-footer-title-color: #0B1430;
+  /* Footer: the page ground */
+  --ifm-footer-background-color: #F3EEE4;
+  --ifm-footer-link-color: #1B1D1C;
+  --ifm-footer-color: #1B1D1C;
+  --ifm-footer-title-color: #1B1D1C;
 
-  /* Admonitions */
-  --ifm-color-success: #36A37B;
-  --ifm-color-info: #334479;
-  --ifm-color-warning: #B78900;
-  --ifm-color-danger: #EB0B5C;
+  /* Admonitions: success is felt, info is ink-2, warning is brass, danger is live red */
+  --ifm-color-success: #1E6B4C;
+  --ifm-color-info: #3D3F3B;
+  --ifm-color-warning: var(--stacked-brass);
+  --ifm-color-danger: var(--stacked-live);
 
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(54, 163, 123, 0.18);
+  --ifm-code-font-size: 92%;
+  --ifm-font-family-base: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ifm-heading-font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ifm-font-family-monospace: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ifm-font-size-base: 106.25%; /* 17 px body on desktop */
+  --ifm-line-height-base: 1.6;
+  --ifm-heading-font-weight: 700;
+  --ifm-h1-font-size: 2.25rem; /* type-page, 36 px */
+  --ifm-h2-font-size: 1.875rem; /* 30 px: a clear step above H3 */
+  --ifm-h3-font-size: 1.1875rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-heading-line-height: 1.2;
+  --ifm-global-radius: 10px;
+  --ifm-toc-border-color: var(--stacked-line);
+  --ifm-color-emphasis-200: var(--stacked-line);
+  --ifm-color-emphasis-300: #D6CFBF;
+  --ifm-table-border-color: var(--stacked-line);
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: #ECE6D9;
+  --ifm-hr-background-color: var(--stacked-line);
+  --ifm-menu-color: #3D3F3B;
+  --ifm-menu-color-background-hover: rgba(27, 29, 28, 0.05);
+  --ifm-navbar-height: 64px;
+  --docusaurus-highlighted-code-line-bg: rgba(30, 107, 76, 0.18);
 }
 
-[data-theme="dark"] {
-  --stacked-dark-bg: #191919;
-  --stacked-dark-surface: #141418;
-  --ifm-background-color: #191919;
-  --ifm-background-surface-color: #141418;
-
-  --ifm-color-content: #ECEEF5;
-  --ifm-color-content-secondary: rgba(236, 238, 245, 0.72);
-
-  /* Chip-yellow leads in dark mode for contrast */
-  --ifm-color-primary: #FDC51D;
-  --ifm-color-primary-dark: #E5B219;
-  --ifm-color-primary-darker: #B78900;
-  --ifm-color-primary-darkest: #8C6900;
-  --ifm-color-primary-light: #FDD04A;
-  --ifm-color-primary-lighter: #FED970;
-  --ifm-color-primary-lightest: #FEE39A;
-
-  --ifm-link-color: #FDC51D;
-  --ifm-link-hover-color: #E5B219;
-
-  /* Navbar — penthouse-midnight in dark */
-  --ifm-navbar-background-color: rgba(46, 46, 54, 0.95);
-  --ifm-navbar-link-color: #ECEEF5;
-  --ifm-navbar-link-hover-color: #FDC51D;
-
-  --ifm-footer-background-color: #191919;
-  --ifm-footer-link-color: #ECEEF5;
-  --ifm-footer-color: #ECEEF5;
-
-  --ifm-color-success: #36A37B;
-  --ifm-color-info: #5A6FA5;
-  --ifm-color-warning: #FDC51D;
-  --ifm-color-danger: #EB0B5C;
-
-  --docusaurus-highlighted-code-line-bg: rgba(54, 163, 123, 0.18);
-}
-
-* {
-  font-family: "Poppins", sans-serif;
-}
-
-/* ===== Navbar ===== */
 /*
- * The frosted-glass blur lives on a ::before pseudo-element, NOT on .navbar itself.
- * `backdrop-filter` (like `filter`/`transform`) on an element makes it the containing
- * block for its `position: fixed` descendants. Docusaurus renders the mobile menu
- * (.navbar-sidebar, which is position:fixed/top:0/bottom:0) INSIDE .navbar — so putting
- * the blur on .navbar trapped the full-screen mobile menu inside the 64px navbar box,
- * collapsing the Docs menu to an unusable sliver. Keeping the blur on the pseudo-element
- * preserves the look without breaking the mobile menu.
+ * Dark mode is PROVISIONAL. The brand's dark theme (a deep felt ground, rail bars and sheets,
+ * cream text) ships after light. Until then dark keeps working on a rail ground with cream text
+ * and act as the primary. Do not treat these values as the final dark design.
+ * The selector is html[data-theme="dark"] on purpose: Infima sets its own dark ground and text
+ * on html[data-theme='dark'], which outranks a bare [data-theme="dark"].
  */
+html[data-theme="dark"] {
+  --stacked-line: rgba(251, 246, 236, 0.12);
+  --stacked-card-red: #F0655C;
+  --stacked-sunken: rgba(251, 246, 236, 0.06);
+  --ifm-color-emphasis-300: rgba(251, 246, 236, 0.18);
+  --ifm-table-head-background: rgba(251, 246, 236, 0.06);
+  --ifm-menu-color: rgba(251, 246, 236, 0.8);
+  --ifm-menu-color-background-hover: rgba(251, 246, 236, 0.06);
+  --stacked-accent: var(--stacked-felt-pale); /* poker-game's dark link colour */
+  --stacked-primary: var(--stacked-act);
+  --stacked-primary-hover: var(--stacked-felt);
+
+  /* The app's dark ramp (poker-game globals.css --dark-ground / --dark-card): charcoal with a
+     faint felt hue, not the blue-black of rail */
+  --ifm-background-color: oklch(16.5% 0.004 160);
+  --ifm-background-surface-color: oklch(22.6% 0.004 160);
+
+  /* Cream text */
+  --ifm-color-content: #FBF6EC;
+  --ifm-color-content-secondary: rgba(251, 246, 236, 0.72);
+
+  /* act as the primary, with shades from the felt ramp */
+  --ifm-color-primary: #2A8463;
+  --ifm-color-primary-dark: #1E6B4C;
+  --ifm-color-primary-darker: #185A40;
+  --ifm-color-primary-darkest: #134A34;
+  --ifm-color-primary-light: #7CA894;
+  --ifm-color-primary-lighter: #AAC6B7;
+  --ifm-color-primary-lightest: #CEDDD2;
+
+  /* act is about 4.2:1 as text on rail, so accent text takes the paler felt (7.2:1) */
+  --ifm-link-color: #7CA894;
+  --ifm-link-hover-color: #AAC6B7;
+  --ifm-menu-color-active: #7CA894;
+  --ifm-breadcrumb-color-active: #7CA894;
+  --ifm-tabs-color-active: #7CA894;
+
+  /* Navbar: rail */
+  --ifm-navbar-background-color: oklch(16.5% 0.004 160);
+  --ifm-navbar-link-color: #FBF6EC;
+  --ifm-navbar-link-hover-color: #7CA894;
+
+  --ifm-footer-background-color: oklch(16.5% 0.004 160);
+  --ifm-footer-link-color: #FBF6EC;
+  --ifm-footer-color: #FBF6EC;
+
+  /* The dark values of success, warning and destructive in globals.css */
+  --ifm-color-success: #8CCFB0;
+  --ifm-color-info: #CCC6B7;
+  --ifm-color-warning: #FBBF24;
+  --ifm-color-danger: #F0655C;
+
+  --docusaurus-highlighted-code-line-bg: rgba(42, 132, 99, 0.18);
+}
+
+/* ===== Base type ===== */
+body {
+  font-family: var(--ifm-font-family-base);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --ifm-font-size-base: 100%;
+    --ifm-h1-font-size: 1.75rem; /* type-page, 28 px on phones */
+    --ifm-h2-font-size: 1.3125rem;
+  }
+}
+
+.markdown h1:first-child {
+  letter-spacing: -0.015em;
+  margin-bottom: 0.6em;
+}
+
+/* Sections: space and size do the work, no rules. H2 sits close to its own text. */
+.markdown h2 {
+  margin-top: 2.1em;
+  margin-bottom: 0.45em;
+  letter-spacing: -0.015em;
+}
+
+.markdown h3 {
+  margin-top: 1.7em;
+  margin-bottom: 0.4em;
+}
+
+.markdown > p:first-of-type {
+  font-size: 1.1em;
+  color: var(--ifm-color-content-secondary);
+}
+
+@media (max-width: 600px) {
+  .markdown > p:first-of-type {
+    font-size: 1.0625em;
+    line-height: 1.45;
+  }
+}
+
+.markdown a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--ifm-link-color) 45%, transparent);
+}
+
+.markdown a:hover {
+  text-decoration-color: currentColor;
+}
+
+.markdown strong {
+  font-weight: 700;
+}
+
+/* Doc column: clear of the sidebar, a reading measure, and the pager on the same column */
+article,
+.pagination-nav {
+  max-width: 680px; /* about 72 characters of 17 px Barlow */
+}
+
+@media (min-width: 997px) {
+  main[class*="docMainContainer"] > .container {
+    padding-left: clamp(32px, 4vw, 56px);
+    padding-right: 24px;
+  }
+}
+
+/* A lone Next or Previous card fills the row instead of floating */
+/* Breadcrumb home icon on the H1's edge */
+.theme-doc-breadcrumbs .breadcrumbs__item:first-child .breadcrumbs__link {
+  padding-left: 0;
+}
+
+/* ===== Navbar: paper bar, hairline under it ===== */
 .navbar {
-  background-color: transparent !important;
-  border-bottom: 1px solid rgba(11, 20, 48, 0.08);
   height: 64px;
   padding: 0 clamp(16px, 3vw, 28px);
-  box-shadow: 0 1px 0 rgba(11, 20, 48, 0.04), 0 4px 16px rgba(11, 20, 48, 0.06);
-}
-
-.navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0.85);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
-  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--stacked-line);
+  box-shadow: none;
 }
 
 [data-theme="dark"] .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px rgba(0, 0, 0, 0.32);
-}
-
-[data-theme="dark"] .navbar::before {
-  background-color: rgba(46, 46, 54, 0.95);
+  border-bottom-color: rgba(251, 246, 236, 0.08);
 }
 
 .navbar__inner {
   align-items: center;
 }
 
-.navbar__item,
-.navbar__link,
-.navbar__items button {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--stacked-midnight);
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: color 120ms ease, background-color 120ms ease;
-}
-
-.navbar__link:hover,
-.navbar__item a:hover {
-  color: var(--stacked-green);
-  background-color: rgba(54, 163, 123, 0.08);
-}
-
-.navbar__link--active {
-  color: var(--stacked-green);
-}
-
-[data-theme="dark"] .navbar__item,
-[data-theme="dark"] .navbar__link,
-[data-theme="dark"] .navbar__items button {
-  color: rgba(236, 238, 245, 0.86);
-}
-
-[data-theme="dark"] .navbar__link:hover,
-[data-theme="dark"] .navbar__item a:hover {
-  color: var(--stacked-yellow);
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
-[data-theme="dark"] .navbar__link--active {
-  color: var(--stacked-yellow);
-}
-
 .navbar__brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--stacked-midnight);
-  margin-right: 18px;
-  gap: 9px;
+  margin-right: 20px;
+  gap: 10px;
+  color: var(--stacked-mute);
 }
 
 [data-theme="dark"] .navbar__brand {
-  color: var(--stacked-cold);
+  color: rgba(251, 246, 236, 0.6);
 }
 
 .navbar__logo {
-  height: 30px;
+  height: 20px;
   width: auto;
   margin-right: 0;
 }
 
 .navbar__logo img {
-  height: 30px;
+  height: 20px;
   width: auto;
 }
 
+/* "Docs", set beside the wordmark: a meta label after a hairline, never a second logo */
 .navbar__title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
   line-height: 1;
   color: inherit;
+  padding-left: 10px;
+  border-left: 1px solid var(--stacked-line);
 }
 
-/* Social icon chips: SVG via mask so we can recolor per mode */
-.navbar_logo {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-left: 14px;
-  background-color: var(--stacked-midnight);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  opacity: 0.72;
-  transition: opacity 120ms ease, transform 120ms ease, background-color 120ms ease;
-  border-radius: 6px;
-  background-image: none !important;
+[data-theme="dark"] .navbar__title {
+  border-left-color: rgba(251, 246, 236, 0.16);
 }
 
-.navbar_logo:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-  background-color: var(--stacked-green);
+.navbar__item,
+.navbar__link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 120ms ease, background-color 120ms ease;
 }
 
-[data-theme="dark"] .navbar_logo {
-  background-color: var(--stacked-cold);
+.navbar__link:hover {
+  color: var(--stacked-accent);
+  background-color: var(--ifm-menu-color-background-hover);
+  text-decoration: none;
 }
 
-[data-theme="dark"] .navbar_logo:hover {
-  background-color: var(--stacked-yellow);
+.navbar__link--active {
+  color: var(--stacked-accent);
+}
+
+/* The one primary on doc pages: Play, felt with white text */
+.navbar__cta.navbar__link,
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  background-color: var(--stacked-primary);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  margin-left: 6px;
+  border-radius: 10px;
+  box-shadow: 0 2px 0 var(--stacked-felt-deep);
+}
+
+.navbar__cta:hover {
+  background-color: var(--stacked-primary-hover);
+  color: #ffffff;
+}
+
+.navbar__cta svg {
+  display: none; /* no external-link arrow on the button */
 }
 
 .navbar-sidebar__brand {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--ifm-background-surface-color);
 }
 
-[data-theme="dark"] .navbar-sidebar__brand {
-  background-color: #191919;
-}
-
-.navbar_github {
-  -webkit-mask-image: url("/img/socials/github-mark.svg");
-  mask-image: url("/img/socials/github-mark.svg");
-}
-
-.navbar_x {
-  -webkit-mask-image: url("/img/socials/x.svg");
-  mask-image: url("/img/socials/x.svg");
-}
-
-.navbar_discord {
-  -webkit-mask-image: url("/img/socials/discord.svg");
-  mask-image: url("/img/socials/discord.svg");
-}
-
-.navbar_telegram {
-  -webkit-mask-image: url("/img/socials/telegram.svg");
-  mask-image: url("/img/socials/telegram.svg");
-}
-
-/* Brand-color hover per platform — overrides the generic .navbar_logo:hover */
-.navbar_x:hover { background-color: #000000; }
-[data-theme="dark"] .navbar_x:hover { background-color: #FFFFFF; }
-
-.navbar_discord:hover,
-[data-theme="dark"] .navbar_discord:hover { background-color: #5865F2; }
-
-.navbar_telegram:hover,
-[data-theme="dark"] .navbar_telegram:hover { background-color: #229ED9; }
-
-.navbar_github:hover { background-color: #181717; }
-[data-theme="dark"] .navbar_github:hover { background-color: #FFFFFF; }
-
-/* Color-mode toggle (do NOT match .navbar__toggle burger or the mobile sidebar's close X) */
-.navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
-  border: 1px solid rgba(11, 20, 48, 0.12);
+/* Colour-mode toggle (not the burger or the mobile menu's close button) */
+.navbar [class*="colorModeToggle"] .clean-btn {
+  border: 1px solid var(--stacked-line);
   border-radius: 8px;
-  margin-left: 14px;
+  margin-left: 12px;
   width: 34px;
   height: 34px;
   align-items: center;
   justify-content: center;
-  color: var(--stacked-midnight);
-  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  color: var(--ifm-color-content);
+  transition: background-color 120ms ease, color 120ms ease;
 }
 
-.navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
-  background-color: rgba(54, 163, 123, 0.08);
-  border-color: rgba(54, 163, 123, 0.32);
-  color: var(--stacked-green);
+.navbar [class*="colorModeToggle"] .clean-btn:hover {
+  background-color: var(--ifm-menu-color-background-hover);
+  color: var(--stacked-accent);
 }
 
-[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close) {
-  border-color: rgba(236, 238, 245, 0.14);
-  color: rgba(236, 238, 245, 0.78);
-}
-
-[data-theme="dark"] .navbar .clean-btn:not(.navbar__toggle):not(.navbar-sidebar__close):hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(236, 238, 245, 0.28);
-  color: var(--stacked-cold);
-}
-
-/* Mobile burger toggle: keep Docusaurus defaults but tone color */
 .navbar__toggle {
-  color: var(--stacked-midnight);
+  color: var(--ifm-color-content);
 }
 
-[data-theme="dark"] .navbar__toggle {
-  color: var(--stacked-cold);
-}
-
-.clean-btn:focus-visible {
-  outline: 2px solid var(--stacked-green);
+:focus-visible {
+  outline: 2px solid var(--stacked-accent);
   outline-offset: 2px;
 }
 
-[data-theme="dark"] .clean-btn:focus-visible {
-  outline-color: var(--stacked-yellow);
+/* ===== Sidebar ===== */
+.theme-doc-sidebar-container {
+  border-right-color: var(--stacked-line) !important;
 }
 
-/* ===== Footer ===== */
-.footer {
-  background-color: #FFFFFF !important;
-  color: #0B1430;
-  padding: 32px 0 20px;
-  border-top: 1px solid rgba(11, 20, 48, 0.08);
+.menu {
+  padding: 16px 12px !important;
 }
 
-[data-theme="dark"] .footer {
-  background-color: #191919 !important;
-  color: var(--stacked-cold);
-  border-top-color: rgba(255, 255, 255, 0.04);
+.menu__link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 7px 12px;
 }
 
-/* Layout: logo column + links columns side-by-side */
+.menu__list-item-collapsible .menu__link--sublist,
+.menu__link--sublist-caret {
+  font-weight: 700;
+  color: var(--ifm-color-content);
+}
+
+.menu__link--active:not(.menu__link--sublist),
+.menu__link--active:not(.menu__link--sublist):hover {
+  background-color: rgba(30, 107, 76, 0.1);
+  font-weight: 700;
+  color: var(--stacked-accent);
+}
+
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist),
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist):hover {
+  background-color: rgba(124, 168, 148, 0.14);
+}
+
+/* ===== Breadcrumbs, table of contents, pager ===== */
+.breadcrumbs__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: transparent;
+  color: var(--ifm-color-content);
+  font-weight: 600;
+}
+
+.table-of-contents__link {
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.table-of-contents__link--active {
+  color: var(--stacked-accent);
+  font-weight: 600;
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--stacked-line);
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+  transition: border-color 120ms ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--stacked-accent);
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.8125rem;
+  color: var(--stacked-mute);
+}
+
+[data-theme="dark"] .pagination-nav__sublabel {
+  color: rgba(251, 246, 236, 0.6);
+}
+
+.pagination-nav__label {
+  font-weight: 700;
+}
+
+/* ===== Admonitions: paper cards with a coloured edge, never a full colour fill ===== */
+.theme-admonition {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--stacked-line);
+  border-left-width: 4px;
+  border-radius: 12px;
+  box-shadow: none;
+  color: var(--ifm-color-content);
+}
+
+.theme-admonition [class*="admonitionHeading"] {
+  text-transform: none;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.alert--success { border-left-color: var(--stacked-felt); }
+.alert--info,
+.alert--secondary { border-left-color: var(--ifm-color-info); }
+.alert--warning { border-left-color: var(--stacked-brass); }
+.alert--danger { border-left-color: var(--stacked-live); }
+
+[data-theme="dark"] .alert--success { border-left-color: var(--stacked-act); }
+[data-theme="dark"] .alert--warning { border-left-color: #FBBF24; }
+[data-theme="dark"] .alert--danger { border-left-color: #F0655C; }
+
+.theme-admonition [class*="admonitionIcon"] svg {
+  fill: currentColor;
+}
+
+.alert--success [class*="admonitionIcon"] { color: var(--stacked-felt); }
+.alert--warning [class*="admonitionIcon"] { color: var(--stacked-brass); }
+.alert--danger [class*="admonitionIcon"] { color: var(--stacked-live); }
+
+/* ===== Tables ===== */
+.markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--stacked-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 700px) {
+  .markdown table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.markdown table th {
+  background: var(--ifm-table-head-background);
+  font-weight: 700;
+  text-align: left;
+}
+
+.markdown table th,
+.markdown table td {
+  border: none;
+  border-bottom: 1px solid var(--stacked-line);
+  padding: 10px 14px;
+}
+
+.markdown table tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown table tr {
+  background: transparent;
+  border: none;
+}
+
+/* ===== Footer: on the same 1120 px container as the homepage ===== */
 .footer > .container {
-  position: relative;
-  padding-left: 88px;
+  max-width: 1120px;
+  padding-left: clamp(16px, 4vw, 32px);
+  padding-right: clamp(16px, 4vw, 32px);
+}
+
+.footer {
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-color-content);
+  padding: 40px 0 28px;
+  border-top: 1px solid var(--stacked-line);
 }
 
 .footer__links {
-  margin-bottom: 16px !important;
+  margin-bottom: 20px !important;
 }
 
 .footer__col {
   margin-bottom: 0 !important;
 }
 
-/* Pull logo out of bottom flow into top-left */
-.footer__bottom {
-  display: block;
-  text-align: left;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(11, 20, 48, 0.08);
-}
-
-[data-theme="dark"] .footer__bottom {
-  border-top-color: rgba(255, 255, 255, 0.04);
-}
-
-.footer__bottom > .margin-bottom--sm {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 !important;
-}
-
-.footer__logo {
-  max-height: 44px;
-  width: auto;
-  margin: 0;
-}
-
 .footer__title {
-  color: #0B1430;
+  color: var(--ifm-color-content);
   font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.92;
+  font-size: 0.9375rem;
   margin-bottom: 10px;
 }
 
-[data-theme="dark"] .footer__title {
-  color: var(--stacked-cold);
-}
-
 .footer__item {
-  padding: 2px 0;
+  padding: 3px 0;
 }
 
-.footer__item a,
 .footer__link-item {
-  color: rgba(11, 20, 48, 0.72);
+  color: var(--ifm-color-content-secondary);
   font-size: 0.9375rem;
   font-weight: 500;
-  transition: color 160ms ease, transform 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: inline-block;
+  transition: color 120ms ease;
 }
 
-[data-theme="dark"] .footer__item a,
-[data-theme="dark"] .footer__link-item {
-  color: rgba(236, 238, 245, 0.72);
-}
-
-.footer__item a:hover,
 .footer__link-item:hover {
-  color: var(--stacked-pink);
+  color: var(--stacked-accent);
   text-decoration: none;
-  transform: translateX(2px);
+}
+
+.footer__link-item svg {
+  display: none;
+}
+
+.footer__bottom {
+  text-align: left;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--stacked-line);
+  display: grid;
+  gap: 12px;
 }
 
 .footer__copyright {
-  color: rgba(11, 20, 48, 0.55);
-  font-size: 0.8125rem;
+  color: var(--stacked-mute);
+  font-size: 0.875rem;
   line-height: 1.55;
   margin: 0;
   text-align: left;
 }
 
 [data-theme="dark"] .footer__copyright {
-  color: rgba(236, 238, 245, 0.5);
+  color: rgba(251, 246, 236, 0.55);
 }
 
-@media (max-width: 768px) {
-  .footer > .container {
-    padding-left: 0;
-  }
-  .footer__bottom > .margin-bottom--sm {
-    position: static;
-    margin-bottom: 16px !important;
-  }
-  .footer__bottom {
-    text-align: left;
-  }
-}
-
-/* ===== Buttons (tactile recipe) ===== */
+/* ===== Buttons (Infima) ===== */
 .button {
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 12px 24px;
-  transition:
-    transform 80ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 80ms ease,
-    background-color 80ms ease;
   text-transform: none;
 }
 
-.button--secondary,
-.button--secondary:link,
-.button--secondary:visited,
-.button--secondary:hover,
-.button--secondary:active,
-.button--secondary:focus {
-  color: #FFFFFF !important;
+.button--primary {
+  color: #ffffff;
+  box-shadow: 0 2px 0 var(--stacked-felt-deep);
 }
 
-.button--secondary {
-  background-color: var(--stacked-green);
-  border: none;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 2px 0 #22674E;
-}
-
-.button--secondary:hover {
-  background-color: var(--stacked-green-dark);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 2px 0 #22674E;
-}
-
-.button--secondary:active,
-.button--secondary.button:active {
-  transform: translateY(2px);
-  background-color: var(--stacked-green-dark);
-  box-shadow:
-    0 0 0 #22674E,
-    inset 0 2px 4px rgba(0, 0, 0, 0.18);
-}
-
-.button--white {
-  background-color: transparent;
-  color: var(--stacked-cold);
-  border: 2px solid rgba(236, 238, 245, 0.65);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-}
-
-.button--white:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
-  border-color: var(--stacked-cold);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-}
-
-.button--white:active,
-.button--white.button:active {
-  transform: translateY(2px);
-  background-color: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.35);
-}
-
-.button:active {
-  transform: translateY(2px);
-}
-
-/* ===== Details / collapsible ===== */
+/* ===== Details ===== */
 details {
-  background-color: var(--stacked-cold) !important;
-  border: 1px solid rgba(11, 20, 48, 0.12);
-  border-radius: 10px;
+  background-color: var(--ifm-background-surface-color) !important;
+  border: 1px solid var(--stacked-line) !important;
+  border-radius: 12px;
   padding: 12px 16px;
   margin-bottom: 10px;
+  box-shadow: none !important;
+  --docusaurus-details-decoration-color: var(--stacked-accent);
 }
 
 details summary {
@@ -535,55 +634,25 @@ details summary {
   cursor: pointer;
 }
 
-details[open] {
-  background-color: #FFFFFF !important;
+details > div > div {
+  border-top-color: var(--stacked-line) !important;
 }
 
-[data-theme="dark"] details {
-  background-color: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(236, 238, 245, 0.10);
-}
-
-[data-theme="dark"] details[open] {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* ===== Sidebar ===== */
-.menu__link--active,
-.menu__link--active:hover {
-  background-color: rgba(54, 163, 123, 0.10);
-  font-weight: 700;
-  color: var(--stacked-green-dark);
-}
-
-[data-theme="dark"] .menu__link--active,
-[data-theme="dark"] .menu__link--active:hover {
-  background-color: rgba(253, 197, 29, 0.12);
-  color: var(--stacked-yellow);
-}
-
-/* ===== Code blocks ===== */
+/* ===== Code ===== */
 .theme-code-block {
   border-radius: 12px !important;
-}
-
-[data-theme="dark"] .theme-code-block {
-  border-radius: 12px !important;
+  border: 1px solid var(--stacked-line);
+  box-shadow: none !important;
 }
 
 code {
-  background-color: rgba(54, 163, 123, 0.10);
-  padding: 0 6px;
+  background-color: var(--stacked-sunken);
+  padding: 1px 6px;
   border-radius: 6px;
   color: inherit;
   border: none;
 }
 
-[data-theme="dark"] code {
-  background-color: rgba(253, 197, 29, 0.14);
-}
-
-/* Don't double-style code inside pre/code blocks */
 .theme-code-block code,
 pre code {
   background-color: transparent;
@@ -591,12 +660,35 @@ pre code {
   border-radius: 0;
 }
 
-/* Responsive Mermaid diagrams: scale SVG down to container width, allow horizontal scroll if still too wide. */
-.docusaurus-mermaid-container {
-  overflow-x: auto;
-  margin: 1.5rem 0;
+/* ===== Images inside pages ===== */
+.markdown img {
+  border-radius: 12px;
 }
-.docusaurus-mermaid-container svg {
-  max-width: 100%;
-  height: auto;
+
+@media (max-width: 996px) {
+  .footer__col {
+    margin-bottom: 24px !important;
+  }
+}
+
+
+
+/* Pager: arrows, not guillemets */
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: "← ";
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: " →";
+}
+
+/* Phones: keep Play in the bar (Infima hides every bar item below 997 px) */
+@media (max-width: 996px) {
+  .navbar__items--right .navbar__cta {
+    display: inline-flex !important;
+    align-items: center;
+    height: 36px;
+    padding: 0 14px;
+    line-height: 1;
+  }
 }

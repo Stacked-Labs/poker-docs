@@ -1,54 +1,60 @@
 ---
 sidebar_position: 55
+sidebar_label: The 24-hour exit
 ---
 
-# 24-hour emergency exit
+import ExitClock from '@site/src/components/ExitClock';
 
-If a settlement at your table ever stalls for 24 hours, you can withdraw your stack — your USDC, a digital dollar that holds a stable value — from the contract yourself, no support ticket, no permission from anyone, just you and the contract.
+# The 24-hour exit
+
+If hands stop settling for 24 hours, you can withdraw your own stack. This page covers when the 24-hour exit opens, how to use it and what you get back.
 
 ## What it is
 
-Every real-money table on Stacked is its own smart contract — a small program on the blockchain that holds the money and follows fixed rules — deployed on Base, an Ethereum-based network with very low fees. The contract is built to settle every hand on-chain in under 5 seconds. If that ever fails — for any reason, including an outage on Stacked's side — the contract has a fallback built in:
+Your stack is held in USDC. USDC is a digital dollar that holds a stable value. Every real-money table on Stacked Poker is its own smart contract, a small program on the blockchain that holds the money and follows fixed rules. It is deployed on Base, an Ethereum-based network with very low fees. At a cash table, the contract typically settles every hand onchain in under 5 seconds. If that ever fails, for any reason, including an outage on Stacked's side, the contract has a fallback built in:
 
-**24 hours after the last successful settlement, any player at the table can call a function on the contract that releases their current stack directly back to their wallet.**
+**24 hours after the last successful settlement, any player at the table can withdraw their current stack straight back to their wallet.**
 
-```mermaid
-flowchart TB
-    H["Hands keep settling<br/>(clock keeps resetting)"] -- "Settlement stalls" --> W["24 hours pass<br/>with no settlement"]
-    W --> E["Emergency exit unlocks<br/>for every seated player"]
-    E --> X["You sign the withdrawal<br/>USDC moves to your wallet"]
-```
+<ExitClock />
 
-This is the safety net behind the whole on-chain custody story. You don't have to take our word for it that your money is safe; the contract is what makes it safe, and the emergency exit is what makes that real.
+This is the safety net behind custody. You don't have to take our word for it that your money is safe. The contract holds it, and the 24-hour exit is what makes that real.
 
 ## When the clock starts
 
-The 24-hour clock resets every time a hand settles successfully on-chain at your table. As long as hands keep settling, the clock keeps resetting and the emergency exit is dormant.
+The 24-hour clock resets every time a hand settles onchain at your table. As long as hands keep settling, the clock keeps resetting and the exit stays locked.
 
-If something goes wrong and settlements stop — for any reason — the clock starts on the last successful one. Once 24 hours have passed without another, the emergency exit unlocks for every player seated at the table.
+If something goes wrong and settling stops, the clock runs from the last successful hand. Once 24 hours have passed without another, the exit unlocks for every player seated at the table.
+
+## Who can use it
+
+The exit is for players still seated at the table. The clock counts from the last hand settled at the whole table, so while other players keep playing there and hands keep settling, it stays locked. In that case you can stand up and get your stack back the ordinary way.
+
+If you've already left the table, use the ordinary return to your wallet balance, described on [Cash out](/docs/your-money/withdrawals). If Stacked has paused ordinary returns in an emergency, your stack stays in the contract, in your name, until they resume. A pause can delay your money. It can't send it anywhere else.
+
+Tournaments have their own version: if a tournament stalls and isn't paid out, anyone can open refunds 24 hours after its advertised end time. See [Tournaments](/docs/playing/tournaments).
 
 ## How to use it
 
-Open the table's **Settings → Players** tab. Once the 24-hour window has elapsed without a settlement, an emergency-withdraw option appears there. Click it, sign the transaction from your wallet, and the contract releases your current stack back to your wallet.
+Open the table's **Settings → Players** tab. Once the 24-hour window has passed without a settled hand, the option to withdraw your stack appears there. Tap it and, if you signed in with your own wallet, sign the transaction. The contract releases your current stack to your wallet.
 
-Stacked's servers aren't involved in this step. The contract handles it on its own — even if our app is unreachable, the contract function is publicly callable from any wallet tool, so your funds are still accessible. You don't need our cooperation for the emergency exit to work.
+Stacked's servers aren't involved in this step. The contract handles it on its own, and it can be called from any wallet tool, so your money is still reachable even if our app is not. You don't need our cooperation for the 24-hour exit to work.
 
 ## What you get back
 
-Your current stack at the stalled table. The amount is whatever was last settled into your seat balance before settlements stopped — so the protection is exactly as good as the most recent successful settlement, which under normal operation is the last hand you played.
+Your current stack at the stalled table. The amount is whatever was last settled for you before hands stopped settling, so the protection is exactly as good as the most recent settled hand. Under normal operation, that's the last hand you played.
 
-This is single-table: emergency-exiting at one table doesn't touch any other table you're seated at. If you're stalled at one and playing normally at another, only the stalled one's emergency exit unlocks.
+The exit works one table at a time. Using it at one table doesn't touch any other table you're seated at. If you're stalled at one and playing normally at another, only the stalled one unlocks.
 
 ## What happens to the table
 
-Once an emergency exit happens, that's typically the end of the table. Players retrieve their stacks, the table closes out, and Stacked works through whatever caused the stall before opening a new one.
+Once players use the 24-hour exit, that's typically the end of the table. Players take their stacks, the table closes out, and Stacked works through whatever caused the stall before opening a new one.
 
 ## When you'd actually need this
 
-In normal operation, you wouldn't. Settlements happen every hand and the clock never gets near 24 hours. The emergency exit exists for the edge cases — outages, infrastructure failures, anything that could otherwise leave your money inaccessible. It's a safety net you hopefully never reach for. The point is that it's always there.
+In normal operation, you wouldn't. Hands settle one by one and the clock never gets near 24 hours. The exit exists for the edge cases: outages, infrastructure failures, anything that could otherwise leave your money out of reach. It's a safety net you hopefully never reach for. The point is that it's always there.
 
 ## What's next
 
-- [How custody works →](/docs/your-money/custody) — the full picture of how the table contract holds your money.
-- [Per-hand settlement →](/docs/your-money/settlement) — what's supposed to happen on every hand.
-- [Withdrawals →](/docs/your-money/withdrawals) — the ordinary withdrawal flow.
+- [How custody works →](/docs/your-money/custody): the full picture of how the table's contract holds your money.
+- [How hands settle →](/docs/your-money/settlement): what's supposed to happen on every cash-table hand.
+- [Cash out →](/docs/your-money/withdrawals): the ordinary way your money comes back.

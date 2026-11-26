@@ -1,44 +1,48 @@
 ---
 sidebar_position: 53
+sidebar_label: Cash out
 ---
 
-# Withdrawals
+import MoneyPath from '@site/src/components/MoneyPath';
 
-A withdrawal moves USDC — a digital dollar that holds a stable value — from a real-money table contract back to your wallet.
+# Cash out
 
-## How it works
+Cash out is the button that returns your table stack to your wallet balance after you stand up. Money in your wallet balance can then go to an exchange or another wallet.
 
-There are two steps. First, you leave the table — between hands. Second, you sign a withdrawal transaction and the contract releases your stack to your wallet.
+## Cash out from a table
 
-```mermaid
-flowchart LR
-    C[Table contract] -->|you sign a withdrawal| W[Your wallet]
-```
+There are three steps: stand up between hands, tap **Cash out**, and confirm. The table's contract then sends your stack to your wallet balance.
 
+<MoneyPath direction="out" />
 
-1. **Leave the table.** Click leave at the table between hands. You can't leave mid-hand; you finish the current hand first. Once you're no longer seated, the withdraw button unlocks.
-2. **Click withdraw.** Sign the transaction from your wallet. The contract sends your stack directly to your wallet — no queue, no Stacked approval, no schedule. The amount is exactly your seat balance at the moment you left.
+1. **Stand up.** Leave your seat between hands. You can't leave mid-hand: you finish the current hand first. Once you're no longer seated, Cash out is available.
+2. **Tap Cash out.** The contract sends your stack straight to your wallet balance, with no queue, no Stacked approval and no schedule. The amount is exactly your table stack at the moment you left.
+3. **Confirm.** If you signed in with your own wallet, it asks you to sign.
 
-Gas is the small network fee for a transaction you sign yourself. If you connected your own wallet, you pay the gas on the withdrawal. On Base, the low-fee network Stacked runs on, it is typically under a cent. If you signed in with Google, X, Discord or email, Stacked covers it.
+If you signed in with your own wallet, you pay the small network fee (gas) on this step, because it's a transaction you sign. On Base, the low-fee network Stacked runs on, it is typically under a cent. If you signed in with a social account, email or phone, Stacked covers it.
 
-## Other ways you end up withdrawing
+## From your wallet balance to an exchange or wallet
 
-The same withdraw step is what you use any time a contract is holding your money for you:
+Your wallet balance is money away from any table. Cash out also sends it to an exchange or a wallet you choose. Check the destination before you confirm: a cash out can't be reversed.
 
-- **You leave a table voluntarily.** The standard case above.
-- **The Host kicks you between hands.** Same flow — you get permission, you click withdraw.
-- **The Host ends the table.** Every seated player gets permission to withdraw their stack.
-- **The Host declined your seat after you deposited.** This can only happen at a table where the Host approves players by hand. Your deposit waits in the contract until you click withdraw. See [Deposits](/docs/your-money/deposits).
-- **The 24-hour emergency exit unlocks.** A separate path for the rare case settlement stalls — see [24-hour emergency exit](/docs/your-money/emergency-exit).
+## Other ways your stack comes back
 
-In every case, **Stacked never moves your funds without your signature.** Whether you left, got kicked, the table closed, or you're emergency-exiting, the final click is always yours.
+The same step applies any time a contract is holding your money for you:
 
-## Why between-hands only
+- **You stand up.** The standard case above.
+- **The Host removes you between hands.** You get permission to take your stack back, then you tap Cash out.
+- **The Host ends the table.** Every seated player gets permission to take their stack back.
+- **The Host declined your seat after you bought in.** This can only happen at a table where the Host approves players by hand. Your buy-in waits in the contract until you take it back. See [Buying in](/docs/your-money/deposits).
+- **The 24-hour exit unlocks.** A separate path for the rare case where hands stop settling. See [The 24-hour exit](/docs/your-money/emergency-exit).
 
-A withdrawal is the contract releasing your seat balance. The seat balance is whatever was last settled on-chain — which is updated at the end of each hand. Waiting until the current hand finishes makes sure the contract knows the correct balance to release; it isn't a Stacked policy decision, it's just how the contract sees things.
+In every case, **Stacked can't send your money anywhere but to you.**
+
+## Why only between hands
+
+Your table stack is whatever was last settled onchain, and that updates at the end of each hand. Waiting until the current hand finishes makes sure the contract knows the correct amount to return. It isn't a Stacked policy decision. It's how the contract sees things.
 
 ## What's next
 
-- [Deposits →](/docs/your-money/deposits) — moving USDC into a table.
-- [How custody works →](/docs/your-money/custody) — what the contract holds and how.
-- [24-hour emergency exit →](/docs/your-money/emergency-exit) — the safety net if settlement stalls.
+- [Buying in →](/docs/your-money/deposits): moving money from your wallet balance to a table.
+- [How custody works →](/docs/your-money/custody): what the contract holds and how.
+- [The 24-hour exit →](/docs/your-money/emergency-exit): the safety net if hands stop settling.
