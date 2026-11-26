@@ -28,7 +28,7 @@ A few practical consequences:
 
 ## What the contract can and can't do
 
-Players and Hosts can't change a table's contract rules. Stacked can update the shared code every table runs on — see [Code and contracts](#code-and-contracts) below for what that does and doesn't change.
+Players and Hosts can't change a table's contract rules. Stacked can update the shared code every table runs on, and every version keeps the same guarantees: the money paths only ever pay players, and the 24-hour exit can't be switched off. See [Code and contracts](#code-and-contracts) below for what an update does and doesn't change.
 
 **The contract can:**
 
@@ -55,6 +55,20 @@ Three parties touch a real-money table. Each has a defined and limited role:
 | **Stacked** | Run the live game, deploy and operate tables, update table contract code, pause deposits and ordinary withdrawals in an emergency, close a table in an emergency (which returns every balance to its owner) | Custody player funds; bypass withdrawal permissions; move funds outside the contract's rules; switch off the 24-hour emergency exit |
 
 There are two systems at work, each doing what it's good at: Stacked runs the game — dealing, betting, turn order — while the on-chain contract holds the money and records each hand's result. Stacked can move chips between seat balances inside the contract as hands settle, but it can never redirect them anywhere outside the contract's rules.
+
+## Stacked vs club apps
+
+In a club app, the club or its agent holds everyone's balance. On Stacked, your Host runs the game and never touches the money.
+
+| | Club apps | Stacked |
+|---|---|---|
+| **Who holds buy-ins** | The club or its agent. | The table's own contract, on-chain. |
+| **Cashing out** | Ask the agent and wait. | You withdraw and sign it yourself. |
+| **If the app goes quiet** | Your balance can go with it. | Withdraw it yourself after 24 hours. |
+| **What the Host earns** | Agent margins you rarely see. | 25% of the platform fee, shown up front. |
+| **Proof** | Their word. | Every hand settles on-chain, where anyone can read it. |
+
+This is about real-money tables. Free Play has no money to hold.
 
 ## Code and contracts
 
