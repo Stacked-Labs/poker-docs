@@ -96,13 +96,24 @@ const config: Config = {
         href: "/img/brand/apple-touch-icon.png",
       },
     },
+    // Small icons drawn at their own size from the vector master, so the browser never shrinks the
+    // 512 px app icon into a blurred tab icon.
     {
       tagName: "link",
       attributes: {
         rel: "icon",
         type: "image/png",
-        sizes: "512x512",
-        href: "/img/brand/stacked-icon-512.png",
+        sizes: "32x32",
+        href: "/img/brand/favicon-32.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/img/brand/favicon-16.png",
       },
     },
     {
