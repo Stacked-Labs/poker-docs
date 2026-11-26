@@ -6,7 +6,7 @@ sidebar_position: 30
 
 Anyone can host on Stacked Poker: a table for your group chat, or your own tournament. On the real-money tables you host, you earn 25% of the platform fee.
 
-Hosts create tables, set the rules, and earn a share of the platform fee on real-money tables. There are no application gates and no fees to start. Sign in, open **Host**, and a new table contract is deployed for you on Base, an Ethereum-based network with very low fees. Stacked covers the deployment gas, the small network fee for an onchain action.
+Hosts create tables, set the rules, and earn a share of the platform fee on real-money tables. There are no application gates and no fees to start. Sign in, open **Host**, and your table is created. A real-money table gets its own contract, deployed for you on Base, an Ethereum-based network with very low fees, and Stacked covers the deployment gas, the small network fee for an onchain action. Free Play tables have no contract.
 
 ## Why host
 

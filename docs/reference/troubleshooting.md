@@ -28,11 +28,11 @@ The action timer keeps running. If you don't come back and act before it expires
 
 ## I can't leave the table
 
-You can only leave between hands. Finish the current hand first, then the leave button activates.
+You can only leave between hands. Finish the current hand first, then stand up and tap **Cash out**.
 
 ## My stack hasn't come back to my wallet balance
 
-Your stack returns once you've stood up between hands. If you signed in with your own wallet, the confirmation has to be signed from it, so check that it's signed in and on Base.
+Your stack returns once you've stood up between hands and tapped **Cash out**. If you signed in with your own wallet, the confirmation has to be signed from it, so check that it's signed in and on Base.
 
 ## Settlement seems stuck
 

@@ -63,7 +63,7 @@ Gas is the network fee for an onchain action. If you signed in with a social acc
 Once you're signed in, tap **Add funds** in the header. You can buy USDC with a card, or send it from an exchange like Coinbase (choose Base as the network). See [Add funds](/docs/getting-started/get-usdc-on-base).
 
 **How do I get my money back from a table?**
-Stand up between hands and your table stack returns to your wallet balance. See [Cash out](/docs/your-money/withdrawals).
+Stand up between hands, then tap **Cash out** and your table stack returns to your wallet balance. See [Cash out](/docs/your-money/withdrawals).
 
 ## Access
 
